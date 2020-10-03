@@ -10,21 +10,47 @@ import UIKit
 
 class MarketViewController: UIViewController {
 
+    @IBOutlet private weak var collectionView: UICollectionView!
+    
+    private lazy var dataSource: [MarketSection] = {
+        return getDataFromJson() ?? []
+    }()
+    
     override func viewDidLoad() {
         super.viewDidLoad()
-
-        // Do any additional setup after loading the view.
+        setupCollectionView()
     }
+}
 
-
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destination.
-        // Pass the selected object to the new view controller.
+private extension MarketViewController {
+    func setupCollectionView() {
+        collectionView.delegate = self
+        collectionView.dataSource = self
+        collectionView.register(cellType: ItemCollectionViewCell.self)
     }
-    */
+    
+    func getDataFromJson() -> [MarketSection]? {
+        do {
+            let decoder = JSONDecoder()
+            let recource = "MarketDataSource"
+            return try decoder.decodeJsonResource(recource, model: [MarketSection].self)
+        } catch {
+         fatalError("Market Json Parser: \(error)")
+        }
+    }
+}
 
+extension MarketViewController: UICollectionViewDelegate, UICollectionViewDataSource {
+    func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
+        return 0
+    }
+    
+    func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
+        guard let cell = collectionView.dequeueReusableCell(of: ItemCollectionViewCell.self, for: indexPath) else {
+            fatalError("Market Collection View could not dequeue ItemCollectionViewCell")
+        }
+     
+        
+        return cell
+    }
 }
