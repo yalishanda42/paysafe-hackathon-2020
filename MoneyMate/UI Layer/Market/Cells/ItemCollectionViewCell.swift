@@ -74,6 +74,17 @@ class ItemCollectionViewCell: UICollectionViewCell {
         titleLabel.text = vm.title
         descriptionLabel.text = vm.description
         plusIcon.isHidden = !vm.isAsset
+        
+        if let progress = vm.progress {
+            let progressView = UIProgressView(progressViewStyle: .default)
+            progressView.progress = progress
+            detailsStackView.addArrangedSubview(progressView)
+        }
+        
+        for description in vm.descriptions {
+            let label = createLabel(with: description, font: .systemFont(ofSize: 17), alignment: .center)
+            requirementsStackView.addArrangedSubview(label)
+        }
     }
 }
 

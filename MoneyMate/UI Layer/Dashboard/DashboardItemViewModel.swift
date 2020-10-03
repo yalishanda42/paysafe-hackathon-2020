@@ -13,4 +13,6 @@ struct DashboardItemViewModel {
     let description: String
     let isAsset: Bool
     let systemImageTitle: String
+    let progress: Float? // in 0...1
+    let descriptions: [String]
 }
