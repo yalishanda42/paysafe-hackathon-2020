@@ -41,9 +41,6 @@ class QuestDetailsViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        #warning("TEST")
-        quest = .init(name: "This is a test quest.", description: "Lorem ipsum dolor sit amet,\nmaikati mi palni banicata s med.", requirements: ["Lorem", "Ipsum course Advanced"], rewards: ["Banica"])
-        
         updateInfo()
         
         infoView.layer.cornerRadius = 8
