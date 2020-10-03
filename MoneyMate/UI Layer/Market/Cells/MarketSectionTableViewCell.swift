@@ -25,6 +25,11 @@ class MarketSectionTableViewCell: UITableViewCell {
         dataSource = model.items
     }
     
+    func configure(with section: DashboardSection) {
+        titleLabel.text = section.title
+        // TODO: datasource
+    }
+    
     func reload() {
         collectionView.reloadData()
     }

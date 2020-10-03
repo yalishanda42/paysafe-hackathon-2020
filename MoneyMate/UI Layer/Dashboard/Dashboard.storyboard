@@ -89,6 +89,12 @@
                             <constraint firstItem="zZv-Ef-jPQ" firstAttribute="top" secondItem="ewV-qr-WIP" secondAttribute="top" id="uRu-rs-tFz"/>
                         </constraints>
                     </view>
+                    <connections>
+                        <outlet property="dateLabel" destination="FxB-sp-9B7" id="Lrq-hN-7UV"/>
+                        <outlet property="moneyLabel" destination="Eae-Hz-Wob" id="b6g-7E-Swc"/>
+                        <outlet property="rankLabel" destination="lJa-EW-hFU" id="J7M-QG-5TL"/>
+                        <outlet property="tableView" destination="Iit-6i-CnD" id="Qh4-cL-YjV"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="uwn-U1-wxm" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
