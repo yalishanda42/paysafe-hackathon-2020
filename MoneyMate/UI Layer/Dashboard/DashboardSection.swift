@@ -9,25 +9,29 @@
 import Foundation
 
 enum DashboardSection: Int, CaseIterable {
-    case jobAndAssets
+    case activeIncome
     case ongoingQuests
+    case ongoingCourses
     case availableQuests
     case liabilities
-    case courses
+    case completedCourses
+    case completedQuests
     
     var title: String {
         switch self {
-            case .jobAndAssets: return "Jobs and Assets"
+            case .activeIncome: return "Income"
             case .ongoingQuests: return "Ongoing Quests"
             case .availableQuests: return "Available Quests"
             case .liabilities: return "Liabilities"
-            case .courses: return "Courses"
+            case .ongoingCourses: return "Ongoing Courses"
+            case .completedCourses: return "Completed Courses"
+            case .completedQuests: return "Completed Quests"
         }
     }
     
     var itemViewModels: [DashboardItemViewModel] {
         switch self {
-            case .jobAndAssets:
+            case .activeIncome:
                 return []
             case .ongoingQuests:
                 return []
@@ -35,7 +39,11 @@ enum DashboardSection: Int, CaseIterable {
                 return []
             case .liabilities:
                 return []
-            case .courses:
+            case .ongoingCourses:
+                return []
+            case .completedCourses:
+                return []
+            case .completedQuests:
                 return []
         }
     }
