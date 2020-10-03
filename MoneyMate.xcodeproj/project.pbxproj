@@ -12,9 +12,8 @@
 		74FD4DC82528974400B69B78 /* Quest.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 74FD4DC72528974400B69B78 /* Quest.storyboard */; };
 		74FD4DCB2528980800B69B78 /* QuestDetailsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 74FD4DCA2528980800B69B78 /* QuestDetailsViewController.swift */; };
 		F3990EE92528586B00E87E2A /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = F3990EE82528586B00E87E2A /* AppDelegate.swift */; };
-		F3990EEB2528586B00E87E2A /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = F3990EEA2528586B00E87E2A /* SceneDelegate.swift */; };
-		F3990EF02528586B00E87E2A /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = F3990EEE2528586B00E87E2A /* Main.storyboard */; };
-		F3990EF22528586D00E87E2A /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = F3990EF12528586D00E87E2A /* Assets.xcassets */; };
+		F3990EF02528586B00E87E2A /* MainTab.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = F3990EEE2528586B00E87E2A /* MainTab.storyboard */; };
+		F3990EF22528586D00E87E2A /* Colors.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = F3990EF12528586D00E87E2A /* Colors.xcassets */; };
 		F3990EF52528586D00E87E2A /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = F3990EF32528586D00E87E2A /* LaunchScreen.storyboard */; };
 		F3990F4625285FFF00E87E2A /* UIView+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = F3990F3025285FFE00E87E2A /* UIView+Extensions.swift */; };
 		F3990F4725285FFF00E87E2A /* JSONDecoder+Utilities.swift in Sources */ = {isa = PBXBuildFile; fileRef = F3990F3125285FFE00E87E2A /* JSONDecoder+Utilities.swift */; };
@@ -54,6 +53,7 @@
 		F3990F8D25288F0C00E87E2A /* MarketSectionTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = F3990F8B25288F0C00E87E2A /* MarketSectionTableViewCell.swift */; };
 		F3990F8E25288F0C00E87E2A /* MarketSectionTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = F3990F8C25288F0C00E87E2A /* MarketSectionTableViewCell.xib */; };
 		F3990F902528A36800E87E2A /* jsonBackUp.json in Sources */ = {isa = PBXBuildFile; fileRef = F3990F8F2528A36800E87E2A /* jsonBackUp.json */; };
+		F3990F922528C31900E87E2A /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = F3990F912528C31900E87E2A /* Assets.xcassets */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -63,9 +63,8 @@
 		74FD4DCA2528980800B69B78 /* QuestDetailsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QuestDetailsViewController.swift; sourceTree = "<group>"; };
 		F3990EE52528586B00E87E2A /* MoneyMate.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = MoneyMate.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		F3990EE82528586B00E87E2A /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		F3990EEA2528586B00E87E2A /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
-		F3990EEF2528586B00E87E2A /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
-		F3990EF12528586D00E87E2A /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		F3990EEF2528586B00E87E2A /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/MainTab.storyboard; sourceTree = "<group>"; };
+		F3990EF12528586D00E87E2A /* Colors.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Colors.xcassets; sourceTree = "<group>"; };
 		F3990EF42528586D00E87E2A /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		F3990EF62528586D00E87E2A /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		F3990F3025285FFE00E87E2A /* UIView+Extensions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIView+Extensions.swift"; sourceTree = "<group>"; };
@@ -106,6 +105,7 @@
 		F3990F8B25288F0C00E87E2A /* MarketSectionTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MarketSectionTableViewCell.swift; sourceTree = "<group>"; };
 		F3990F8C25288F0C00E87E2A /* MarketSectionTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = MarketSectionTableViewCell.xib; sourceTree = "<group>"; };
 		F3990F8F2528A36800E87E2A /* jsonBackUp.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = jsonBackUp.json; sourceTree = "<group>"; };
+		F3990F912528C31900E87E2A /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -157,7 +157,6 @@
 			isa = PBXGroup;
 			children = (
 				F3990EE82528586B00E87E2A /* AppDelegate.swift */,
-				F3990EEA2528586B00E87E2A /* SceneDelegate.swift */,
 				F3990F7C252878B200E87E2A /* Utilities */,
 				F3990F2F25285FDD00E87E2A /* Extensions */,
 				F3990F5F2528613400E87E2A /* UI Layer */,
@@ -199,7 +198,8 @@
 			isa = PBXGroup;
 			children = (
 				F3990F7F252879B300E87E2A /* Jsons */,
-				F3990EF12528586D00E87E2A /* Assets.xcassets */,
+				F3990F912528C31900E87E2A /* Assets.xcassets */,
+				F3990EF12528586D00E87E2A /* Colors.xcassets */,
 				F3990EF32528586D00E87E2A /* LaunchScreen.storyboard */,
 				F3990EF62528586D00E87E2A /* Info.plist */,
 			);
@@ -209,7 +209,7 @@
 		F3990F5F2528613400E87E2A /* UI Layer */ = {
 			isa = PBXGroup;
 			children = (
-				F3990EEE2528586B00E87E2A /* Main.storyboard */,
+				F3990EEE2528586B00E87E2A /* MainTab.storyboard */,
 				F3990F64252861CD00E87E2A /* MainTabViewController.swift */,
 				F3990F622528615400E87E2A /* Bank */,
 				F3990F612528614E00E87E2A /* Market */,
@@ -347,11 +347,13 @@
 				F3990EF52528586D00E87E2A /* LaunchScreen.storyboard in Resources */,
 				F3990F7825286B4400E87E2A /* ItemCollectionViewCell.xib in Resources */,
 				F3990EF22528586D00E87E2A /* Assets.xcassets in Resources */,
+				F3990EF22528586D00E87E2A /* Colors.xcassets in Resources */,
 				74FD4DC82528974400B69B78 /* Quest.storyboard in Resources */,
-				F3990EF02528586B00E87E2A /* Main.storyboard in Resources */,
+				F3990EF02528586B00E87E2A /* MainTab.storyboard in Resources */,
 				F3990F712528629700E87E2A /* Market.storyboard in Resources */,
 				F3990F73252862A200E87E2A /* Dashboard.storyboard in Resources */,
 				F3990F6F2528628A00E87E2A /* Bank.storyboard in Resources */,
+				F3990F922528C31900E87E2A /* Assets.xcassets in Resources */,
 				74FD4DB125286B0D00B69B78 /* Quiz.storyboard in Resources */,
 				F3990F8925288BFA00E87E2A /* MarketDataSource.json in Resources */,
 				F3990F8E25288F0C00E87E2A /* MarketSectionTableViewCell.xib in Resources */,
@@ -390,7 +392,6 @@
 				F3990F65252861CD00E87E2A /* MainTabViewController.swift in Sources */,
 				F3990F5825285FFF00E87E2A /* UIViewController+StoryboardInstantiable.swift in Sources */,
 				F3990F5525285FFF00E87E2A /* NSAttributedString+AddLink.swift in Sources */,
-				F3990EEB2528586B00E87E2A /* SceneDelegate.swift in Sources */,
 				F3990F5625285FFF00E87E2A /* DateFormatter+Extensions.swift in Sources */,
 				74FD4DCB2528980800B69B78 /* QuestDetailsViewController.swift in Sources */,
 				F3990F8D25288F0C00E87E2A /* MarketSectionTableViewCell.swift in Sources */,
@@ -407,12 +408,12 @@
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXVariantGroup section */
-		F3990EEE2528586B00E87E2A /* Main.storyboard */ = {
+		F3990EEE2528586B00E87E2A /* MainTab.storyboard */ = {
 			isa = PBXVariantGroup;
 			children = (
 				F3990EEF2528586B00E87E2A /* Base */,
 			);
-			name = Main.storyboard;
+			name = MainTab.storyboard;
 			sourceTree = "<group>";
 		};
 		F3990EF32528586D00E87E2A /* LaunchScreen.storyboard */ = {
