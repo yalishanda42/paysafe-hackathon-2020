@@ -8,14 +8,22 @@
 
 import Foundation
 
+extension Notification.Name {
+    static let dataStoreWasUpdated = Notification.Name("dataStoreWasUpdated")
+}
+
+extension Notification {
+    static let dataStoreWasUpdated = Notification(name: .dataStoreWasUpdated)
+}
+
 struct GameDataStore {
+    private init() {}
     static var shared = GameDataStore() {
         didSet {
-            // TODO: post notification in notification center
+            NotificationCenter.default.post(.dataStoreWasUpdated)
         }
     }
-    private init() {
-    }
+    
     
     var date = Date()
     var account = AccountData()
@@ -131,7 +139,6 @@ struct Income: Codable, Hashable, Equatable {
 }
 
 struct Loan: Codable, Hashable, Equatable {
-    let startDate: Date
     let value: Int
     let regularity: Regularity
     let paymentsCount: Int

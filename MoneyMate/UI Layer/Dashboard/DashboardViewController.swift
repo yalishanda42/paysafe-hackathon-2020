@@ -18,6 +18,11 @@ class DashboardViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         setupTableView()
+        NotificationCenter.default.addObserver(self, selector: #selector(tableView.reloadData), name: .dataStoreWasUpdated, object: nil)
+    }
+    
+    deinit {
+        NotificationCenter.default.removeObserver(self)
     }
 }
 

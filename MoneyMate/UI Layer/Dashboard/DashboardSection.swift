@@ -104,12 +104,13 @@ extension DashboardItemViewModel {
         var prog: Float? = nil
         
         if let loan = model.loan {
-            let duration = loan.startDate
-                .addingTimeInterval(loan.regularity.timeInterval * Double(loan.paymentsCount))
-                .timeIntervalSince(loan.startDate)
-            let elapsed = GameDataStore.shared.date
-                .timeIntervalSince(loan.startDate)
-            prog = Float(elapsed / duration)
+            #warning("TODO: calculate progress based on loan start date")
+//            let duration = loan.startDate
+//                .addingTimeInterval(loan.regularity.timeInterval * Double(loan.paymentsCount))
+//                .timeIntervalSince(loan.startDate)
+//            let elapsed = GameDataStore.shared.date
+//                .timeIntervalSince(loan.startDate)
+//            prog = Float(elapsed / duration)
             desc.append("- \(loan.value) / \(loan.regularity.rawValue)")
             desc.append("Total Loan: \(loan.paymentsCount * loan.value)")
         }
