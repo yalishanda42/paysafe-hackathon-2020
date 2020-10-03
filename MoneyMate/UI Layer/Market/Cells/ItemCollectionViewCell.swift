@@ -47,6 +47,11 @@ class ItemCollectionViewCell: UICollectionViewCell {
             detailsStackView.addArrangedSubview(detailStack)
         }
 
+        
+        guard !model.requirements.isEmpty else {
+            return
+        }
+        
         let titleLabel = createLabel(with: "Requirements",
                                      font: .systemFont(ofSize: 17, weight: .bold),
                                      alignment: .center)
@@ -77,7 +82,7 @@ private extension ItemCollectionViewCell {
         stackView.distribution = .fillEqually
         stackView.alignment = .center
         stackView.axis = .horizontal
-        stackView.spacing = 2
+        stackView.spacing = 3
         
         stackView.addArrangedSubview(left)
         stackView.addArrangedSubview(right)

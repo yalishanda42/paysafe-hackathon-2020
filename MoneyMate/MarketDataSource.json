@@ -16,11 +16,143 @@
                         "value": "3m"
                     }
                 ],
+                "requirements": []
+            },
+            {
+                "title" : "Android Developer Basics",
+                "imageTitle" : "book.circle",
+                "description": "In this course you will learn the basics of Android development",
+                "details": [
+                    {
+                        "title": "Price",
+                        "value": "$177"
+                    },
+                    {
+                        "title": "Duration",
+                        "value": "3m"
+                    }
+                ],
+                "requirements": []
+            },
+            {
+                "title" : "DJ Basics",
+                "imageTitle" : "book.circle",
+                "description": "In this course you will learn the basics of DJ skills",
+                "details": [
+                    {
+                        "title": "Price",
+                        "value": "$177"
+                    },
+                    {
+                        "title": "Duration",
+                        "value": "3m"
+                    }
+                ],
+                "requirements": []
+            }
+        ]
+    },
+    {
+        "title": "Jobs",
+        "items": [
+            {
+                "title" : "Intern iOS Developer",
+                "imageTitle" : "briefcase",
+                "description": "Start your career like iOS developer in PaySafe",
+                "details": [
+                    {
+                        "title": "Salary",
+                        "value": "$7000 per month"
+                    }
+                ],
                 "requirements": [
-                    "iOS Development Basics",
-                    "iOS Development Advanced"
+                    "iOS Developer Basics"
+                ]
+            },
+            {
+                "title" : "Intern Android Developer",
+                "imageTitle" : "briefcase",
+                "description": "Start your career like Android developer in PaySafe",
+                "details": [
+                    {
+                        "title": "Salary",
+                        "value": "$7000 per month"
+                    }
+                ],
+                "requirements": [
+                    "Android Developer Basics"
+                ]
+            },
+            {
+                "title" : "DJ Lessons",
+                "imageTitle" : "briefcase",
+                "description": "Start your career like DJ in Yalta",
+                "details": [
+                    {
+                        "title": "Salary",
+                        "value": "$1000 per event"
+                    }
+                ],
+                "requirements": [
+                    "DJ Basics"
                 ]
             }
         ]
+    },
+    {
+        "title": "Real Estate",
+        "items": [
+            {
+                "title" : "House",
+                "imageTitle" : "house",
+                "description": "The building is on very comunicative place :D",
+                "details": [
+                    {
+                        "title": "Buy Cash",
+                        "value": "$700000"
+                    },
+                    {
+                        "title": "Bank Loan",
+                        "value": "$1944 per month"
+                    }
+                    
+                ],
+                "requirements": []
+            },
+            {
+                "title" : "Business Building",
+                "imageTitle" : "house",
+                "description": "The building is on very comunicative place :D",
+                "details": [
+                    {
+                        "title": "Buy Cash",
+                        "value": "$7000000"
+                    },
+                    {
+                        "title": "Bank Loan",
+                        "value": "$19444 per month"
+                    }
+                ],
+                "requirements": []
+            },
+            {
+                "title" : "3 Rooms Flat",
+                "imageTitle" : "house",
+                "description": "The building is on very comunicative place :D",
+                "details": [
+                    {
+                        "title": "Buy Cash",
+                        "value": "$100000"
+                    },
+                    {
+                        "title": "Bank Loan",
+                        "value": "$277 per month"
+                    }
+                ],
+                "requirements": []
+            }
+        ]
     }
+
 ]
+

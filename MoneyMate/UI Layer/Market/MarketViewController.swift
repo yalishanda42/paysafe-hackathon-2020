@@ -43,7 +43,7 @@ private extension MarketViewController {
         tableView.delegate = self
         tableView.dataSource = self
         tableView.estimatedRowHeight = 300 // TODO: Check which is perfect
-        tableView.rowHeight = 400// UITableView.automaticDimension
+        tableView.rowHeight = 350// UITableView.automaticDimension
         tableView.register(cellType: MarketSectionTableViewCell.self)
     }
     
