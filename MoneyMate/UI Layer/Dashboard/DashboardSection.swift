@@ -49,8 +49,8 @@ enum DashboardSection: Int, CaseIterable {
                     .filter { q in
                         !account.completedQuests.contains(q)
                         && !account.ongoingQuests.contains(q)
-                        && Set(account.completedQuests.map { c in c.name }).isSubset(of: q.unlockingRequirementsQuests)
-                        && Set(account.completedCourses.map { c in c.name }).isSubset(of: q.unlockingRequirementsCourses)
+                        && Set(q.unlockingRequirementsQuests).isSubset(of: account.completedQuests.map { c in c.name })
+                        && Set(q.unlockingRequirementsCourses).isSubset(of: account.completedCourses.map { c in c.name })
                     }.map(DashboardItemViewModel.init(from:))
             case .liabilities:
                 return account.items.filter { !$0.isAsset }
@@ -124,14 +124,11 @@ extension DashboardItemViewModel {
     
     init(from model: QuestData) {
         self.title = model.name
-        self.description = model.description
+        self.description = ""
         self.systemImageTitle = "safari"
         self.progress = nil
         self.isAsset = false
-        if Set(GameDataStore.shared.account.completedCourses.map { $0.name })
-            .isSubset(of: model.completionRequirementsCourses)
-            && Set(GameDataStore.shared.account.jobs.map { $0.name }).isSubset(of: model.completionRequirementsJobs)
-            && Set(GameDataStore.shared.account.items.map { $0.name }).isSubset(of: model.completionRequirementsItems) {
+        if model.isCompleted {
             self.descriptions = ["Completed!"]
         } else {
             self.descriptions = []

@@ -20,7 +20,7 @@ struct GameDataStore {
     var date = Date()
     var account = AccountData()
     var ranking: [AccountData] = []
-    var quests: [QuestData] = []
+    var quests: [QuestData] = getDataFromJson()
     var marketSections: [MarketSection] = getDataFromJson()
     
     private static func getDataFromJson<T: Codable>() -> [T] {
@@ -91,6 +91,10 @@ struct QuestData: Codable, Hashable, Equatable {
     let completionRequirementsCourses: [String]
     let completionRequirementsJobs: [String]
     let completionRequirementsItems: [String]
+    let completionRequirementsCoursesMin: Int
+    let completionRequirementsJobsMin: Int
+    let completionRequirementsItemsMin: Int
+    let completionRequirementsCost: Int
     let rewardMoney: Int
     let rewardItem: [ItemData]
         
@@ -111,10 +115,17 @@ struct QuestData: Codable, Hashable, Equatable {
         return result
     }
     
+    var isCompleted: Bool {
+        return Set(completionRequirementsCourses).isSubset(of: GameDataStore.shared.account.completedCourses.map { $0.name })
+            && Set(completionRequirementsJobs).isSubset(of: GameDataStore.shared.account.jobs.map { $0.name })
+            && Set(completionRequirementsItems).isSubset(of: GameDataStore.shared.account.items.map { $0.name })
+            && GameDataStore.shared.account.completedCourses.count >= completionRequirementsCoursesMin
+            && GameDataStore.shared.account.jobs.count >= completionRequirementsJobsMin
+            && GameDataStore.shared.account.money >= completionRequirementsCost
+    }
 }
 
 struct Income: Codable, Hashable, Equatable {
-    let startDate: Date
     let value: Int
     let regularity: Regularity
 }

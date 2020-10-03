@@ -1,0 +1,90 @@
+[
+    {
+        "name": "Education",
+        "description": "Invest some time and money in your education and find your desired job with it.",
+        "unlockingRequirementsQuests": [],
+        "unlockingRequirementsCourses": [],
+        "completionRequirementsCourses": [],
+        "completionRequirementsJobs": [],
+        "completionRequirementsCoursesMin": 1,
+        "completionRequirementsJobsMin": 1,
+        "completionRequirementsItems": [],
+        "completionRequirementsItemsMin": 0,
+        "completionRequirementsCost": 0,
+        "rewardMoney": 0,
+        "rewardItem": []
+    },
+    {
+        "name": "Real Estate Loan",
+        "description": "Buy some real estate using a bank loan and then turn it into another source of your income.",
+        "unlockingRequirementsQuests": [
+            "Education"
+        ],
+        "unlockingRequirementsCourses": [],
+        "completionRequirementsCourses": [],
+        "completionRequirementsJobs": [],
+        "completionRequirementsCoursesMin": 0,
+        "completionRequirementsJobsMin": 0,
+        "completionRequirementsItems": [],
+        "completionRequirementsItemsMin": 1,
+        "completionRequirementsCost": 0,
+        "rewardMoney": 0,
+        "rewardItem": []
+    },
+    {
+        "name": "You, so you are an IT...",
+        "description": "A friend told you about this genius idea: make a website for the business of his relative!",
+        "unlockingRequirementsQuests": [
+            "Real Estate Loan"
+        ],
+        "unlockingRequirementsCourses": [
+            "Web Development"
+        ],
+        "completionRequirementsCourses": [],
+        "completionRequirementsJobs": [],
+        "completionRequirementsCoursesMin": 0,
+        "completionRequirementsJobsMin": 0,
+        "completionRequirementsItems": [],
+        "completionRequirementsItemsMin": 0,
+        "completionRequirementsCost": 500,
+        "rewardMoney": 1500,
+        "rewardItem": [
+            {
+                "name": "Website",
+                "description": "The website you made for the relative of your friend.",
+                "income": {
+                    "value": 500,
+                    "regularity": "monthly"
+                }
+            }
+        ]
+    },
+    {
+        "name": "Yo, wanna be famous?",
+        "description": "You have got luck! A big record label noticed your skills and offers you a contract. The reward is very promising... looks like somebody is getting rich!",
+        "unlockingRequirementsQuests": [
+            "Real Estate Loan"
+        ],
+        "unlockingRequirementsCourses": [
+            "Music Production"
+        ],
+        "completionRequirementsCourses": [],
+        "completionRequirementsJobs": [],
+        "completionRequirementsCoursesMin": 0,
+        "completionRequirementsJobsMin": 0,
+        "completionRequirementsItems": [],
+        "completionRequirementsItemsMin": 0,
+        "completionRequirementsCost": 0,
+        "rewardMoney": 5000,
+        "rewardItem": [
+            {
+                "name": "Record Label Contract",
+                "description": "The contract you made with the record label that noticed you.",
+                "income": {
+                    "value": 10000,
+                    "regularity": "monthly"
+                }
+            }
+        ]
+    }
+]

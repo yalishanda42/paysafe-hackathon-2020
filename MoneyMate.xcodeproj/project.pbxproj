@@ -16,6 +16,7 @@
 		74FD4DE32528E54000B69B78 /* DashboardSectionTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 74FD4DE22528E54000B69B78 /* DashboardSectionTableViewCell.swift */; };
 		74FD4DE62528ECCB00B69B78 /* DashboardSectionTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 74FD4DE52528ECCB00B69B78 /* DashboardSectionTableViewCell.xib */; };
 		74FD4DE92528F5D500B69B78 /* DashboardItemViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 74FD4DE82528F5D500B69B78 /* DashboardItemViewModel.swift */; };
+		74FD4DED252935C000B69B78 /* QuestData.json in Resources */ = {isa = PBXBuildFile; fileRef = 74FD4DEC252935C000B69B78 /* QuestData.json */; };
 		F3990EE92528586B00E87E2A /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = F3990EE82528586B00E87E2A /* AppDelegate.swift */; };
 		F3990EF02528586B00E87E2A /* MainTab.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = F3990EEE2528586B00E87E2A /* MainTab.storyboard */; };
 		F3990EF22528586D00E87E2A /* Colors.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = F3990EF12528586D00E87E2A /* Colors.xcassets */; };
@@ -71,6 +72,7 @@
 		74FD4DE22528E54000B69B78 /* DashboardSectionTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DashboardSectionTableViewCell.swift; sourceTree = "<group>"; };
 		74FD4DE52528ECCB00B69B78 /* DashboardSectionTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = DashboardSectionTableViewCell.xib; sourceTree = "<group>"; };
 		74FD4DE82528F5D500B69B78 /* DashboardItemViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DashboardItemViewModel.swift; sourceTree = "<group>"; };
+		74FD4DEC252935C000B69B78 /* QuestData.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = QuestData.json; sourceTree = "<group>"; };
 		F3990EE52528586B00E87E2A /* MoneyMate.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = MoneyMate.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		F3990EE82528586B00E87E2A /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		F3990EEF2528586B00E87E2A /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/MainTab.storyboard; sourceTree = "<group>"; };
@@ -303,6 +305,7 @@
 		F3990F7F252879B300E87E2A /* Jsons */ = {
 			isa = PBXGroup;
 			children = (
+				74FD4DEC252935C000B69B78 /* QuestData.json */,
 				F3990F8825288BFA00E87E2A /* MarketSection.json */,
 				F3990F8F2528A36800E87E2A /* jsonBackUp.json */,
 			);
@@ -379,6 +382,7 @@
 				F3990F922528C31900E87E2A /* Assets.xcassets in Resources */,
 				74FD4DE62528ECCB00B69B78 /* DashboardSectionTableViewCell.xib in Resources */,
 				74FD4DB125286B0D00B69B78 /* Quiz.storyboard in Resources */,
+				74FD4DED252935C000B69B78 /* QuestData.json in Resources */,
 				F3990F8925288BFA00E87E2A /* MarketSection.json in Resources */,
 				F3990F8E25288F0C00E87E2A /* MarketSectionTableViewCell.xib in Resources */,
 			);

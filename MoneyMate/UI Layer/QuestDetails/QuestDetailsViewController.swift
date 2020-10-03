@@ -16,7 +16,7 @@ class QuestDetailsViewController: UIViewController {
     
     weak var delegate: QuestDetailsViewControllerDelegate?
     
-    var quest: QuestData = .init(name: "", description: "", unlockingRequirementsQuests: [], unlockingRequirementsCourses: [], completionRequirementsCourses: [], completionRequirementsJobs: [], completionRequirementsItems: [], rewardMoney: 0, rewardItem: []) {
+    var quest: QuestData? = nil {
         didSet {
             updateInfo()
         }
@@ -54,11 +54,14 @@ class QuestDetailsViewController: UIViewController {
     
     @IBAction func onTapRightButton(_ sender: Any) {
         dismiss(animated: true) {
-            self.delegate?.acceptQuest(self.quest)
+            guard let quest = self.quest else { return }
+            self.delegate?.acceptQuest(quest)
         }
     }
     
     private func updateInfo() {
+        guard let quest = quest else { return }
+        
         questTitle?.text = quest.name
         questDescription?.text = quest.description
         
