@@ -9,21 +9,79 @@
 /* Begin PBXBuildFile section */
 		F3990EE92528586B00E87E2A /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = F3990EE82528586B00E87E2A /* AppDelegate.swift */; };
 		F3990EEB2528586B00E87E2A /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = F3990EEA2528586B00E87E2A /* SceneDelegate.swift */; };
-		F3990EED2528586B00E87E2A /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F3990EEC2528586B00E87E2A /* ViewController.swift */; };
 		F3990EF02528586B00E87E2A /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = F3990EEE2528586B00E87E2A /* Main.storyboard */; };
 		F3990EF22528586D00E87E2A /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = F3990EF12528586D00E87E2A /* Assets.xcassets */; };
 		F3990EF52528586D00E87E2A /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = F3990EF32528586D00E87E2A /* LaunchScreen.storyboard */; };
+		F3990F4625285FFF00E87E2A /* UIView+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = F3990F3025285FFE00E87E2A /* UIView+Extensions.swift */; };
+		F3990F4725285FFF00E87E2A /* JSONDecoder+Utilities.swift in Sources */ = {isa = PBXBuildFile; fileRef = F3990F3125285FFE00E87E2A /* JSONDecoder+Utilities.swift */; };
+		F3990F4825285FFF00E87E2A /* String+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = F3990F3225285FFE00E87E2A /* String+Extensions.swift */; };
+		F3990F4925285FFF00E87E2A /* UIView+XibLoadable.swift in Sources */ = {isa = PBXBuildFile; fileRef = F3990F3325285FFE00E87E2A /* UIView+XibLoadable.swift */; };
+		F3990F4A25285FFF00E87E2A /* UIView+Nib.swift in Sources */ = {isa = PBXBuildFile; fileRef = F3990F3425285FFE00E87E2A /* UIView+Nib.swift */; };
+		F3990F4B25285FFF00E87E2A /* UITableViewCell+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = F3990F3525285FFE00E87E2A /* UITableViewCell+Extensions.swift */; };
+		F3990F4C25285FFF00E87E2A /* NSAttributedString+BulletedString.swift in Sources */ = {isa = PBXBuildFile; fileRef = F3990F3625285FFE00E87E2A /* NSAttributedString+BulletedString.swift */; };
+		F3990F4D25285FFF00E87E2A /* UITableView+RegisterCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = F3990F3725285FFE00E87E2A /* UITableView+RegisterCell.swift */; };
+		F3990F4E25285FFF00E87E2A /* UIViewController+Container.swift in Sources */ = {isa = PBXBuildFile; fileRef = F3990F3825285FFE00E87E2A /* UIViewController+Container.swift */; };
+		F3990F4F25285FFF00E87E2A /* UIButton+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = F3990F3925285FFE00E87E2A /* UIButton+Extensions.swift */; };
+		F3990F5025285FFF00E87E2A /* UIButton+Action.swift in Sources */ = {isa = PBXBuildFile; fileRef = F3990F3A25285FFE00E87E2A /* UIButton+Action.swift */; };
+		F3990F5125285FFF00E87E2A /* UINavigationController+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = F3990F3B25285FFE00E87E2A /* UINavigationController+Extensions.swift */; };
+		F3990F5225285FFF00E87E2A /* UIView+Layout.swift in Sources */ = {isa = PBXBuildFile; fileRef = F3990F3C25285FFE00E87E2A /* UIView+Layout.swift */; };
+		F3990F5325285FFF00E87E2A /* UIImage+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = F3990F3D25285FFE00E87E2A /* UIImage+Extensions.swift */; };
+		F3990F5425285FFF00E87E2A /* NSObject+ClassName.swift in Sources */ = {isa = PBXBuildFile; fileRef = F3990F3E25285FFE00E87E2A /* NSObject+ClassName.swift */; };
+		F3990F5525285FFF00E87E2A /* NSAttributedString+AddLink.swift in Sources */ = {isa = PBXBuildFile; fileRef = F3990F3F25285FFF00E87E2A /* NSAttributedString+AddLink.swift */; };
+		F3990F5625285FFF00E87E2A /* DateFormatter+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = F3990F4025285FFF00E87E2A /* DateFormatter+Extensions.swift */; };
+		F3990F5725285FFF00E87E2A /* Date+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = F3990F4125285FFF00E87E2A /* Date+Extensions.swift */; };
+		F3990F5825285FFF00E87E2A /* UIViewController+StoryboardInstantiable.swift in Sources */ = {isa = PBXBuildFile; fileRef = F3990F4225285FFF00E87E2A /* UIViewController+StoryboardInstantiable.swift */; };
+		F3990F5925285FFF00E87E2A /* UIWindow+VisibleViewControllers.swift in Sources */ = {isa = PBXBuildFile; fileRef = F3990F4325285FFF00E87E2A /* UIWindow+VisibleViewControllers.swift */; };
+		F3990F5A25285FFF00E87E2A /* CollectionView+RegisterCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = F3990F4425285FFF00E87E2A /* CollectionView+RegisterCell.swift */; };
+		F3990F5B25285FFF00E87E2A /* UIBarButtonItem+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = F3990F4525285FFF00E87E2A /* UIBarButtonItem+Extensions.swift */; };
+		F3990F5D252860F000E87E2A /* Default-568h@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = F3990F5C252860F000E87E2A /* Default-568h@2x.png */; };
+		F3990F65252861CD00E87E2A /* MainTabViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F3990F64252861CD00E87E2A /* MainTabViewController.swift */; };
+		F3990F672528622800E87E2A /* BankViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F3990F662528622800E87E2A /* BankViewController.swift */; };
+		F3990F6A2528624100E87E2A /* MarketViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F3990F682528624100E87E2A /* MarketViewController.swift */; };
+		F3990F6D2528625900E87E2A /* DashboardViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F3990F6C2528625900E87E2A /* DashboardViewController.swift */; };
+		F3990F6F2528628A00E87E2A /* Bank.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = F3990F6E2528628A00E87E2A /* Bank.storyboard */; };
+		F3990F712528629700E87E2A /* Market.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = F3990F702528629700E87E2A /* Market.storyboard */; };
+		F3990F73252862A200E87E2A /* Dashboard.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = F3990F72252862A200E87E2A /* Dashboard.storyboard */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
 		F3990EE52528586B00E87E2A /* MoneyMate.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = MoneyMate.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		F3990EE82528586B00E87E2A /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		F3990EEA2528586B00E87E2A /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
-		F3990EEC2528586B00E87E2A /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
 		F3990EEF2528586B00E87E2A /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		F3990EF12528586D00E87E2A /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		F3990EF42528586D00E87E2A /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		F3990EF62528586D00E87E2A /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		F3990F3025285FFE00E87E2A /* UIView+Extensions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIView+Extensions.swift"; sourceTree = "<group>"; };
+		F3990F3125285FFE00E87E2A /* JSONDecoder+Utilities.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "JSONDecoder+Utilities.swift"; sourceTree = "<group>"; };
+		F3990F3225285FFE00E87E2A /* String+Extensions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "String+Extensions.swift"; sourceTree = "<group>"; };
+		F3990F3325285FFE00E87E2A /* UIView+XibLoadable.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIView+XibLoadable.swift"; sourceTree = "<group>"; };
+		F3990F3425285FFE00E87E2A /* UIView+Nib.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIView+Nib.swift"; sourceTree = "<group>"; };
+		F3990F3525285FFE00E87E2A /* UITableViewCell+Extensions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UITableViewCell+Extensions.swift"; sourceTree = "<group>"; };
+		F3990F3625285FFE00E87E2A /* NSAttributedString+BulletedString.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "NSAttributedString+BulletedString.swift"; sourceTree = "<group>"; };
+		F3990F3725285FFE00E87E2A /* UITableView+RegisterCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UITableView+RegisterCell.swift"; sourceTree = "<group>"; };
+		F3990F3825285FFE00E87E2A /* UIViewController+Container.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIViewController+Container.swift"; sourceTree = "<group>"; };
+		F3990F3925285FFE00E87E2A /* UIButton+Extensions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIButton+Extensions.swift"; sourceTree = "<group>"; };
+		F3990F3A25285FFE00E87E2A /* UIButton+Action.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIButton+Action.swift"; sourceTree = "<group>"; };
+		F3990F3B25285FFE00E87E2A /* UINavigationController+Extensions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UINavigationController+Extensions.swift"; sourceTree = "<group>"; };
+		F3990F3C25285FFE00E87E2A /* UIView+Layout.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIView+Layout.swift"; sourceTree = "<group>"; };
+		F3990F3D25285FFE00E87E2A /* UIImage+Extensions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIImage+Extensions.swift"; sourceTree = "<group>"; };
+		F3990F3E25285FFE00E87E2A /* NSObject+ClassName.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "NSObject+ClassName.swift"; sourceTree = "<group>"; };
+		F3990F3F25285FFF00E87E2A /* NSAttributedString+AddLink.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "NSAttributedString+AddLink.swift"; sourceTree = "<group>"; };
+		F3990F4025285FFF00E87E2A /* DateFormatter+Extensions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "DateFormatter+Extensions.swift"; sourceTree = "<group>"; };
+		F3990F4125285FFF00E87E2A /* Date+Extensions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Date+Extensions.swift"; sourceTree = "<group>"; };
+		F3990F4225285FFF00E87E2A /* UIViewController+StoryboardInstantiable.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIViewController+StoryboardInstantiable.swift"; sourceTree = "<group>"; };
+		F3990F4325285FFF00E87E2A /* UIWindow+VisibleViewControllers.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIWindow+VisibleViewControllers.swift"; sourceTree = "<group>"; };
+		F3990F4425285FFF00E87E2A /* CollectionView+RegisterCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "CollectionView+RegisterCell.swift"; sourceTree = "<group>"; };
+		F3990F4525285FFF00E87E2A /* UIBarButtonItem+Extensions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIBarButtonItem+Extensions.swift"; sourceTree = "<group>"; };
+		F3990F5C252860F000E87E2A /* Default-568h@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Default-568h@2x.png"; sourceTree = "<group>"; };
+		F3990F64252861CD00E87E2A /* MainTabViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainTabViewController.swift; sourceTree = "<group>"; };
+		F3990F662528622800E87E2A /* BankViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BankViewController.swift; sourceTree = "<group>"; };
+		F3990F682528624100E87E2A /* MarketViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MarketViewController.swift; sourceTree = "<group>"; };
+		F3990F6C2528625900E87E2A /* DashboardViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DashboardViewController.swift; sourceTree = "<group>"; };
+		F3990F6E2528628A00E87E2A /* Bank.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Bank.storyboard; sourceTree = "<group>"; };
+		F3990F702528629700E87E2A /* Market.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Market.storyboard; sourceTree = "<group>"; };
+		F3990F72252862A200E87E2A /* Dashboard.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Dashboard.storyboard; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -40,6 +98,7 @@
 		F3990EDC2528586B00E87E2A = {
 			isa = PBXGroup;
 			children = (
+				F3990F5C252860F000E87E2A /* Default-568h@2x.png */,
 				F3990EE72528586B00E87E2A /* MoneyMate */,
 				F3990EE62528586B00E87E2A /* Products */,
 			);
@@ -58,13 +117,89 @@
 			children = (
 				F3990EE82528586B00E87E2A /* AppDelegate.swift */,
 				F3990EEA2528586B00E87E2A /* SceneDelegate.swift */,
-				F3990EEC2528586B00E87E2A /* ViewController.swift */,
-				F3990EEE2528586B00E87E2A /* Main.storyboard */,
+				F3990F2F25285FDD00E87E2A /* Extensions */,
+				F3990F5F2528613400E87E2A /* UI Layer */,
+				F3990F5E2528610600E87E2A /* Resources */,
+			);
+			path = MoneyMate;
+			sourceTree = "<group>";
+		};
+		F3990F2F25285FDD00E87E2A /* Extensions */ = {
+			isa = PBXGroup;
+			children = (
+				F3990F4425285FFF00E87E2A /* CollectionView+RegisterCell.swift */,
+				F3990F4125285FFF00E87E2A /* Date+Extensions.swift */,
+				F3990F4025285FFF00E87E2A /* DateFormatter+Extensions.swift */,
+				F3990F3125285FFE00E87E2A /* JSONDecoder+Utilities.swift */,
+				F3990F3F25285FFF00E87E2A /* NSAttributedString+AddLink.swift */,
+				F3990F3625285FFE00E87E2A /* NSAttributedString+BulletedString.swift */,
+				F3990F3E25285FFE00E87E2A /* NSObject+ClassName.swift */,
+				F3990F3225285FFE00E87E2A /* String+Extensions.swift */,
+				F3990F4525285FFF00E87E2A /* UIBarButtonItem+Extensions.swift */,
+				F3990F3A25285FFE00E87E2A /* UIButton+Action.swift */,
+				F3990F3925285FFE00E87E2A /* UIButton+Extensions.swift */,
+				F3990F3D25285FFE00E87E2A /* UIImage+Extensions.swift */,
+				F3990F3B25285FFE00E87E2A /* UINavigationController+Extensions.swift */,
+				F3990F3725285FFE00E87E2A /* UITableView+RegisterCell.swift */,
+				F3990F3525285FFE00E87E2A /* UITableViewCell+Extensions.swift */,
+				F3990F3025285FFE00E87E2A /* UIView+Extensions.swift */,
+				F3990F3C25285FFE00E87E2A /* UIView+Layout.swift */,
+				F3990F3425285FFE00E87E2A /* UIView+Nib.swift */,
+				F3990F3325285FFE00E87E2A /* UIView+XibLoadable.swift */,
+				F3990F3825285FFE00E87E2A /* UIViewController+Container.swift */,
+				F3990F4225285FFF00E87E2A /* UIViewController+StoryboardInstantiable.swift */,
+				F3990F4325285FFF00E87E2A /* UIWindow+VisibleViewControllers.swift */,
+			);
+			path = Extensions;
+			sourceTree = "<group>";
+		};
+		F3990F5E2528610600E87E2A /* Resources */ = {
+			isa = PBXGroup;
+			children = (
 				F3990EF12528586D00E87E2A /* Assets.xcassets */,
 				F3990EF32528586D00E87E2A /* LaunchScreen.storyboard */,
 				F3990EF62528586D00E87E2A /* Info.plist */,
 			);
-			path = MoneyMate;
+			name = Resources;
+			sourceTree = "<group>";
+		};
+		F3990F5F2528613400E87E2A /* UI Layer */ = {
+			isa = PBXGroup;
+			children = (
+				F3990EEE2528586B00E87E2A /* Main.storyboard */,
+				F3990F64252861CD00E87E2A /* MainTabViewController.swift */,
+				F3990F622528615400E87E2A /* Bank */,
+				F3990F612528614E00E87E2A /* Market */,
+				F3990F602528614000E87E2A /* Dashboard */,
+			);
+			path = "UI Layer";
+			sourceTree = "<group>";
+		};
+		F3990F602528614000E87E2A /* Dashboard */ = {
+			isa = PBXGroup;
+			children = (
+				F3990F6C2528625900E87E2A /* DashboardViewController.swift */,
+				F3990F72252862A200E87E2A /* Dashboard.storyboard */,
+			);
+			path = Dashboard;
+			sourceTree = "<group>";
+		};
+		F3990F612528614E00E87E2A /* Market */ = {
+			isa = PBXGroup;
+			children = (
+				F3990F682528624100E87E2A /* MarketViewController.swift */,
+				F3990F702528629700E87E2A /* Market.storyboard */,
+			);
+			path = Market;
+			sourceTree = "<group>";
+		};
+		F3990F622528615400E87E2A /* Bank */ = {
+			isa = PBXGroup;
+			children = (
+				F3990F662528622800E87E2A /* BankViewController.swift */,
+				F3990F6E2528628A00E87E2A /* Bank.storyboard */,
+			);
+			path = Bank;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -126,8 +261,12 @@
 			buildActionMask = 2147483647;
 			files = (
 				F3990EF52528586D00E87E2A /* LaunchScreen.storyboard in Resources */,
+				F3990F5D252860F000E87E2A /* Default-568h@2x.png in Resources */,
 				F3990EF22528586D00E87E2A /* Assets.xcassets in Resources */,
 				F3990EF02528586B00E87E2A /* Main.storyboard in Resources */,
+				F3990F712528629700E87E2A /* Market.storyboard in Resources */,
+				F3990F73252862A200E87E2A /* Dashboard.storyboard in Resources */,
+				F3990F6F2528628A00E87E2A /* Bank.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -138,9 +277,34 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				F3990EED2528586B00E87E2A /* ViewController.swift in Sources */,
+				F3990F5225285FFF00E87E2A /* UIView+Layout.swift in Sources */,
+				F3990F5925285FFF00E87E2A /* UIWindow+VisibleViewControllers.swift in Sources */,
+				F3990F672528622800E87E2A /* BankViewController.swift in Sources */,
+				F3990F4A25285FFF00E87E2A /* UIView+Nib.swift in Sources */,
+				F3990F5725285FFF00E87E2A /* Date+Extensions.swift in Sources */,
 				F3990EE92528586B00E87E2A /* AppDelegate.swift in Sources */,
+				F3990F4625285FFF00E87E2A /* UIView+Extensions.swift in Sources */,
+				F3990F4E25285FFF00E87E2A /* UIViewController+Container.swift in Sources */,
+				F3990F5B25285FFF00E87E2A /* UIBarButtonItem+Extensions.swift in Sources */,
+				F3990F4725285FFF00E87E2A /* JSONDecoder+Utilities.swift in Sources */,
+				F3990F5A25285FFF00E87E2A /* CollectionView+RegisterCell.swift in Sources */,
+				F3990F5425285FFF00E87E2A /* NSObject+ClassName.swift in Sources */,
+				F3990F4D25285FFF00E87E2A /* UITableView+RegisterCell.swift in Sources */,
+				F3990F5025285FFF00E87E2A /* UIButton+Action.swift in Sources */,
+				F3990F4925285FFF00E87E2A /* UIView+XibLoadable.swift in Sources */,
+				F3990F6D2528625900E87E2A /* DashboardViewController.swift in Sources */,
+				F3990F4825285FFF00E87E2A /* String+Extensions.swift in Sources */,
+				F3990F6A2528624100E87E2A /* MarketViewController.swift in Sources */,
+				F3990F65252861CD00E87E2A /* MainTabViewController.swift in Sources */,
+				F3990F5825285FFF00E87E2A /* UIViewController+StoryboardInstantiable.swift in Sources */,
+				F3990F5525285FFF00E87E2A /* NSAttributedString+AddLink.swift in Sources */,
 				F3990EEB2528586B00E87E2A /* SceneDelegate.swift in Sources */,
+				F3990F5625285FFF00E87E2A /* DateFormatter+Extensions.swift in Sources */,
+				F3990F4B25285FFF00E87E2A /* UITableViewCell+Extensions.swift in Sources */,
+				F3990F4C25285FFF00E87E2A /* NSAttributedString+BulletedString.swift in Sources */,
+				F3990F5325285FFF00E87E2A /* UIImage+Extensions.swift in Sources */,
+				F3990F5125285FFF00E87E2A /* UINavigationController+Extensions.swift in Sources */,
+				F3990F4F25285FFF00E87E2A /* UIButton+Extensions.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -285,16 +449,18 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_TEAM = GYTK9QHG76;
 				INFOPLIST_FILE = MoneyMate/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
+				MARKETING_VERSION = 1.0;
 				PRODUCT_BUNDLE_IDENTIFIER = com.luboDev.MoneyMate;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
+				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Debug;
 		};
@@ -303,16 +469,18 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_TEAM = GYTK9QHG76;
 				INFOPLIST_FILE = MoneyMate/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
+				MARKETING_VERSION = 1.0;
 				PRODUCT_BUNDLE_IDENTIFIER = com.luboDev.MoneyMate;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
+				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Release;
 		};
