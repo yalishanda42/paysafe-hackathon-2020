@@ -1,0 +1,103 @@
+[
+    {
+        "title": "Education",
+        "items": [
+            {
+                "title" : "iOS Developer Basics",
+                "imageTitle" : "book.circle",
+                "description": "In this course you will learn the basics of iOS development",
+                "requirements": [
+                    {
+                        "title": "Price",
+                        "value": "$177"
+                    },
+                    {
+                        "title": "Duration",
+                        "value": "3m"
+                    }
+                ]
+            },
+            {
+                "title" : "Android Developer Basics",
+                "imageTitle" : "book.circle",
+                "description": "In this course you will learn the basics of Android development",
+                "requirements": [
+                    {
+                        "title": "Price",
+                        "value": "$177"
+                    },
+                    {
+                        "title": "Duration",
+                        "value": "3m"
+                    }
+                ]
+            },
+            {
+                "title" : "DJ Basics",
+                "imageTitle" : "book.circle",
+                "description": "In this course you will learn the basics of DJ skills",
+                "requirements": [
+                    {
+                        "title": "Price",
+                        "value": "$177"
+                    },
+                    {
+                        "title": "Duration",
+                        "value": "3m"
+                    }
+                ]
+            }
+        ]
+    },
+    {
+        "title": "Jobs",
+        "items": [
+            {
+                "title" : "Intern iOS Developer",
+                "imageTitle" : "book.circle",
+                "description": "Start your career like iOS developer in PaySafe",
+                "requirements": [
+                    {
+                        "title": "Salary",
+                        "value": "$7000 per month"
+                    },
+                    {
+                        "title": "Requirements",
+                        "value": "iOS Developer Basics"
+                    }
+                ]
+            },
+            {
+                "title" : "Intern Android Developer",
+                "imageTitle" : "book.circle",
+                "description": "Start your career like Android developer in PaySafe",
+                "requirements": [
+                    {
+                        "title": "Salary",
+                        "value": "$7000 per month"
+                    },
+                    {
+                        "title": "Requirements",
+                        "value": "Android Developer Basics"
+                    }
+                ]
+            },
+            {
+                "title" : "DJ Lessons",
+                "imageTitle" : "book.circle",
+                "description": "Start your career like DJ in Yalta",
+                "requirements": [
+                    {
+                        "title": "Salary",
+                        "value": "$1000 per event"
+                    },
+                    {
+                        "title": "Requirements",
+                        "value": "DJ Basics"
+                    }
+                ]
+            }
+        ]
+    }
+]
+

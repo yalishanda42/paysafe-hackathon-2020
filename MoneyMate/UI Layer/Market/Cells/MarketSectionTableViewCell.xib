@@ -1,0 +1,71 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="15705" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina6_1" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="15706"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <tableViewCell contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" rowHeight="317" id="KGk-i7-Jjw" customClass="MarketSectionTableViewCell" customModule="MoneyMate" customModuleProvider="target">
+            <rect key="frame" x="0.0" y="0.0" width="276" height="317"/>
+            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+            <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="KGk-i7-Jjw" id="H2p-sc-9uM">
+                <rect key="frame" x="0.0" y="0.0" width="276" height="317"/>
+                <autoresizingMask key="autoresizingMask"/>
+                <subviews>
+                    <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" dataMode="none" translatesAutoresizingMaskIntoConstraints="NO" id="M2D-mP-fgW">
+                        <rect key="frame" x="0.0" y="53" width="276" height="240"/>
+                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <constraints>
+                            <constraint firstAttribute="height" relation="greaterThanOrEqual" constant="200" id="mu9-TJ-deA"/>
+                        </constraints>
+                        <collectionViewFlowLayout key="collectionViewLayout" scrollDirection="horizontal" minimumLineSpacing="10" minimumInteritemSpacing="10" id="13Y-yP-Bky">
+                            <size key="itemSize" width="50" height="50"/>
+                            <size key="headerReferenceSize" width="16" height="0.0"/>
+                            <size key="footerReferenceSize" width="0.0" height="0.0"/>
+                            <inset key="sectionInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
+                        </collectionViewFlowLayout>
+                    </collectionView>
+                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="0f4-wY-GMX">
+                        <rect key="frame" x="0.0" y="0.0" width="276" height="37"/>
+                        <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Title" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ugE-y6-2P5">
+                                <rect key="frame" x="16" y="8" width="244" height="29"/>
+                                <fontDescription key="fontDescription" type="boldSystem" pointSize="24"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
+                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <constraints>
+                            <constraint firstItem="ugE-y6-2P5" firstAttribute="top" secondItem="0f4-wY-GMX" secondAttribute="top" constant="8" id="02X-Np-y1C"/>
+                            <constraint firstAttribute="trailing" secondItem="ugE-y6-2P5" secondAttribute="trailing" constant="16" id="ANw-Kh-YKj"/>
+                            <constraint firstItem="ugE-y6-2P5" firstAttribute="leading" secondItem="0f4-wY-GMX" secondAttribute="leading" constant="16" id="RKl-eI-zjm"/>
+                            <constraint firstAttribute="bottom" secondItem="ugE-y6-2P5" secondAttribute="bottom" id="mIy-CI-s9q"/>
+                        </constraints>
+                    </view>
+                </subviews>
+                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                <constraints>
+                    <constraint firstAttribute="trailing" secondItem="M2D-mP-fgW" secondAttribute="trailing" id="R7o-W2-B7O"/>
+                    <constraint firstAttribute="bottom" secondItem="M2D-mP-fgW" secondAttribute="bottom" constant="24" id="bJT-xr-qdx"/>
+                    <constraint firstItem="0f4-wY-GMX" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" id="e8G-xl-1TW"/>
+                    <constraint firstAttribute="trailing" secondItem="0f4-wY-GMX" secondAttribute="trailing" id="gDd-3x-kvK"/>
+                    <constraint firstItem="M2D-mP-fgW" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" id="meb-fQ-No7"/>
+                    <constraint firstItem="0f4-wY-GMX" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="top" id="spL-qf-7nB"/>
+                    <constraint firstItem="M2D-mP-fgW" firstAttribute="top" secondItem="0f4-wY-GMX" secondAttribute="bottom" constant="16" id="xbt-5Q-djf"/>
+                </constraints>
+            </tableViewCellContentView>
+            <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+            <viewLayoutGuide key="safeArea" id="njF-e1-oar"/>
+            <connections>
+                <outlet property="collectionView" destination="M2D-mP-fgW" id="Yix-j2-K4j"/>
+                <outlet property="titleLabel" destination="ugE-y6-2P5" id="cWp-OV-UGl"/>
+            </connections>
+            <point key="canvasLocation" x="-94.20289855072464" y="69.308035714285708"/>
+        </tableViewCell>
+    </objects>
+</document>
