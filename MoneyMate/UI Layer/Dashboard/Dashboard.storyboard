@@ -1,26 +1,111 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="15705" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="mCv-CQ-fNY">
-    <device id="retina6_1" orientation="portrait" appearance="light"/>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="17503.1" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="jE3-6S-6ia">
+    <device id="retina5_9" orientation="portrait" appearance="light"/>
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="15706"/>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="17502"/>
+        <capability name="Named colors" minToolsVersion="9.0"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="System colors in document resources" minToolsVersion="11.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
         <!--Dashboard View Controller-->
-        <scene sceneID="PmO-2u-Vld">
+        <scene sceneID="Ss5-y3-CR9">
             <objects>
-                <viewController storyboardIdentifier="DashboardViewController" id="mCv-CQ-fNY" customClass="DashboardViewController" customModule="MoneyMate" customModuleProvider="target" sceneMemberID="viewController">
-                    <view key="view" contentMode="scaleToFill" id="VIG-hu-o7q">
-                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                <viewController storyboardIdentifier="MarketViewController" id="jE3-6S-6ia" customClass="DashboardViewController" customModule="MoneyMate" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="OyL-an-pvc">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="812"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
-                        <viewLayoutGuide key="safeArea" id="kqL-rT-jMF"/>
+                        <subviews>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" bounces="NO" alwaysBounceVertical="YES" showsHorizontalScrollIndicator="NO" bouncesZoom="NO" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="Iit-6i-CnD">
+                                <rect key="frame" x="0.0" y="144" width="375" height="634"/>
+                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                            </tableView>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="zZv-Ef-jPQ">
+                                <rect key="frame" x="0.0" y="44" width="375" height="100"/>
+                                <subviews>
+                                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="dollarsign.circle.fill" catalog="system" translatesAutoresizingMaskIntoConstraints="NO" id="ZUf-nl-4bg">
+                                        <rect key="frame" x="308" y="5" width="55" height="53.666666666666671"/>
+                                        <color key="tintColor" name="pineGreen"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="55" id="Juo-f6-SgV"/>
+                                            <constraint firstAttribute="width" constant="55" id="SXw-fX-Diz"/>
+                                        </constraints>
+                                    </imageView>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="420" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Eae-Hz-Wob">
+                                        <rect key="frame" x="301" y="63" width="62" height="33"/>
+                                        <fontDescription key="fontDescription" style="UICTFontTextStyleTitle0"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="FxB-sp-9B7">
+                                        <rect key="frame" x="127" y="33.666666666666671" width="121" height="33"/>
+                                        <fontDescription key="fontDescription" style="UICTFontTextStyleHeadline"/>
+                                        <state key="normal" title="Mon 21.12.2112">
+                                            <color key="titleColor" systemColor="labelColor"/>
+                                        </state>
+                                    </button>
+                                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="person.circle.fill" catalog="system" translatesAutoresizingMaskIntoConstraints="NO" id="t38-jA-k5C">
+                                        <rect key="frame" x="12" y="5" width="55" height="53.666666666666671"/>
+                                        <color key="tintColor" name="pineGreen"/>
+                                        <constraints>
+                                            <constraint firstAttribute="width" constant="55" id="GGQ-z7-fK1"/>
+                                            <constraint firstAttribute="height" constant="55" id="X15-b3-tzX"/>
+                                        </constraints>
+                                    </imageView>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="420th" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="lJa-EW-hFU">
+                                        <rect key="frame" x="12.000000000000004" y="63" width="53.333333333333343" height="33"/>
+                                        <fontDescription key="fontDescription" style="UICTFontTextStyleTitle3"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                </subviews>
+                                <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                                <constraints>
+                                    <constraint firstItem="Eae-Hz-Wob" firstAttribute="top" secondItem="ZUf-nl-4bg" secondAttribute="bottom" constant="4" id="5K0-Jn-720"/>
+                                    <constraint firstItem="ZUf-nl-4bg" firstAttribute="top" secondItem="zZv-Ef-jPQ" secondAttribute="top" constant="4" id="7oI-zC-buG"/>
+                                    <constraint firstItem="t38-jA-k5C" firstAttribute="top" secondItem="zZv-Ef-jPQ" secondAttribute="top" constant="4" id="8ZG-YD-pkI"/>
+                                    <constraint firstAttribute="trailing" secondItem="Eae-Hz-Wob" secondAttribute="trailing" constant="12" id="Cg3-at-bBz"/>
+                                    <constraint firstItem="FxB-sp-9B7" firstAttribute="centerX" secondItem="zZv-Ef-jPQ" secondAttribute="centerX" id="Ga7-7l-3Lo"/>
+                                    <constraint firstAttribute="bottom" secondItem="lJa-EW-hFU" secondAttribute="bottom" constant="4" id="NKs-DF-GdN"/>
+                                    <constraint firstAttribute="bottom" secondItem="Eae-Hz-Wob" secondAttribute="bottom" constant="4" id="RIO-kg-99f"/>
+                                    <constraint firstAttribute="height" constant="100" id="UTZ-3y-DVy"/>
+                                    <constraint firstItem="lJa-EW-hFU" firstAttribute="leading" secondItem="zZv-Ef-jPQ" secondAttribute="leading" constant="12" id="XLh-XA-7MA"/>
+                                    <constraint firstItem="t38-jA-k5C" firstAttribute="leading" secondItem="zZv-Ef-jPQ" secondAttribute="leading" constant="12" id="YYL-Hx-Cal"/>
+                                    <constraint firstAttribute="trailing" secondItem="ZUf-nl-4bg" secondAttribute="trailing" constant="12" id="Ys9-vL-jLj"/>
+                                    <constraint firstItem="FxB-sp-9B7" firstAttribute="centerY" secondItem="zZv-Ef-jPQ" secondAttribute="centerY" id="qhF-oO-enD"/>
+                                    <constraint firstItem="lJa-EW-hFU" firstAttribute="top" secondItem="t38-jA-k5C" secondAttribute="bottom" constant="4" id="s3Q-2s-5Da"/>
+                                </constraints>
+                            </view>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="ewV-qr-WIP"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <constraints>
+                            <constraint firstItem="zZv-Ef-jPQ" firstAttribute="trailing" secondItem="ewV-qr-WIP" secondAttribute="trailing" id="BfD-qg-ueo"/>
+                            <constraint firstItem="ewV-qr-WIP" firstAttribute="bottom" secondItem="Iit-6i-CnD" secondAttribute="bottom" id="Clk-X4-1iK"/>
+                            <constraint firstItem="Iit-6i-CnD" firstAttribute="top" secondItem="zZv-Ef-jPQ" secondAttribute="bottom" id="Cmc-yO-EkX"/>
+                            <constraint firstItem="ewV-qr-WIP" firstAttribute="trailing" secondItem="Iit-6i-CnD" secondAttribute="trailing" id="Lxy-k0-lNe"/>
+                            <constraint firstItem="Iit-6i-CnD" firstAttribute="leading" secondItem="ewV-qr-WIP" secondAttribute="leading" id="MVb-Pj-nSi"/>
+                            <constraint firstItem="zZv-Ef-jPQ" firstAttribute="leading" secondItem="ewV-qr-WIP" secondAttribute="leading" id="RdU-oV-y9P"/>
+                            <constraint firstItem="zZv-Ef-jPQ" firstAttribute="top" secondItem="ewV-qr-WIP" secondAttribute="top" id="uRu-rs-tFz"/>
+                        </constraints>
                     </view>
                 </viewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="ypY-0K-x17" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="uwn-U1-wxm" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="194" y="58"/>
+            <point key="canvasLocation" x="23.199999999999999" y="16.256157635467982"/>
         </scene>
     </scenes>
+    <resources>
+        <image name="dollarsign.circle.fill" catalog="system" width="128" height="121"/>
+        <image name="person.circle.fill" catalog="system" width="128" height="121"/>
+        <namedColor name="pineGreen">
+            <color red="0.082352941176470587" green="0.47843137254901963" blue="0.43137254901960786" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </namedColor>
+        <systemColor name="labelColor">
+            <color white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+        </systemColor>
+        <systemColor name="systemBackgroundColor">
+            <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+        </systemColor>
+    </resources>
 </document>
