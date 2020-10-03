@@ -23,7 +23,7 @@ class Switcher {
         }
     }
     
-    private static func changeRootTo(_ viewController: UIViewController, modalPresentationStyle: UIModalPresentationStyle? = nil, completion: ((UIViewController) -> Void)? = nil) {
+    static func changeRootTo(_ viewController: UIViewController, modalPresentationStyle: UIModalPresentationStyle? = nil, completion: ((UIViewController) -> Void)? = nil) {
         var rootVC: UIViewController = viewController
 
         guard let appDelegate = UIApplication.shared.delegate as? AppDelegate else {
