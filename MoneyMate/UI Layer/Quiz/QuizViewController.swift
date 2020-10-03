@@ -8,20 +8,6 @@
 
 import UIKit
 
-struct Quiz: Codable {
-    let questions: [Question]
-}
-
-struct Question: Codable {
-    let text: String
-    let answers: [Answer]
-}
-
-struct Answer: Codable, Equatable {
-    let text: String
-    let isCorrect: Bool
-}
-
 protocol QuizViewControllerDelegate: class {
     func submitResult(success: Bool)
 }
@@ -30,15 +16,15 @@ class QuizViewController: UIViewController {
     
     weak var delegate: QuizViewControllerDelegate?
     
-    var quiz: Quiz = .init(questions: []) {
+    var quiz: QuizData = .init(questions: []) {
         didSet {
             tableView?.reloadData()
         }
     }
     
-    private(set) var currentQuestion: (index: Int, object: Question)?
-    private(set) var currentAnswer: Answer?
-    private(set) var allAnswers: [Answer] = []
+    private(set) var currentQuestion: (index: Int, object: QuestionData)?
+    private(set) var currentAnswer: AnswerData?
+    private(set) var allAnswers: [AnswerData] = []
 
     @IBOutlet weak var screenTitle: UILabel!
     @IBOutlet weak var tableView: UITableView!

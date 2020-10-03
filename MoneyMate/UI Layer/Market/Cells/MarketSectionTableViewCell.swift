@@ -20,6 +20,13 @@ class MarketSectionTableViewCell: UITableViewCell {
         setupCollectionView()
     }
     
+    override func prepareForReuse() {
+        super.prepareForReuse()
+        titleLabel.text = nil
+        dataSource = []
+        collectionView.reloadData()
+    }
+    
     func configure(with model: MarketSection) {
         titleLabel.text = model.title
         dataSource = model.items

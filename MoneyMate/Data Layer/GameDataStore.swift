@@ -14,7 +14,8 @@ struct GameDataStore {
             // TODO: post notification in notification center
         }
     }
-    private init() {}
+    private init() {
+    }
     
     var date = Date()
     var account = AccountData()
@@ -36,25 +37,73 @@ struct GameDataStore {
 struct AccountData {
     var money = 1000
     var jobs: [JobData] = []
-    var courses: [CourseData] = []
+    var ongoingCourses: [CourseData] = []
+    var completedCourses: [CourseData] = []
     var items: [ItemData] = []
+    var ongoingQuests: [QuestData] = []
     var completedQuests: [QuestData] = []
 }
 
-struct JobData {
+struct JobData: Codable {
     let name: String
+    let description: String
+    let income: Income
 }
 
-struct CourseData {
+struct CourseData: Codable, Equatable {
     let name: String
+    let description: String
+    let quiz: QuizData
+    let enrollmentDate: Date
+    let examDate: Date
 }
 
-struct ItemData {
-    let name: String
+struct QuizData: Codable, Equatable {
+    let questions: [QuestionData]
 }
 
-struct QuestData {
-    let name: String
+struct QuestionData: Codable, Equatable {
+    let text: String
+    let answers: [AnswerData]
 }
 
+struct AnswerData: Codable, Equatable {
+    let text: String
+    let isCorrect: Bool
+}
 
+struct ItemData: Codable {
+    let name: String
+    let description: String
+    let isAsset: Bool
+    let income: Income?
+    let loan: Loan?
+}
+
+struct QuestData: Codable {
+    let name: String
+    let description: String
+    let requirements: [String]
+    let rewards: [String]
+    // TODO
+}
+
+struct Income: Codable {
+    let startDate: Date
+    let value: Int
+    let regularity: Regularity
+}
+
+struct Loan: Codable {
+    let startDate: Date
+    let value: Int
+    let regularity: Regularity
+    let paymentsCount: Int
+}
+
+enum Regularity: String, Codable {
+    case daily
+    case weekly
+    case monthly
+    case yearly
+}

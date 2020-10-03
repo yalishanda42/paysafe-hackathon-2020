@@ -20,6 +20,13 @@ class DashboardSectionTableViewCell: UITableViewCell {
         setupCollectionView()
     }
     
+    override func prepareForReuse() {
+        super.prepareForReuse()
+        titleLabel.text = nil
+        dataSource = []
+        collectionView.reloadData()
+    }
+    
     func configure(with model: DashboardSection) {
         titleLabel.text = model.title
         dataSource = model.itemViewModels

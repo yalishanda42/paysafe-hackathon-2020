@@ -26,6 +26,16 @@ class ItemCollectionViewCell: UICollectionViewCell {
         containerView.roundCorners(radius: 8)
     }
     
+    override func prepareForReuse() {
+        super.prepareForReuse()
+        imageView.image = nil
+        titleLabel.text = nil
+        descriptionLabel.text = nil
+        detailsStackView.removeAllArrangedSubviews()
+        requirementsStackView.removeAllArrangedSubviews()
+        plusIcon.isHidden = true
+    }
+    
     func configure(with model: MarketItemModel) {
         
         let imageConfig = UIImage.SymbolConfiguration(weight: .regular)

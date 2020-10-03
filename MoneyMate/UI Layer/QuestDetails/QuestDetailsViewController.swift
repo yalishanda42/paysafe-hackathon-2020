@@ -8,22 +8,15 @@
 
 import UIKit
 
-struct Quest: Codable {
-    let name: String
-    let description: String
-    let requirements: [String]
-    let rewards: [String]
-}
-
 protocol QuestDetailsViewControllerDelegate: class {
-    func acceptQuest(_ quest: Quest)
+    func acceptQuest(_ quest: QuestData)
 }
 
 class QuestDetailsViewController: UIViewController {
     
     weak var delegate: QuestDetailsViewControllerDelegate?
     
-    var quest: Quest = .init(name: "", description: "", requirements: [], rewards: []) {
+    var quest: QuestData = .init(name: "", description: "", requirements: [], rewards: []) {
         didSet {
             updateInfo()
         }
