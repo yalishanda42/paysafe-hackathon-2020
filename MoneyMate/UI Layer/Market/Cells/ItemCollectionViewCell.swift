@@ -19,6 +19,8 @@ class ItemCollectionViewCell: UICollectionViewCell {
     @IBOutlet private weak var detailsStackView: UIStackView!
     @IBOutlet private weak var requirementsStackView: UIStackView!
     
+    @IBOutlet private weak var plusIcon: UIImageView!
+    
     override func awakeFromNib() {
         super.awakeFromNib()
         containerView.roundCorners(radius: 8)
@@ -63,6 +65,15 @@ class ItemCollectionViewCell: UICollectionViewCell {
                                          alignment: .center)
             requirementsStackView.addArrangedSubview(valueLable)
         }
+        
+        plusIcon.isHidden = true
+    }
+    
+    func configure(with vm: DashboardItemViewModel) {
+        imageView.image = UIImage(systemName: vm.systemImageTitle)
+        titleLabel.text = vm.title
+        descriptionLabel.text = vm.description
+        plusIcon.isHidden = !vm.isAsset
     }
 }
 

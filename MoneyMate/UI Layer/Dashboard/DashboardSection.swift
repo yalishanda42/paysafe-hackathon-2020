@@ -24,4 +24,19 @@ enum DashboardSection: Int, CaseIterable {
             case .courses: return "Courses"
         }
     }
+    
+    var itemViewModels: [DashboardItemViewModel] {
+        switch self {
+            case .jobAndAssets:
+                return []
+            case .ongoingQuests:
+                return []
+            case .availableQuests:
+                return []
+            case .liabilities:
+                return []
+            case .courses:
+                return []
+        }
+    }
 }

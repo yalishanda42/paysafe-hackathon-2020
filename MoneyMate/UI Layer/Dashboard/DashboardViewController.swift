@@ -28,7 +28,7 @@ extension DashboardViewController: UITableViewDelegate, UITableViewDataSource {
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        guard let cell = tableView.dequeueReusableCell(of: MarketSectionTableViewCell.self, for: indexPath),
+        guard let cell = tableView.dequeueReusableCell(of: DashboardSectionTableViewCell.self, for: indexPath),
               let dashboardSection = DashboardSection(rawValue: indexPath.row)
         else {
             fatalError("TableView could not dequeue MarketSectionTableViewCell or dashbord section is invalid for index path \(indexPath)")
@@ -36,6 +36,18 @@ extension DashboardViewController: UITableViewDelegate, UITableViewDataSource {
         
         cell.configure(with: dashboardSection)
         return cell
+    }
+    
+    func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
+        if let items = DashboardSection(rawValue: indexPath.row)?.itemViewModels, items.isEmpty {
+            return 0.1
+        }
+        
+        return 280
+    }
+    
+    func tableView(_ tableView: UITableView, heightForFooterInSection section: Int) -> CGFloat {
+        return CGFloat.leastNormalMagnitude
     }
 }
 
@@ -45,7 +57,7 @@ private extension DashboardViewController {
         tableView.delegate = self
         tableView.dataSource = self
         tableView.estimatedRowHeight = 200 // TODO: Check which is perfect
-        tableView.rowHeight = 300// UITableView.automaticDimension
-        tableView.register(cellType: MarketSectionTableViewCell.self)
+//        tableView.rowHeight = 200// UITableView.automaticDimension
+        tableView.register(cellType: DashboardSectionTableViewCell.self)
     }
 }

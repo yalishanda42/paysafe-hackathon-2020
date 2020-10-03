@@ -13,6 +13,9 @@
 		74FD4DCB2528980800B69B78 /* QuestDetailsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 74FD4DCA2528980800B69B78 /* QuestDetailsViewController.swift */; };
 		74FD4DD92528D5E200B69B78 /* GameDataStore.swift in Sources */ = {isa = PBXBuildFile; fileRef = 74FD4DD82528D5E200B69B78 /* GameDataStore.swift */; };
 		74FD4DDF2528DED500B69B78 /* DashboardSection.swift in Sources */ = {isa = PBXBuildFile; fileRef = 74FD4DDE2528DED500B69B78 /* DashboardSection.swift */; };
+		74FD4DE32528E54000B69B78 /* DashboardSectionTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 74FD4DE22528E54000B69B78 /* DashboardSectionTableViewCell.swift */; };
+		74FD4DE62528ECCB00B69B78 /* DashboardSectionTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 74FD4DE52528ECCB00B69B78 /* DashboardSectionTableViewCell.xib */; };
+		74FD4DE92528F5D500B69B78 /* DashboardItemViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 74FD4DE82528F5D500B69B78 /* DashboardItemViewModel.swift */; };
 		F3990EE92528586B00E87E2A /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = F3990EE82528586B00E87E2A /* AppDelegate.swift */; };
 		F3990EF02528586B00E87E2A /* MainTab.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = F3990EEE2528586B00E87E2A /* MainTab.storyboard */; };
 		F3990EF22528586D00E87E2A /* Colors.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = F3990EF12528586D00E87E2A /* Colors.xcassets */; };
@@ -65,6 +68,9 @@
 		74FD4DCA2528980800B69B78 /* QuestDetailsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QuestDetailsViewController.swift; sourceTree = "<group>"; };
 		74FD4DD82528D5E200B69B78 /* GameDataStore.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameDataStore.swift; sourceTree = "<group>"; };
 		74FD4DDE2528DED500B69B78 /* DashboardSection.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DashboardSection.swift; sourceTree = "<group>"; };
+		74FD4DE22528E54000B69B78 /* DashboardSectionTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DashboardSectionTableViewCell.swift; sourceTree = "<group>"; };
+		74FD4DE52528ECCB00B69B78 /* DashboardSectionTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = DashboardSectionTableViewCell.xib; sourceTree = "<group>"; };
+		74FD4DE82528F5D500B69B78 /* DashboardItemViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DashboardItemViewModel.swift; sourceTree = "<group>"; };
 		F3990EE52528586B00E87E2A /* MoneyMate.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = MoneyMate.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		F3990EE82528586B00E87E2A /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		F3990EEF2528586B00E87E2A /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/MainTab.storyboard; sourceTree = "<group>"; };
@@ -237,8 +243,11 @@
 			isa = PBXGroup;
 			children = (
 				74FD4DDE2528DED500B69B78 /* DashboardSection.swift */,
+				74FD4DE82528F5D500B69B78 /* DashboardItemViewModel.swift */,
 				F3990F6C2528625900E87E2A /* DashboardViewController.swift */,
 				F3990F72252862A200E87E2A /* Dashboard.storyboard */,
+				74FD4DE22528E54000B69B78 /* DashboardSectionTableViewCell.swift */,
+				74FD4DE52528ECCB00B69B78 /* DashboardSectionTableViewCell.xib */,
 			);
 			path = Dashboard;
 			sourceTree = "<group>";
@@ -368,6 +377,7 @@
 				F3990F73252862A200E87E2A /* Dashboard.storyboard in Resources */,
 				F3990F6F2528628A00E87E2A /* Bank.storyboard in Resources */,
 				F3990F922528C31900E87E2A /* Assets.xcassets in Resources */,
+				74FD4DE62528ECCB00B69B78 /* DashboardSectionTableViewCell.xib in Resources */,
 				74FD4DB125286B0D00B69B78 /* Quiz.storyboard in Resources */,
 				F3990F8925288BFA00E87E2A /* MarketSection.json in Resources */,
 				F3990F8E25288F0C00E87E2A /* MarketSectionTableViewCell.xib in Resources */,
@@ -401,12 +411,14 @@
 				F3990F5425285FFF00E87E2A /* NSObject+ClassName.swift in Sources */,
 				F3990F4D25285FFF00E87E2A /* UITableView+RegisterCell.swift in Sources */,
 				F3990F5025285FFF00E87E2A /* UIButton+Action.swift in Sources */,
+				74FD4DE92528F5D500B69B78 /* DashboardItemViewModel.swift in Sources */,
 				F3990F4925285FFF00E87E2A /* UIView+XibLoadable.swift in Sources */,
 				F3990F6D2528625900E87E2A /* DashboardViewController.swift in Sources */,
 				F3990F4825285FFF00E87E2A /* String+Extensions.swift in Sources */,
 				F3990F6A2528624100E87E2A /* MarketViewController.swift in Sources */,
 				F3990F65252861CD00E87E2A /* MainTabViewController.swift in Sources */,
 				F3990F5825285FFF00E87E2A /* UIViewController+StoryboardInstantiable.swift in Sources */,
+				74FD4DE32528E54000B69B78 /* DashboardSectionTableViewCell.swift in Sources */,
 				F3990F5525285FFF00E87E2A /* NSAttributedString+AddLink.swift in Sources */,
 				F3990F5625285FFF00E87E2A /* DateFormatter+Extensions.swift in Sources */,
 				74FD4DCB2528980800B69B78 /* QuestDetailsViewController.swift in Sources */,
