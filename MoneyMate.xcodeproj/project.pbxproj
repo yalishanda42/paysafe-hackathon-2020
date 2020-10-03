@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		74FD4DB125286B0D00B69B78 /* Quiz.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 74FD4DB025286B0D00B69B78 /* Quiz.storyboard */; };
+		74FD4DB425286BB700B69B78 /* QuizViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 74FD4DB325286BB600B69B78 /* QuizViewController.swift */; };
 		F3990EE92528586B00E87E2A /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = F3990EE82528586B00E87E2A /* AppDelegate.swift */; };
 		F3990EEB2528586B00E87E2A /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = F3990EEA2528586B00E87E2A /* SceneDelegate.swift */; };
 		F3990EF02528586B00E87E2A /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = F3990EEE2528586B00E87E2A /* Main.storyboard */; };
@@ -45,6 +47,8 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		74FD4DB025286B0D00B69B78 /* Quiz.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Quiz.storyboard; sourceTree = "<group>"; };
+		74FD4DB325286BB600B69B78 /* QuizViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QuizViewController.swift; sourceTree = "<group>"; };
 		F3990EE52528586B00E87E2A /* MoneyMate.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = MoneyMate.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		F3990EE82528586B00E87E2A /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		F3990EEA2528586B00E87E2A /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -95,6 +99,15 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		74FD4DAE25286A5B00B69B78 /* Quiz */ = {
+			isa = PBXGroup;
+			children = (
+				74FD4DB025286B0D00B69B78 /* Quiz.storyboard */,
+				74FD4DB325286BB600B69B78 /* QuizViewController.swift */,
+			);
+			path = Quiz;
+			sourceTree = "<group>";
+		};
 		F3990EDC2528586B00E87E2A = {
 			isa = PBXGroup;
 			children = (
@@ -171,6 +184,7 @@
 				F3990F622528615400E87E2A /* Bank */,
 				F3990F612528614E00E87E2A /* Market */,
 				F3990F602528614000E87E2A /* Dashboard */,
+				74FD4DAE25286A5B00B69B78 /* Quiz */,
 			);
 			path = "UI Layer";
 			sourceTree = "<group>";
@@ -267,6 +281,7 @@
 				F3990F712528629700E87E2A /* Market.storyboard in Resources */,
 				F3990F73252862A200E87E2A /* Dashboard.storyboard in Resources */,
 				F3990F6F2528628A00E87E2A /* Bank.storyboard in Resources */,
+				74FD4DB125286B0D00B69B78 /* Quiz.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -303,6 +318,7 @@
 				F3990F4B25285FFF00E87E2A /* UITableViewCell+Extensions.swift in Sources */,
 				F3990F4C25285FFF00E87E2A /* NSAttributedString+BulletedString.swift in Sources */,
 				F3990F5325285FFF00E87E2A /* UIImage+Extensions.swift in Sources */,
+				74FD4DB425286BB700B69B78 /* QuizViewController.swift in Sources */,
 				F3990F5125285FFF00E87E2A /* UINavigationController+Extensions.swift in Sources */,
 				F3990F4F25285FFF00E87E2A /* UIButton+Extensions.swift in Sources */,
 			);
