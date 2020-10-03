@@ -15,29 +15,22 @@
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="4gH-KD-M0Z">
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" bounces="NO" alwaysBounceVertical="YES" showsHorizontalScrollIndicator="NO" bouncesZoom="NO" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="qog-W4-LED">
                                 <rect key="frame" x="0.0" y="44" width="414" height="818"/>
-                                <color key="backgroundColor" systemColor="systemTealColor" red="0.35294117650000001" green="0.7843137255" blue="0.98039215690000003" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                <collectionViewFlowLayout key="collectionViewLayout" automaticEstimatedItemSize="YES" minimumLineSpacing="10" minimumInteritemSpacing="10" id="75O-mA-L59">
-                                    <size key="itemSize" width="50" height="50"/>
-                                    <size key="headerReferenceSize" width="0.0" height="0.0"/>
-                                    <size key="footerReferenceSize" width="0.0" height="0.0"/>
-                                    <inset key="sectionInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
-                                </collectionViewFlowLayout>
-                                <cells/>
-                            </collectionView>
+                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                            </tableView>
                         </subviews>
                         <color key="backgroundColor" systemColor="systemBlueColor" red="0.0" green="0.47843137250000001" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
-                            <constraint firstItem="4gH-KD-M0Z" firstAttribute="leading" secondItem="oDY-rV-iSe" secondAttribute="leading" id="4bU-0n-W4R"/>
-                            <constraint firstItem="4gH-KD-M0Z" firstAttribute="top" secondItem="oDY-rV-iSe" secondAttribute="top" id="60O-kL-h9Q"/>
-                            <constraint firstItem="oDY-rV-iSe" firstAttribute="trailing" secondItem="4gH-KD-M0Z" secondAttribute="trailing" id="LWv-PR-3AX"/>
-                            <constraint firstItem="oDY-rV-iSe" firstAttribute="bottom" secondItem="4gH-KD-M0Z" secondAttribute="bottom" id="Rgt-kH-i4p"/>
+                            <constraint firstItem="oDY-rV-iSe" firstAttribute="trailing" secondItem="qog-W4-LED" secondAttribute="trailing" id="2W7-43-nNL"/>
+                            <constraint firstItem="oDY-rV-iSe" firstAttribute="bottom" secondItem="qog-W4-LED" secondAttribute="bottom" id="Obe-TL-2Nn"/>
+                            <constraint firstItem="qog-W4-LED" firstAttribute="top" secondItem="oDY-rV-iSe" secondAttribute="top" id="WKk-JW-TuP"/>
+                            <constraint firstItem="qog-W4-LED" firstAttribute="leading" secondItem="oDY-rV-iSe" secondAttribute="leading" id="mWX-nz-SKd"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="oDY-rV-iSe"/>
                     </view>
                     <connections>
-                        <outlet property="collectionView" destination="4gH-KD-M0Z" id="8Ql-IE-iHp"/>
+                        <outlet property="tableView" destination="qog-W4-LED" id="8yU-IL-T8u"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="NTu-Xq-eIP" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>

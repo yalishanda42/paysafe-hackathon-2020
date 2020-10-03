@@ -9,8 +9,8 @@
 import UIKit
 
 class MarketViewController: UIViewController {
-
-    @IBOutlet private weak var collectionView: UICollectionView!
+    
+    @IBOutlet private weak var tableView: UITableView!
     
     private lazy var dataSource: [MarketSection] = {
         return getDataFromJson() ?? []
@@ -18,16 +18,35 @@ class MarketViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        setupCollectionView()
+        setupTableView()
+    }
+}
+
+
+extension MarketViewController: UITableViewDelegate, UITableViewDataSource {
+    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        return dataSource.count
+    }
+    
+    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+        guard let cell = tableView.dequeueReusableCell(of: MarketSectionTableViewCell.self, for: indexPath) else {
+            fatalError("TableView could not dequeue MarketSectionTableViewCell")
+        }
+        
+        cell.configure(with: dataSource[indexPath.row])
+        return cell
     }
 }
 
 private extension MarketViewController {
-    func setupCollectionView() {
-        collectionView.delegate = self
-        collectionView.dataSource = self
-        collectionView.register(cellType: ItemCollectionViewCell.self)
+    func setupTableView() {
+        tableView.delegate = self
+        tableView.dataSource = self
+        tableView.estimatedRowHeight = 300 // TODO: Check which is perfect
+        tableView.rowHeight = 400// UITableView.automaticDimension
+        tableView.register(cellType: MarketSectionTableViewCell.self)
     }
+    
     
     func getDataFromJson() -> [MarketSection]? {
         do {
@@ -35,22 +54,7 @@ private extension MarketViewController {
             let recource = "MarketDataSource"
             return try decoder.decodeJsonResource(recource, model: [MarketSection].self)
         } catch {
-         fatalError("Market Json Parser: \(error)")
+            fatalError("Market Json Parser: \(error)")
         }
-    }
-}
-
-extension MarketViewController: UICollectionViewDelegate, UICollectionViewDataSource {
-    func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        return 0
-    }
-    
-    func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
-        guard let cell = collectionView.dequeueReusableCell(of: ItemCollectionViewCell.self, for: indexPath) else {
-            fatalError("Market Collection View could not dequeue ItemCollectionViewCell")
-        }
-     
-        
-        return cell
     }
 }

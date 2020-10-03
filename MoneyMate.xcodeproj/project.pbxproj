@@ -38,7 +38,6 @@
 		F3990F5925285FFF00E87E2A /* UIWindow+VisibleViewControllers.swift in Sources */ = {isa = PBXBuildFile; fileRef = F3990F4325285FFF00E87E2A /* UIWindow+VisibleViewControllers.swift */; };
 		F3990F5A25285FFF00E87E2A /* CollectionView+RegisterCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = F3990F4425285FFF00E87E2A /* CollectionView+RegisterCell.swift */; };
 		F3990F5B25285FFF00E87E2A /* UIBarButtonItem+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = F3990F4525285FFF00E87E2A /* UIBarButtonItem+Extensions.swift */; };
-		F3990F5D252860F000E87E2A /* Default-568h@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = F3990F5C252860F000E87E2A /* Default-568h@2x.png */; };
 		F3990F65252861CD00E87E2A /* MainTabViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F3990F64252861CD00E87E2A /* MainTabViewController.swift */; };
 		F3990F672528622800E87E2A /* BankViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F3990F662528622800E87E2A /* BankViewController.swift */; };
 		F3990F6A2528624100E87E2A /* MarketViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F3990F682528624100E87E2A /* MarketViewController.swift */; };
@@ -50,8 +49,11 @@
 		F3990F7825286B4400E87E2A /* ItemCollectionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = F3990F7625286B4400E87E2A /* ItemCollectionViewCell.xib */; };
 		F3990F7B2528748500E87E2A /* MarketItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = F3990F7A2528748500E87E2A /* MarketItem.swift */; };
 		F3990F7E252878C000E87E2A /* Switcher.swift in Sources */ = {isa = PBXBuildFile; fileRef = F3990F7D252878C000E87E2A /* Switcher.swift */; };
-		F3990F81252879E100E87E2A /* MarketDataSource.swift in Sources */ = {isa = PBXBuildFile; fileRef = F3990F80252879E100E87E2A /* MarketDataSource.swift */; };
 		F3990F8325287B7C00E87E2A /* MarketSection.swift in Sources */ = {isa = PBXBuildFile; fileRef = F3990F8225287B7C00E87E2A /* MarketSection.swift */; };
+		F3990F8925288BFA00E87E2A /* MarketDataSource.json in Resources */ = {isa = PBXBuildFile; fileRef = F3990F8825288BFA00E87E2A /* MarketDataSource.json */; };
+		F3990F8D25288F0C00E87E2A /* MarketSectionTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = F3990F8B25288F0C00E87E2A /* MarketSectionTableViewCell.swift */; };
+		F3990F8E25288F0C00E87E2A /* MarketSectionTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = F3990F8C25288F0C00E87E2A /* MarketSectionTableViewCell.xib */; };
+		F3990F902528A36800E87E2A /* jsonBackUp.json in Sources */ = {isa = PBXBuildFile; fileRef = F3990F8F2528A36800E87E2A /* jsonBackUp.json */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -88,7 +90,6 @@
 		F3990F4325285FFF00E87E2A /* UIWindow+VisibleViewControllers.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIWindow+VisibleViewControllers.swift"; sourceTree = "<group>"; };
 		F3990F4425285FFF00E87E2A /* CollectionView+RegisterCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "CollectionView+RegisterCell.swift"; sourceTree = "<group>"; };
 		F3990F4525285FFF00E87E2A /* UIBarButtonItem+Extensions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIBarButtonItem+Extensions.swift"; sourceTree = "<group>"; };
-		F3990F5C252860F000E87E2A /* Default-568h@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Default-568h@2x.png"; sourceTree = "<group>"; };
 		F3990F64252861CD00E87E2A /* MainTabViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainTabViewController.swift; sourceTree = "<group>"; };
 		F3990F662528622800E87E2A /* BankViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BankViewController.swift; sourceTree = "<group>"; };
 		F3990F682528624100E87E2A /* MarketViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MarketViewController.swift; sourceTree = "<group>"; };
@@ -100,8 +101,11 @@
 		F3990F7625286B4400E87E2A /* ItemCollectionViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ItemCollectionViewCell.xib; sourceTree = "<group>"; };
 		F3990F7A2528748500E87E2A /* MarketItem.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MarketItem.swift; sourceTree = "<group>"; };
 		F3990F7D252878C000E87E2A /* Switcher.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Switcher.swift; sourceTree = "<group>"; };
-		F3990F80252879E100E87E2A /* MarketDataSource.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MarketDataSource.swift; sourceTree = "<group>"; };
 		F3990F8225287B7C00E87E2A /* MarketSection.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MarketSection.swift; sourceTree = "<group>"; };
+		F3990F8825288BFA00E87E2A /* MarketDataSource.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = MarketDataSource.json; sourceTree = "<group>"; };
+		F3990F8B25288F0C00E87E2A /* MarketSectionTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MarketSectionTableViewCell.swift; sourceTree = "<group>"; };
+		F3990F8C25288F0C00E87E2A /* MarketSectionTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = MarketSectionTableViewCell.xib; sourceTree = "<group>"; };
+		F3990F8F2528A36800E87E2A /* jsonBackUp.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = jsonBackUp.json; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -136,7 +140,6 @@
 		F3990EDC2528586B00E87E2A = {
 			isa = PBXGroup;
 			children = (
-				F3990F5C252860F000E87E2A /* Default-568h@2x.png */,
 				F3990EE72528586B00E87E2A /* MoneyMate */,
 				F3990EE62528586B00E87E2A /* Products */,
 			);
@@ -251,6 +254,8 @@
 			children = (
 				F3990F7525286B4400E87E2A /* ItemCollectionViewCell.swift */,
 				F3990F7625286B4400E87E2A /* ItemCollectionViewCell.xib */,
+				F3990F8B25288F0C00E87E2A /* MarketSectionTableViewCell.swift */,
+				F3990F8C25288F0C00E87E2A /* MarketSectionTableViewCell.xib */,
 			);
 			path = Cells;
 			sourceTree = "<group>";
@@ -275,7 +280,8 @@
 		F3990F7F252879B300E87E2A /* Jsons */ = {
 			isa = PBXGroup;
 			children = (
-				F3990F80252879E100E87E2A /* MarketDataSource.swift */,
+				F3990F8825288BFA00E87E2A /* MarketDataSource.json */,
+				F3990F8F2528A36800E87E2A /* jsonBackUp.json */,
 			);
 			name = Jsons;
 			sourceTree = "<group>";
@@ -340,7 +346,6 @@
 			files = (
 				F3990EF52528586D00E87E2A /* LaunchScreen.storyboard in Resources */,
 				F3990F7825286B4400E87E2A /* ItemCollectionViewCell.xib in Resources */,
-				F3990F5D252860F000E87E2A /* Default-568h@2x.png in Resources */,
 				F3990EF22528586D00E87E2A /* Assets.xcassets in Resources */,
 				74FD4DC82528974400B69B78 /* Quest.storyboard in Resources */,
 				F3990EF02528586B00E87E2A /* Main.storyboard in Resources */,
@@ -348,6 +353,8 @@
 				F3990F73252862A200E87E2A /* Dashboard.storyboard in Resources */,
 				F3990F6F2528628A00E87E2A /* Bank.storyboard in Resources */,
 				74FD4DB125286B0D00B69B78 /* Quiz.storyboard in Resources */,
+				F3990F8925288BFA00E87E2A /* MarketDataSource.json in Resources */,
+				F3990F8E25288F0C00E87E2A /* MarketSectionTableViewCell.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -358,12 +365,12 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				F3990F81252879E100E87E2A /* MarketDataSource.swift in Sources */,
 				F3990F5225285FFF00E87E2A /* UIView+Layout.swift in Sources */,
 				F3990F5925285FFF00E87E2A /* UIWindow+VisibleViewControllers.swift in Sources */,
 				F3990F672528622800E87E2A /* BankViewController.swift in Sources */,
 				F3990F4A25285FFF00E87E2A /* UIView+Nib.swift in Sources */,
 				F3990F5725285FFF00E87E2A /* Date+Extensions.swift in Sources */,
+				F3990F902528A36800E87E2A /* jsonBackUp.json in Sources */,
 				F3990EE92528586B00E87E2A /* AppDelegate.swift in Sources */,
 				F3990F4625285FFF00E87E2A /* UIView+Extensions.swift in Sources */,
 				F3990F4E25285FFF00E87E2A /* UIViewController+Container.swift in Sources */,
@@ -386,6 +393,7 @@
 				F3990EEB2528586B00E87E2A /* SceneDelegate.swift in Sources */,
 				F3990F5625285FFF00E87E2A /* DateFormatter+Extensions.swift in Sources */,
 				74FD4DCB2528980800B69B78 /* QuestDetailsViewController.swift in Sources */,
+				F3990F8D25288F0C00E87E2A /* MarketSectionTableViewCell.swift in Sources */,
 				F3990F4B25285FFF00E87E2A /* UITableViewCell+Extensions.swift in Sources */,
 				F3990F4C25285FFF00E87E2A /* NSAttributedString+BulletedString.swift in Sources */,
 				F3990F5325285FFF00E87E2A /* UIImage+Extensions.swift in Sources */,

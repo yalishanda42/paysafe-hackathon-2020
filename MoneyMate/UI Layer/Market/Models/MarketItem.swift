@@ -13,10 +13,16 @@ struct MarketItemModel: Codable {
     var title: String
     var imageTitle: String
     var description: String
-    var requirements: [RequirementModel]
+    var details: [DetailsModel]
+    var requirements: [String]
 }
 
-struct RequirementModel: Codable {
+struct DetailsModel: Codable {
     var title: String
     var value: String
 }
+//
+//struct RequirementModel: Codable {
+//    var title: String
+//    var value: [String]
+//}

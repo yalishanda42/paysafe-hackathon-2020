@@ -1,0 +1,26 @@
+[
+    {
+        "title": "Education",
+        "items": [
+            {
+                "title" : "iOS Developer Basics",
+                "imageTitle" : "book.circle",
+                "description": "In this course you will learn the basics of iOS development",
+                "details": [
+                    {
+                        "title": "Price",
+                        "value": "$177"
+                    },
+                    {
+                        "title": "Duration",
+                        "value": "3m"
+                    }
+                ],
+                "requirements": [
+                    "iOS Development Basics",
+                    "iOS Development Advanced"
+                ]
+            }
+        ]
+    }
+]
