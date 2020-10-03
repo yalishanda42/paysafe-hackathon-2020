@@ -45,8 +45,13 @@ enum DashboardSection: Int, CaseIterable {
                 return account.ongoingQuests
                     .map(DashboardItemViewModel.init(from:))
             case .availableQuests:
-                #warning("TODO")
-                return []
+                return GameDataStore.shared.quests
+                    .filter { q in
+                        !account.completedQuests.contains(q)
+                        && !account.ongoingQuests.contains(q)
+                        && Set(account.completedQuests.map { c in c.name }).isSubset(of: q.unlockingRequirementsQuests)
+                        && Set(account.completedCourses.map { c in c.name }).isSubset(of: q.unlockingRequirementsCourses)
+                    }.map(DashboardItemViewModel.init(from:))
             case .liabilities:
                 return account.items.filter { !$0.isAsset }
                     .map(DashboardItemViewModel.init(from:))
@@ -80,8 +85,9 @@ extension DashboardItemViewModel {
             .ongoingCourses.contains(model) {
             let duration = model.examDate.timeIntervalSince(model.enrollmentDate)
             let elapsed = GameDataStore.shared.date.timeIntervalSince(model.enrollmentDate)
-            self.progress = Float(elapsed / duration)
-            self.descriptions = model.examDate >= GameDataStore.shared.date ? ["Take exam!"] : []
+            let prog = Float(elapsed / duration)
+            self.descriptions = prog >= 1.0 ? ["Take exam!"] : []
+            self.progress = prog
         } else {
             self.progress = nil
             self.descriptions = []
@@ -98,7 +104,12 @@ extension DashboardItemViewModel {
         var prog: Float? = nil
         
         if let loan = model.loan {
-            #warning("TODO: calculate progress")
+            let duration = loan.startDate
+                .addingTimeInterval(loan.regularity.timeInterval * Double(loan.paymentsCount))
+                .timeIntervalSince(loan.startDate)
+            let elapsed = GameDataStore.shared.date
+                .timeIntervalSince(loan.startDate)
+            prog = Float(elapsed / duration)
             desc.append("- \(loan.value) / \(loan.regularity.rawValue)")
             desc.append("Total Loan: \(loan.paymentsCount * loan.value)")
         }
@@ -117,7 +128,13 @@ extension DashboardItemViewModel {
         self.systemImageTitle = "safari"
         self.progress = nil
         self.isAsset = false
-        #warning("TODO")
-        self.descriptions = []
+        if Set(GameDataStore.shared.account.completedCourses.map { $0.name })
+            .isSubset(of: model.completionRequirementsCourses)
+            && Set(GameDataStore.shared.account.jobs.map { $0.name }).isSubset(of: model.completionRequirementsJobs)
+            && Set(GameDataStore.shared.account.items.map { $0.name }).isSubset(of: model.completionRequirementsItems) {
+            self.descriptions = ["Completed!"]
+        } else {
+            self.descriptions = []
+        }
     }
 }

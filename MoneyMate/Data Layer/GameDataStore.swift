@@ -44,13 +44,13 @@ struct AccountData {
     var completedQuests: [QuestData] = []
 }
 
-struct JobData: Codable {
+struct JobData: Hashable, Codable, Equatable {
     let name: String
     let description: String
     let income: Income
 }
 
-struct CourseData: Codable, Equatable {
+struct CourseData: Codable, Hashable, Equatable {
     let name: String
     let description: String
     let quiz: QuizData
@@ -58,52 +58,90 @@ struct CourseData: Codable, Equatable {
     let examDate: Date
 }
 
-struct QuizData: Codable, Equatable {
+struct QuizData: Codable, Hashable, Equatable {
     let questions: [QuestionData]
 }
 
-struct QuestionData: Codable, Equatable {
+struct QuestionData: Codable, Hashable, Equatable {
     let text: String
     let answers: [AnswerData]
 }
 
-struct AnswerData: Codable, Equatable {
+struct AnswerData: Codable, Hashable, Equatable {
     let text: String
     let isCorrect: Bool
 }
 
-struct ItemData: Codable {
+struct ItemData: Codable, Hashable, Equatable {
     let name: String
     let description: String
-    let isAsset: Bool
     let income: Income?
     let loan: Loan?
+    
+    var isAsset: Bool {
+        income != nil
+    }
 }
 
-struct QuestData: Codable {
+struct QuestData: Codable, Hashable, Equatable {
     let name: String
     let description: String
-    let requirements: [String]
-    let rewards: [String]
-    // TODO
+    let unlockingRequirementsQuests: [String]
+    let unlockingRequirementsCourses: [String]
+    let completionRequirementsCourses: [String]
+    let completionRequirementsJobs: [String]
+    let completionRequirementsItems: [String]
+    let rewardMoney: Int
+    let rewardItem: [ItemData]
+        
+    var completionRequirements: [String] {
+        completionRequirementsCourses
+            + completionRequirementsJobs
+            + completionRequirementsItems
+    }
+    
+    var rewards: [String] {
+        var result: [String] = []
+        
+        if rewardMoney > 0 {
+            result.append("$\(rewardMoney)")
+        }
+        
+        result += rewardItem.map { $0.name }
+        return result
+    }
+    
 }
 
-struct Income: Codable {
+struct Income: Codable, Hashable, Equatable {
     let startDate: Date
     let value: Int
     let regularity: Regularity
 }
 
-struct Loan: Codable {
+struct Loan: Codable, Hashable, Equatable {
     let startDate: Date
     let value: Int
     let regularity: Regularity
     let paymentsCount: Int
 }
 
-enum Regularity: String, Codable {
+enum Regularity: String, Codable, Hashable, Equatable {
     case daily
     case weekly
     case monthly
     case yearly
+    
+    var timeInterval: TimeInterval {
+        switch self {
+        case .daily:
+            return 60 * 60 * 24
+        case .weekly:
+            return Regularity.daily.timeInterval * 7
+        case .monthly:
+            return Regularity.daily.timeInterval * 31
+        case .yearly:
+            return Regularity.daily.timeInterval * 365
+        }
+    }
 }

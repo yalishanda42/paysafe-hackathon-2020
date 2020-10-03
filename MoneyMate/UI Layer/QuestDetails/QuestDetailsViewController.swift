@@ -16,7 +16,7 @@ class QuestDetailsViewController: UIViewController {
     
     weak var delegate: QuestDetailsViewControllerDelegate?
     
-    var quest: QuestData = .init(name: "", description: "", requirements: [], rewards: []) {
+    var quest: QuestData = .init(name: "", description: "", unlockingRequirementsQuests: [], unlockingRequirementsCourses: [], completionRequirementsCourses: [], completionRequirementsJobs: [], completionRequirementsItems: [], rewardMoney: 0, rewardItem: []) {
         didSet {
             updateInfo()
         }
@@ -73,7 +73,7 @@ class QuestDetailsViewController: UIViewController {
         reqStack.addArrangedSubview(reqStackTitle)
         rewardsStack.addArrangedSubview(rewardsStackTitle)
         
-        quest.requirements
+        quest.completionRequirements
             .map { UILabel.create(from: $0, font: .systemFont(ofSize: 17)) }
             .forEach(reqStack.addArrangedSubview(_:))
         
