@@ -15,11 +15,21 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
         
+        setupAppearance()
+        
         window = UIWindow(frame: UIScreen.main.bounds)
         window?.makeKeyAndVisible()
         
         let mainTabVc = MainTabViewController.instantiateFromStoryboard()
         window?.rootViewController = mainTabVc
         return true
+    }
+}
+
+extension AppDelegate {
+    func setupAppearance() {
+        UITabBar.appearance().tintColor = .fromAsset(.shamrockGreen)
+        UITabBar.appearance().backgroundColor = .fromAsset(.pineGreen)
+        UINavigationBar.appearance().backgroundColor = .fromAsset(.pineGreen)
     }
 }

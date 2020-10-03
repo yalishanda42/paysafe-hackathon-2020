@@ -54,6 +54,7 @@
 		F3990F8E25288F0C00E87E2A /* MarketSectionTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = F3990F8C25288F0C00E87E2A /* MarketSectionTableViewCell.xib */; };
 		F3990F902528A36800E87E2A /* jsonBackUp.json in Sources */ = {isa = PBXBuildFile; fileRef = F3990F8F2528A36800E87E2A /* jsonBackUp.json */; };
 		F3990F922528C31900E87E2A /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = F3990F912528C31900E87E2A /* Assets.xcassets */; };
+		F3990F942528C8D400E87E2A /* UIColor+Utilities.swift in Sources */ = {isa = PBXBuildFile; fileRef = F3990F932528C8D400E87E2A /* UIColor+Utilities.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -106,6 +107,7 @@
 		F3990F8C25288F0C00E87E2A /* MarketSectionTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = MarketSectionTableViewCell.xib; sourceTree = "<group>"; };
 		F3990F8F2528A36800E87E2A /* jsonBackUp.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = jsonBackUp.json; sourceTree = "<group>"; };
 		F3990F912528C31900E87E2A /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		F3990F932528C8D400E87E2A /* UIColor+Utilities.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIColor+Utilities.swift"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -168,6 +170,7 @@
 		F3990F2F25285FDD00E87E2A /* Extensions */ = {
 			isa = PBXGroup;
 			children = (
+				F3990F932528C8D400E87E2A /* UIColor+Utilities.swift */,
 				F3990F4425285FFF00E87E2A /* CollectionView+RegisterCell.swift */,
 				F3990F4125285FFF00E87E2A /* Date+Extensions.swift */,
 				F3990F4025285FFF00E87E2A /* DateFormatter+Extensions.swift */,
@@ -346,7 +349,7 @@
 			files = (
 				F3990EF52528586D00E87E2A /* LaunchScreen.storyboard in Resources */,
 				F3990F7825286B4400E87E2A /* ItemCollectionViewCell.xib in Resources */,
-				F3990EF22528586D00E87E2A /* Assets.xcassets in Resources */,
+				F3990EF22528586D00E87E2A /* Colors.xcassets in Resources */,
 				F3990EF22528586D00E87E2A /* Colors.xcassets in Resources */,
 				74FD4DC82528974400B69B78 /* Quest.storyboard in Resources */,
 				F3990EF02528586B00E87E2A /* MainTab.storyboard in Resources */,
@@ -381,6 +384,7 @@
 				F3990F7B2528748500E87E2A /* MarketItem.swift in Sources */,
 				F3990F5A25285FFF00E87E2A /* CollectionView+RegisterCell.swift in Sources */,
 				F3990F7725286B4400E87E2A /* ItemCollectionViewCell.swift in Sources */,
+				F3990F942528C8D400E87E2A /* UIColor+Utilities.swift in Sources */,
 				F3990F7E252878C000E87E2A /* Switcher.swift in Sources */,
 				F3990F5425285FFF00E87E2A /* NSObject+ClassName.swift in Sources */,
 				F3990F4D25285FFF00E87E2A /* UITableView+RegisterCell.swift in Sources */,

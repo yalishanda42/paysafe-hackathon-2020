@@ -31,13 +31,18 @@ private extension MainTabViewController {
         viewControllerList.append(marketVC)
 
         let navController = UINavigationController()
-        navController.tabBarItem = UITabBarItem(title: "Bank", image: nil, tag: 3)
-        navController.tabBarItem.selectedImage = nil //UIImage(named: "settingsActive")
+        navController.tabBarItem = UITabBarItem(title: "Bank", image: resizeForTabBarImage("bank"), tag: 3)
+        navController.tabBarItem.selectedImage = resizeForTabBarImage("bank.fill")
 
         let bankVC = BankViewController.instantiateFromStoryboard()
         navController.pushViewController(bankVC, animated: true)
 
         viewControllerList.append(navController)
         viewControllers = viewControllerList
+    }
+    
+    func resizeForTabBarImage(_ named: String) -> UIImage {
+        let img = UIImage(named: named)!
+        return img.imageWithImage(scaledToWidth: 24)
     }
 }

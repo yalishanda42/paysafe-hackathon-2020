@@ -75,4 +75,19 @@ extension UIImage {
         
         return newImage
     }
+    
+    func imageWithImage(scaledToWidth: CGFloat) -> UIImage {
+        let oldWidth = size.width
+        let scaleFactor = scaledToWidth / oldWidth
+
+        let newHeight = size.height * scaleFactor
+        let newWidth = oldWidth * scaleFactor
+
+        UIGraphicsBeginImageContext(CGSize(width:newWidth, height:newHeight))
+        draw(in: CGRect(x:0, y:0, width:newWidth, height:newHeight))
+        let newImage = UIGraphicsGetImageFromCurrentImageContext()
+        
+        UIGraphicsEndImageContext()
+        return newImage!
+    }
 }
