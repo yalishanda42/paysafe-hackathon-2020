@@ -9,6 +9,8 @@
 /* Begin PBXBuildFile section */
 		74FD4DB125286B0D00B69B78 /* Quiz.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 74FD4DB025286B0D00B69B78 /* Quiz.storyboard */; };
 		74FD4DB425286BB700B69B78 /* QuizViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 74FD4DB325286BB600B69B78 /* QuizViewController.swift */; };
+		74FD4DC82528974400B69B78 /* Quest.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 74FD4DC72528974400B69B78 /* Quest.storyboard */; };
+		74FD4DCB2528980800B69B78 /* QuestDetailsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 74FD4DCA2528980800B69B78 /* QuestDetailsViewController.swift */; };
 		F3990EE92528586B00E87E2A /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = F3990EE82528586B00E87E2A /* AppDelegate.swift */; };
 		F3990EEB2528586B00E87E2A /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = F3990EEA2528586B00E87E2A /* SceneDelegate.swift */; };
 		F3990EF02528586B00E87E2A /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = F3990EEE2528586B00E87E2A /* Main.storyboard */; };
@@ -49,6 +51,8 @@
 /* Begin PBXFileReference section */
 		74FD4DB025286B0D00B69B78 /* Quiz.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Quiz.storyboard; sourceTree = "<group>"; };
 		74FD4DB325286BB600B69B78 /* QuizViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QuizViewController.swift; sourceTree = "<group>"; };
+		74FD4DC72528974400B69B78 /* Quest.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Quest.storyboard; sourceTree = "<group>"; };
+		74FD4DCA2528980800B69B78 /* QuestDetailsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QuestDetailsViewController.swift; sourceTree = "<group>"; };
 		F3990EE52528586B00E87E2A /* MoneyMate.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = MoneyMate.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		F3990EE82528586B00E87E2A /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		F3990EEA2528586B00E87E2A /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -106,6 +110,15 @@
 				74FD4DB325286BB600B69B78 /* QuizViewController.swift */,
 			);
 			path = Quiz;
+			sourceTree = "<group>";
+		};
+		74FD4DC6252896F500B69B78 /* QuestDetails */ = {
+			isa = PBXGroup;
+			children = (
+				74FD4DC72528974400B69B78 /* Quest.storyboard */,
+				74FD4DCA2528980800B69B78 /* QuestDetailsViewController.swift */,
+			);
+			path = QuestDetails;
 			sourceTree = "<group>";
 		};
 		F3990EDC2528586B00E87E2A = {
@@ -185,6 +198,7 @@
 				F3990F612528614E00E87E2A /* Market */,
 				F3990F602528614000E87E2A /* Dashboard */,
 				74FD4DAE25286A5B00B69B78 /* Quiz */,
+				74FD4DC6252896F500B69B78 /* QuestDetails */,
 			);
 			path = "UI Layer";
 			sourceTree = "<group>";
@@ -277,6 +291,7 @@
 				F3990EF52528586D00E87E2A /* LaunchScreen.storyboard in Resources */,
 				F3990F5D252860F000E87E2A /* Default-568h@2x.png in Resources */,
 				F3990EF22528586D00E87E2A /* Assets.xcassets in Resources */,
+				74FD4DC82528974400B69B78 /* Quest.storyboard in Resources */,
 				F3990EF02528586B00E87E2A /* Main.storyboard in Resources */,
 				F3990F712528629700E87E2A /* Market.storyboard in Resources */,
 				F3990F73252862A200E87E2A /* Dashboard.storyboard in Resources */,
@@ -315,6 +330,7 @@
 				F3990F5525285FFF00E87E2A /* NSAttributedString+AddLink.swift in Sources */,
 				F3990EEB2528586B00E87E2A /* SceneDelegate.swift in Sources */,
 				F3990F5625285FFF00E87E2A /* DateFormatter+Extensions.swift in Sources */,
+				74FD4DCB2528980800B69B78 /* QuestDetailsViewController.swift in Sources */,
 				F3990F4B25285FFF00E87E2A /* UITableViewCell+Extensions.swift in Sources */,
 				F3990F4C25285FFF00E87E2A /* NSAttributedString+BulletedString.swift in Sources */,
 				F3990F5325285FFF00E87E2A /* UIImage+Extensions.swift in Sources */,
