@@ -11,6 +11,8 @@
         "completionRequirementsItems": [],
         "completionRequirementsItemsMin": 0,
         "completionRequirementsCost": 0,
+        "completionRequirementsLoansMin": 0,
+        "completionRequirementsRentsMin": 0,
         "rewardMoney": 0,
         "rewardItem": []
     },
@@ -28,6 +30,8 @@
         "completionRequirementsItems": [],
         "completionRequirementsItemsMin": 1,
         "completionRequirementsCost": 0,
+        "completionRequirementsLoansMin": 1,
+        "completionRequirementsRentsMin": 1,
         "rewardMoney": 0,
         "rewardItem": []
     },
@@ -47,6 +51,8 @@
         "completionRequirementsItems": [],
         "completionRequirementsItemsMin": 0,
         "completionRequirementsCost": 500,
+        "completionRequirementsLoansMin": 0,
+        "completionRequirementsRentsMin": 0,
         "rewardMoney": 1500,
         "rewardItem": [
             {
@@ -76,6 +82,8 @@
         "completionRequirementsItems": [],
         "completionRequirementsItemsMin": 0,
         "completionRequirementsCost": 0,
+        "completionRequirementsLoansMin": 0,
+        "completionRequirementsRentsMin": 0,
         "rewardMoney": 5000,
         "rewardItem": [
             {

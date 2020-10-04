@@ -139,6 +139,7 @@ struct GameDataStore {
         case .accomplishQuest(let quest):
             account.ongoingQuests.removeAll { $0 == quest }
             account.completedQuests.append(quest)
+            quest.rewardItem.forEach { account.items.append($0) }
             account.money -= quest.completionRequirementsCost
         case .enrollForCourse(let course):
             if account.money > course.cost {
@@ -160,17 +161,22 @@ struct GameDataStore {
             if account.money > item.cost{
                 account.items.append(item)
                 account.money -= item.cost
+                account.itemPurchaseDate[item.name] = date
             }
         case .loanItem(let item):
+            account.items.append(item)
             account.itemLoanBeginDate[item.name] = date
+            account.itemPurchaseDate[item.name] = date
         case .lendItem(let item):
             account.itemRentBeginDate[item.name] = date
         case .stopLendingItem(let item):
             account.itemRentBeginDate[item.name] = nil
         case .sellItem(let item):
+            account.itemPurchaseDate[item.name] = nil
             account.money += item.cost / 2
             account.itemRentBeginDate[item.name] = nil
             account.itemLoanBeginDate[item.name] = nil //just in case
+            account.items.removeAll { $0 == item }
         case .sendItem(let item):
             break // TODO: send to another player?
         case .forwardTimeWith1Day:
@@ -180,9 +186,47 @@ struct GameDataStore {
     }
     
     mutating private func dateTriggers() {
-        #warning("TODO: pay loans, rents, salaries accordingly")
         // for food -$10 daily
         account.money -= 10
+        
+        let loanBeginDates = account.itemLoanBeginDate // copy it
+        for (itemName, loanBeginDate) in loanBeginDates {
+            if let item = account.items.first(where: { $0.name == itemName }),
+               isPayday(startDate: loanBeginDate, reg: item.loan!.regularity) {
+                account.money -= item.loan!.value
+                let r = item.loan!.regularity.timeInterval
+                if Int(date.timeIntervalSince(loanBeginDate)) / Int(r) >= item.loan!.paymentsCount {
+                    account.itemLoanBeginDate[itemName] = nil
+                }
+            }
+        }
+        
+        for (itemName, rentBeginDate) in account.itemRentBeginDate {
+            if let item = account.items.first(where: { $0.name == itemName }),
+               isPayday(startDate: rentBeginDate, reg: item.rent!.regularity) {
+                account.money += item.rent!.value
+            }
+        }
+        
+        for (jobName, jobBeginDate) in account.jobBeginDate {
+            if let job = account.jobs.first(where: { $0.name == jobName }),
+               isPayday(startDate: jobBeginDate, reg: job.income.regularity) {
+                account.money += job.income.value
+            }
+        }
+        
+        for (itemName, incomeBeginDate) in account.itemPurchaseDate {
+            if let item = account.items.first(where: { $0.name == itemName }),
+               let income = item.constantIncome,
+               isPayday(startDate: incomeBeginDate, reg: income.regularity) {
+                account.money += income.value
+            }
+        }
+    }
+    
+    private func isPayday(startDate s: Date, reg: Regularity) -> Bool {
+        let r = reg.timeInterval
+        return Int(date.timeIntervalSince(s)) % Int(r) == 0
     }
     
     // MARK: - HELPERS
@@ -212,6 +256,7 @@ struct AccountData {
     var jobBeginDate: [String: Date] = [:]
     var itemLoanBeginDate: [String: Date] = [:]
     var itemRentBeginDate: [String: Date] = [:]
+    var itemPurchaseDate: [String: Date] = [:]
     
     func examDate(forCourseName name: String) -> Date? {
         guard let beginDate = courseBeginDate[name],
@@ -279,6 +324,8 @@ struct QuestData: Codable, Hashable, Equatable, Nameable {
     let completionRequirementsJobsMin: Int
     let completionRequirementsItemsMin: Int
     let completionRequirementsCost: Int
+    let completionRequirementsLoansMin: Int
+    let completionRequirementsRentsMin: Int
     let rewardMoney: Int
     let rewardItem: [ItemData]
         
@@ -305,7 +352,10 @@ struct QuestData: Codable, Hashable, Equatable, Nameable {
             && Set(completionRequirementsItems).isSubset(of: GameDataStore.shared.account.items.map { $0.name })
             && GameDataStore.shared.account.completedCourses.count >= completionRequirementsCoursesMin
             && GameDataStore.shared.account.jobs.count >= completionRequirementsJobsMin
+            && GameDataStore.shared.account.items.count >= completionRequirementsItemsMin
             && GameDataStore.shared.account.money >= completionRequirementsCost
+            && GameDataStore.shared.account.itemLoanBeginDate.count >= completionRequirementsLoansMin
+            && GameDataStore.shared.account.itemRentBeginDate.count >= completionRequirementsRentsMin
     }
 }
 
