@@ -46,8 +46,7 @@ extension MarketItemModel {
         self.details = [
             .init(title: "Salary", value: "\(data.income.value) / \(data.income.regularity.rawValue)"),
         ]
-        self.requirements = []
-        #warning("TODO")
+        self.requirements = data.requiredCourses
     }
     
     init(with data: ItemData) {

@@ -77,6 +77,7 @@ struct JobData: Hashable, Codable, Equatable {
     let name: String
     let description: String
     let income: Income
+    let requiredCourses: [String]
 }
 
 struct CourseData: Codable, Hashable, Equatable {

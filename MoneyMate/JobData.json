@@ -2,6 +2,7 @@
     {
         "name": "Web Developer Intern",
         "description": "Develop web-sites like a pro. Fullstack, of course.",
+        "requiredCourses": ["Web Development"],
         "income": {
             "value": 550,
             "regularity": "weekly"
@@ -10,6 +11,7 @@
     {
         "name": "DJ @ Plaza",
         "description": "Party every night while getting paid. Have chalga nightmares.",
+        "requiredCourses": ["Music Production"],
         "income": {
             "value": 35,
             "regularity": "daily"
