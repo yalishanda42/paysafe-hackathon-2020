@@ -58,9 +58,14 @@
 		F3990F8925288BFA00E87E2A /* MarketSection.json in Resources */ = {isa = PBXBuildFile; fileRef = F3990F8825288BFA00E87E2A /* MarketSection.json */; };
 		F3990F8D25288F0C00E87E2A /* MarketSectionTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = F3990F8B25288F0C00E87E2A /* MarketSectionTableViewCell.swift */; };
 		F3990F8E25288F0C00E87E2A /* MarketSectionTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = F3990F8C25288F0C00E87E2A /* MarketSectionTableViewCell.xib */; };
-		F3990F902528A36800E87E2A /* jsonBackUp.json in Sources */ = {isa = PBXBuildFile; fileRef = F3990F8F2528A36800E87E2A /* jsonBackUp.json */; };
 		F3990F922528C31900E87E2A /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = F3990F912528C31900E87E2A /* Assets.xcassets */; };
 		F3990F942528C8D400E87E2A /* UIColor+Utilities.swift in Sources */ = {isa = PBXBuildFile; fileRef = F3990F932528C8D400E87E2A /* UIColor+Utilities.swift */; };
+		F3990F962528D49F00E87E2A /* BankActionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F3990F952528D49F00E87E2A /* BankActionView.swift */; };
+		F3990F992528D4B800E87E2A /* BankActionView.xib in Resources */ = {isa = PBXBuildFile; fileRef = F3990F982528D4B800E87E2A /* BankActionView.xib */; };
+		F3F85BFE2528F8470030C674 /* BankTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = F3F85BFC2528F8470030C674 /* BankTableViewCell.swift */; };
+		F3F85BFF2528F8470030C674 /* BankTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = F3F85BFD2528F8470030C674 /* BankTableViewCell.xib */; };
+		F3F85C012528F9460030C674 /* BankSectionHeaderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F3F85C002528F9460030C674 /* BankSectionHeaderView.swift */; };
+		F3F85C07252923160030C674 /* Double+Utilities.swift in Sources */ = {isa = PBXBuildFile; fileRef = F3F85C06252923160030C674 /* Double+Utilities.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -117,9 +122,14 @@
 		F3990F8825288BFA00E87E2A /* MarketSection.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = MarketSection.json; sourceTree = "<group>"; };
 		F3990F8B25288F0C00E87E2A /* MarketSectionTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MarketSectionTableViewCell.swift; sourceTree = "<group>"; };
 		F3990F8C25288F0C00E87E2A /* MarketSectionTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = MarketSectionTableViewCell.xib; sourceTree = "<group>"; };
-		F3990F8F2528A36800E87E2A /* jsonBackUp.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = jsonBackUp.json; sourceTree = "<group>"; };
 		F3990F912528C31900E87E2A /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		F3990F932528C8D400E87E2A /* UIColor+Utilities.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIColor+Utilities.swift"; sourceTree = "<group>"; };
+		F3990F952528D49F00E87E2A /* BankActionView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BankActionView.swift; sourceTree = "<group>"; };
+		F3990F982528D4B800E87E2A /* BankActionView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = BankActionView.xib; sourceTree = "<group>"; };
+		F3F85BFC2528F8470030C674 /* BankTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BankTableViewCell.swift; sourceTree = "<group>"; };
+		F3F85BFD2528F8470030C674 /* BankTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = BankTableViewCell.xib; sourceTree = "<group>"; };
+		F3F85C002528F9460030C674 /* BankSectionHeaderView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BankSectionHeaderView.swift; sourceTree = "<group>"; };
+		F3F85C06252923160030C674 /* Double+Utilities.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Double+Utilities.swift"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -214,6 +224,7 @@
 				F3990F3825285FFE00E87E2A /* UIViewController+Container.swift */,
 				F3990F4225285FFF00E87E2A /* UIViewController+StoryboardInstantiable.swift */,
 				F3990F4325285FFF00E87E2A /* UIWindow+VisibleViewControllers.swift */,
+				F3F85C06252923160030C674 /* Double+Utilities.swift */,
 			);
 			path = Extensions;
 			sourceTree = "<group>";
@@ -271,6 +282,8 @@
 		F3990F622528615400E87E2A /* Bank */ = {
 			isa = PBXGroup;
 			children = (
+				F3F85BFB2528F8090030C674 /* Cells */,
+				F3990F972528D4A300E87E2A /* Views */,
 				F3990F662528622800E87E2A /* BankViewController.swift */,
 				F3990F6E2528628A00E87E2A /* Bank.storyboard */,
 			);
@@ -311,8 +324,28 @@
 				74FD4DEC252935C000B69B78 /* QuestData.json */,
 				F3990F8825288BFA00E87E2A /* MarketSection.json */,
 				F3990F8F2528A36800E87E2A /* jsonBackUp.json */,
+				F3990F8825288BFA00E87E2A /* MarketDataSource.json */,
 			);
 			name = Jsons;
+			sourceTree = "<group>";
+		};
+		F3990F972528D4A300E87E2A /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				F3990F952528D49F00E87E2A /* BankActionView.swift */,
+				F3990F982528D4B800E87E2A /* BankActionView.xib */,
+				F3F85C002528F9460030C674 /* BankSectionHeaderView.swift */,
+			);
+			path = Views;
+			sourceTree = "<group>";
+		};
+		F3F85BFB2528F8090030C674 /* Cells */ = {
+			isa = PBXGroup;
+			children = (
+				F3F85BFC2528F8470030C674 /* BankTableViewCell.swift */,
+				F3F85BFD2528F8470030C674 /* BankTableViewCell.xib */,
+			);
+			path = Cells;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -373,13 +406,14 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				F3990F992528D4B800E87E2A /* BankActionView.xib in Resources */,
 				F3990EF52528586D00E87E2A /* LaunchScreen.storyboard in Resources */,
 				F3990F7825286B4400E87E2A /* ItemCollectionViewCell.xib in Resources */,
-				F3990EF22528586D00E87E2A /* Colors.xcassets in Resources */,
 				F3990EF22528586D00E87E2A /* Colors.xcassets in Resources */,
 				74FD4DC82528974400B69B78 /* Quest.storyboard in Resources */,
 				F3990EF02528586B00E87E2A /* MainTab.storyboard in Resources */,
 				F3990F712528629700E87E2A /* Market.storyboard in Resources */,
+				F3F85BFF2528F8470030C674 /* BankTableViewCell.xib in Resources */,
 				F3990F73252862A200E87E2A /* Dashboard.storyboard in Resources */,
 				F3990F6F2528628A00E87E2A /* Bank.storyboard in Resources */,
 				F3990F922528C31900E87E2A /* Assets.xcassets in Resources */,
@@ -412,6 +446,7 @@
 				F3990F5B25285FFF00E87E2A /* UIBarButtonItem+Extensions.swift in Sources */,
 				F3990F4725285FFF00E87E2A /* JSONDecoder+Utilities.swift in Sources */,
 				F3990F7B2528748500E87E2A /* MarketItem.swift in Sources */,
+				F3F85C07252923160030C674 /* Double+Utilities.swift in Sources */,
 				F3990F5A25285FFF00E87E2A /* CollectionView+RegisterCell.swift in Sources */,
 				F3990F7725286B4400E87E2A /* ItemCollectionViewCell.swift in Sources */,
 				F3990F942528C8D400E87E2A /* UIColor+Utilities.swift in Sources */,
@@ -423,11 +458,14 @@
 				F3990F4925285FFF00E87E2A /* UIView+XibLoadable.swift in Sources */,
 				F3990F6D2528625900E87E2A /* DashboardViewController.swift in Sources */,
 				F3990F4825285FFF00E87E2A /* String+Extensions.swift in Sources */,
+				F3F85C012528F9460030C674 /* BankSectionHeaderView.swift in Sources */,
 				F3990F6A2528624100E87E2A /* MarketViewController.swift in Sources */,
 				F3990F65252861CD00E87E2A /* MainTabViewController.swift in Sources */,
 				F3990F5825285FFF00E87E2A /* UIViewController+StoryboardInstantiable.swift in Sources */,
 				74FD4DE32528E54000B69B78 /* DashboardSectionTableViewCell.swift in Sources */,
+				F3F85BFE2528F8470030C674 /* BankTableViewCell.swift in Sources */,
 				F3990F5525285FFF00E87E2A /* NSAttributedString+AddLink.swift in Sources */,
+				F3990F962528D49F00E87E2A /* BankActionView.swift in Sources */,
 				F3990F5625285FFF00E87E2A /* DateFormatter+Extensions.swift in Sources */,
 				74FD4DCB2528980800B69B78 /* QuestDetailsViewController.swift in Sources */,
 				F3990F8D25288F0C00E87E2A /* MarketSectionTableViewCell.swift in Sources */,

@@ -43,6 +43,6 @@ private extension MainTabViewController {
     
     func resizeForTabBarImage(_ named: String) -> UIImage {
         let img = UIImage(named: named)!
-        return img.imageWithImage(scaledToWidth: 24)
+        return img.resize(scaledToWidth: 24)
     }
 }
