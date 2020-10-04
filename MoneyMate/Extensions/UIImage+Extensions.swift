@@ -76,7 +76,7 @@ extension UIImage {
         return newImage
     }
     
-    func imageWithImage(scaledToWidth: CGFloat) -> UIImage {
+    func resize(scaledToWidth: CGFloat) -> UIImage {
         let oldWidth = size.width
         let scaleFactor = scaledToWidth / oldWidth
 

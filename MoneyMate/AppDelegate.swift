@@ -28,8 +28,11 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 
 extension AppDelegate {
     func setupAppearance() {
-        UITabBar.appearance().tintColor = .fromAsset(.shamrockGreen)
-        UITabBar.appearance().backgroundColor = .fromAsset(.pineGreen)
+        UITabBar.appearance().tintColor = UIColor.fromAsset(.shamrockGreen)
+        UITabBar.appearance().backgroundColor = UIColor.fromAsset(.khaki)
+//        UITabBar.appearance().backgroundImage = UIImage()
+//        UITabBar.appearance().shadowImage     = UIImage()
+//        UITabBar.appearance().clipsToBounds   = true
         UINavigationBar.appearance().backgroundColor = .fromAsset(.pineGreen)
     }
 }
