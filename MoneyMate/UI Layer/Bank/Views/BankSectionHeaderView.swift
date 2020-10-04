@@ -35,7 +35,7 @@ class BankSectionHeaderView: UIView {
     override func layoutSubviews() {
         super.layoutSubviews()
         if isFirst {
-            roundCorners(corners: [.topLeft, .topRight], radius: 8)
+            roundCorners(corners: [.topLeft, .topRight], radius: 32)
         }
     }
     

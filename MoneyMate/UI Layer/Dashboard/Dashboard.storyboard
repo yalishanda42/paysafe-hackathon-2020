@@ -18,7 +18,7 @@
                         <subviews>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" bounces="NO" alwaysBounceVertical="YES" showsHorizontalScrollIndicator="NO" bouncesZoom="NO" dataMode="prototypes" style="plain" separatorStyle="default" allowsSelection="NO" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="Iit-6i-CnD">
                                 <rect key="frame" x="0.0" y="120" width="375" height="658"/>
-                                <color key="backgroundColor" name="ashGray"/>
+                                <color key="backgroundColor" systemColor="secondarySystemBackgroundColor" red="0.94901960780000005" green="0.94901960780000005" blue="0.96862745100000003" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                             </tableView>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="zZv-Ef-jPQ">
                                 <rect key="frame" x="0.0" y="0.0" width="375" height="120"/>
@@ -94,9 +94,6 @@
     </scenes>
     <resources>
         <image name="person.circle.fill" catalog="system" width="64" height="60"/>
-        <namedColor name="ashGray">
-            <color red="0.76078431372549016" green="0.77254901960784317" blue="0.73333333333333328" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-        </namedColor>
         <namedColor name="shamrockGreen">
             <color red="0.28627450980392155" green="0.62352941176470589" blue="0.40784313725490196" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </namedColor>

@@ -70,22 +70,25 @@ class BankViewController: UIViewController {
                                 endDate: Date().dateByAdding(5, to: .year)!, rate: 0.10, isBankLoan: false)
         
         
-        dataSource = BankDataSource(balance: 7_377_777,
+        dataSource = BankDataSource(balance: Double(GameDataStore.shared.account.money),
                                     personalLoans: [personal,personal,personal],
                                     mortageLoans: [mortage,mortage,mortage,mortage],
                                     deposits: [deposit, deposit
                                         
         ])
+        
+        NotificationCenter.default.addObserver(self, selector: #selector(updateBalance), name: .dataStoreWasUpdated, object: nil)
+        
         setupUI()
     }
     
-//    override func viewDidLayoutSubviews() {
-//        super.viewDidLayoutSubviews()
-//        var size = tableView.contentSize
-//        size.height += 16
-//        let bounds = CGRect(origin: .zero, size: size)
-//        tableView.roundCorners(corners: [.topLeft, .topRight], radius: 32, bounds: bounds)
-//    }
+    deinit {
+        NotificationCenter.default.removeObserver(self)
+    }
+    
+    @objc func updateBalance() {
+        availableBalanceLabel.text = Double(GameDataStore.shared.account.money).moneyString
+    }
 }
 
 private extension BankViewController {
@@ -99,12 +102,6 @@ private extension BankViewController {
     
     func setupNavigationBar() {
         navigationController?.backgroundColor()
-
-        let button = UIButton()
-        let dateString = GameDataStore.shared.date.shortDateFormattedString
-        button.setTitle(dateString, for: .normal)
-        button.setTitleColor(.black, for: .normal)
-        navigationItem.titleView = button
     }
     
     func setupTableView() {
@@ -189,7 +186,7 @@ extension BankViewController: UITableViewDelegate, UITableViewDataSource {
         
         let sectionView = BankSectionHeaderView(text: sectionType.sectionTitle,
                                                 isFirst: section == 0, height: 50)
-        sectionView.backgroundColor = .fromAsset(.ashGray)
+        sectionView.backgroundColor = .secondarySystemBackground
         return sectionView
     }
     
