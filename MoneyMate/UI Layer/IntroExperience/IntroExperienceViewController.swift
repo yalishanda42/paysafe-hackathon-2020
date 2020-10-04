@@ -38,7 +38,7 @@ class IntroExperienceViewController: UIViewController {
         }
         
         // TODO Show Video Controller
-        Switcher.changeRootToTab()
+        Switcher.changeToVideoPlayer()
     }
     
     @IBAction func secondaryButtonTapped(_ sender: UIButton) {
@@ -110,8 +110,11 @@ private extension IntroExperienceViewController {
     func updateButtonsUI(isLastPage: Bool = false) {
         let primaryButtonText = isLastPage ? "Start First Quize" : "Next"
         primaryButton.setTitle(primaryButtonText, for: .normal)
-        secondaryButton.isHidden = !isLastPage
-        setupSkipBarButton(isHidden: isLastPage)
+//        secondaryButton.isHidden = !isLastPage
+//        setupSkipBarButton(isHidden: isLastPage)
+//
+        secondaryButton.isHidden = true
+        setupSkipBarButton(isHidden: true)
     }
     
     func getDataFromJson() -> [IntroExperienceModel]? {

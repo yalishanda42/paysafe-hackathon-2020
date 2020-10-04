@@ -1,22 +1,17 @@
 [
     {
         "imageTitle" : "introExperience1",
-        "title" : "Get back to going strong.",
-        "description" : "ProtectWell offers daily symptom checking - from the latest CDC guidelines - and resources for healthy habits to reduce your risk of COVID-19."
+        "title" : "Money lessons you don't learn in school.",
+        "description" : "In the game you will learn basic and advanced strategies on how to create passive income and manage your personal finances"
     },
     {
         "imageTitle" : "introExperience2",
-        "title" : "Create a better world.",
-        "description" : "It takes all of us to create a better society where safety and progress can coexist. Staying home when symptomatic and daily symptom checking will help get us there."
-    },
-    {
-        "imageTitle" : "introExperience3",
-        "title" : "Check your symptoms mindfully.",
-        "description" : "When completing your daily symptom checker, consider any existing conditions, symptoms that are unusual to you, or environmental triggers causing allergies."
+        "title" : "Rich people don't work for money, the make the money work for them",
+        "description" : "In order to become rich you must know the difference between assets and liabilities. Hint: The assets put money in your pocket, liabilities take them out."
     },
     {
         "imageTitle" : "introExperience4",
         "title" : "Let the game begin!",
-        "description" : "Checking your symptoms daily only takes a moment! Try it now by clicking the button below or continue to the app to explore what else is in your ProtectWell account."
+        "description" : "In your first challenge, you will learn why it is so important to pay yourself first. If you do not know what this means, then this game is right for you."
     }
 ]

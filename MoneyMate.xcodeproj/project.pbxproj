@@ -75,6 +75,9 @@
 		F3F85C112529A7560030C674 /* IntroExperienceViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F3F85C0F2529A7560030C674 /* IntroExperienceViewController.swift */; };
 		F3F85C132529A7F90030C674 /* IntroExperience.json in Resources */ = {isa = PBXBuildFile; fileRef = F3F85C122529A7F90030C674 /* IntroExperience.json */; };
 		F3F85C152529A9250030C674 /* UIViewController+Alert.swift in Sources */ = {isa = PBXBuildFile; fileRef = F3F85C142529A9240030C674 /* UIViewController+Alert.swift */; };
+		F3F85C182529AFAB0030C674 /* VideoViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F3F85C172529AFAB0030C674 /* VideoViewController.swift */; };
+		F3F85C1A2529AFBB0030C674 /* Video.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = F3F85C192529AFBB0030C674 /* Video.storyboard */; };
+		F3F85C1E2529B7000030C674 /* money.video.mp4 in Resources */ = {isa = PBXBuildFile; fileRef = F3F85C1D2529B7000030C674 /* money.video.mp4 */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -148,6 +151,9 @@
 		F3F85C0F2529A7560030C674 /* IntroExperienceViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = IntroExperienceViewController.swift; sourceTree = "<group>"; };
 		F3F85C122529A7F90030C674 /* IntroExperience.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = IntroExperience.json; sourceTree = "<group>"; };
 		F3F85C142529A9240030C674 /* UIViewController+Alert.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIViewController+Alert.swift"; sourceTree = "<group>"; };
+		F3F85C172529AFAB0030C674 /* VideoViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VideoViewController.swift; sourceTree = "<group>"; };
+		F3F85C192529AFBB0030C674 /* Video.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Video.storyboard; sourceTree = "<group>"; };
+		F3F85C1D2529B7000030C674 /* money.video.mp4 */ = {isa = PBXFileReference; lastKnownFileType = file; path = money.video.mp4; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -251,6 +257,7 @@
 		F3990F5E2528610600E87E2A /* Resources */ = {
 			isa = PBXGroup;
 			children = (
+				F3F85C1D2529B7000030C674 /* money.video.mp4 */,
 				F3990F7F252879B300E87E2A /* Jsons */,
 				F3990F912528C31900E87E2A /* Assets.xcassets */,
 				F3990EF12528586D00E87E2A /* Colors.xcassets */,
@@ -265,6 +272,7 @@
 			children = (
 				F3990EEE2528586B00E87E2A /* MainTab.storyboard */,
 				F3990F64252861CD00E87E2A /* MainTabViewController.swift */,
+				F3F85C162529AF760030C674 /* Video */,
 				F3F85C082529A7340030C674 /* IntroExperience */,
 				F3990F622528615400E87E2A /* Bank */,
 				F3990F612528614E00E87E2A /* Market */,
@@ -389,6 +397,15 @@
 			path = Cells;
 			sourceTree = "<group>";
 		};
+		F3F85C162529AF760030C674 /* Video */ = {
+			isa = PBXGroup;
+			children = (
+				F3F85C172529AFAB0030C674 /* VideoViewController.swift */,
+				F3F85C192529AFBB0030C674 /* Video.storyboard */,
+			);
+			path = Video;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -450,6 +467,7 @@
 				F3990F992528D4B800E87E2A /* BankActionView.xib in Resources */,
 				F3990EF52528586D00E87E2A /* LaunchScreen.storyboard in Resources */,
 				741FA83B25296523001DE305 /* JobData.json in Resources */,
+				F3F85C1E2529B7000030C674 /* money.video.mp4 in Resources */,
 				F3990F7825286B4400E87E2A /* ItemCollectionViewCell.xib in Resources */,
 				F3990EF22528586D00E87E2A /* Colors.xcassets in Resources */,
 				F3F85C0D2529A74B0030C674 /* IntroExperienceCollectionViewCell.xib in Resources */,
@@ -464,6 +482,7 @@
 				F3F85C132529A7F90030C674 /* IntroExperience.json in Resources */,
 				F3990F922528C31900E87E2A /* Assets.xcassets in Resources */,
 				74FD4DE62528ECCB00B69B78 /* DashboardSectionTableViewCell.xib in Resources */,
+				F3F85C1A2529AFBB0030C674 /* Video.storyboard in Resources */,
 				74FD4DB125286B0D00B69B78 /* Quiz.storyboard in Resources */,
 				74FD4DED252935C000B69B78 /* QuestData.json in Resources */,
 				F3990F8925288BFA00E87E2A /* MarketSection.json in Resources */,
@@ -497,6 +516,7 @@
 				F3990F5A25285FFF00E87E2A /* CollectionView+RegisterCell.swift in Sources */,
 				F3990F7725286B4400E87E2A /* ItemCollectionViewCell.swift in Sources */,
 				F3990F942528C8D400E87E2A /* UIColor+Utilities.swift in Sources */,
+				F3F85C182529AFAB0030C674 /* VideoViewController.swift in Sources */,
 				F3F85C112529A7560030C674 /* IntroExperienceViewController.swift in Sources */,
 				F3990F7E252878C000E87E2A /* Switcher.swift in Sources */,
 				F3990F5425285FFF00E87E2A /* NSObject+ClassName.swift in Sources */,

@@ -3,6 +3,11 @@ import UIKit
 
 class Switcher {
 
+    static func changeToVideoPlayer() {
+        let videoPlayerVC = VideoViewController.instantiateFromStoryboard()
+        changeRootTo(videoPlayerVC)
+    }
+    
     static func changeToIntroExperience() {
         let introExperienceVC = IntroExperienceViewController.instantiateFromStoryboard()
         let navigationVC = introExperienceVC.embedInNavigation()
