@@ -9,22 +9,31 @@
 import UIKit
 
 protocol QuizViewControllerDelegate: class {
-    func submitResult(success: Bool)
+    func submitResult(success: Bool, course: CourseData)
 }
 
 class QuizViewController: UIViewController {
     
     weak var delegate: QuizViewControllerDelegate?
     
-    var quiz: QuizData = .init(questions: []) {
+    var course: CourseData? {
         didSet {
+            if let newQuiz = course?.quiz {
+                quiz = newQuiz
+            }
+        }
+    }
+    
+    private var quiz: QuizData = .init(questions: []) {
+        didSet {
+            currentQuestion = (index: 0, object: quiz.questions[0])
             tableView?.reloadData()
         }
     }
     
-    private(set) var currentQuestion: (index: Int, object: QuestionData)?
-    private(set) var currentAnswer: AnswerData?
-    private(set) var allAnswers: [AnswerData] = []
+    private var currentQuestion: (index: Int, object: QuestionData)?
+    private var currentAnswer: AnswerData?
+    private var allAnswers: [AnswerData] = []
 
     @IBOutlet weak var screenTitle: UILabel!
     @IBOutlet weak var tableView: UITableView!
@@ -52,7 +61,9 @@ class QuizViewController: UIViewController {
     
     @IBAction func onTapNextButton(_ sender: Any) {
         guard nextButton.title(for: .normal) != "Done" else {
-            delegate?.submitResult(success: isSuccess())
+            dismiss(animated: true) { [unowned self] in
+                self.delegate?.submitResult(success: self.isSuccess(), course: self.course!)
+            }
             return
         }
         
@@ -64,7 +75,7 @@ class QuizViewController: UIViewController {
         let nextIndex = q.index + 1
         if nextIndex < quiz.questions.count {
             let nextQ = quiz.questions[nextIndex]
-            screenTitle.text = "(\(nextIndex + 1) / \(quiz.questions.count)) \(q.object.text)"
+            screenTitle.text = "(\(nextIndex + 1) / \(quiz.questions.count)) \(nextQ.text)"
             currentQuestion = (index: nextIndex, object: nextQ)
         } else {
             nextButton.setTitle("Done", for: .normal)

@@ -90,13 +90,15 @@ extension DashboardItemViewModel {
             let duration = examDate.timeIntervalSince(enrollmentDate)
             let elapsed = GameDataStore.shared.date.timeIntervalSince(enrollmentDate)
             let prog = Float(elapsed / duration)
-            self.descriptions = prog >= 1.0 ? ["Take exam!"] : []
+            let daysLeft = prog < 1.0
+                ? (examDate.timeIntervalSince(GameDataStore.shared.date)) / Regularity.daily.timeInterval
+                : 0
+            self.descriptions = prog >= 1.0 ? ["Take exam!"] : ["\(daysLeft) days to exam"]
             self.progress = prog
         } else {
             self.progress = nil
             self.descriptions = []
         }
-        
     }
     
     init(from model: ItemData) {

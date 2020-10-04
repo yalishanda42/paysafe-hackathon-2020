@@ -65,9 +65,24 @@ extension UIViewController {
         for action in actions {
             alertController.addAction(.init(title: action.sheetActionText, style: .default, handler: { _ in
                 GameDataStore.shared.send(action)
+                if case .takeExam(let course) = action {
+                    let quizVC = QuizViewController.instantiateFromStoryboard()
+                    quizVC.course = course
+                    quizVC.delegate = self
+                    quizVC.modalPresentationStyle = .fullScreen
+                    self.present(quizVC, animated: true)
+                }
             }))
         }
         alertController.addAction(.init(title: "Cancel", style: .cancel, handler: nil))
         present(alertController, animated: true, completion: nil)
+    }
+}
+
+extension UIViewController: QuizViewControllerDelegate {
+    func submitResult(success: Bool, course: CourseData) {
+        if success {
+            GameDataStore.shared.send(.passCourse(course))
+        }
     }
 }

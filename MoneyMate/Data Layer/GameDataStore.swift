@@ -98,7 +98,9 @@ struct GameDataStore {
                 let duration = examDate.timeIntervalSince(enrollmentDate)
                 let elapsed = GameDataStore.shared.date.timeIntervalSince(enrollmentDate)
                 let prog = Float(elapsed / duration)
-                result.append(.takeExam(course))
+                if prog >= 1.0 {
+                    result.append(.takeExam(course))
+                }
             }
         } else if let job = jobs.first(where: { $0.name == name }) {
             if account.jobs.contains(job) {
