@@ -18,10 +18,23 @@ class MarketViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        tableView.layer.cornerRadius = 32
         setupTableView()
         NotificationCenter.default.addObserver(tableView as Any, selector: #selector(tableView.reloadData), name: .dataStoreWasUpdated, object: nil)
+        
     }
+    
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        setupNavigationBar()
+    }
+    
+//    override func viewDidLayoutSubviews() {
+//        super.viewDidLayoutSubviews()
+//        var size = tableView.contentSize
+//        size.height += 350
+//        let bounds = CGRect(origin: .zero, size: size)
+//        tableView.roundCorners(corners: [.topLeft, .topRight], radius: 32, bounds: bounds)
+//    }
     
     deinit {
         NotificationCenter.default.removeObserver(self)
@@ -38,20 +51,34 @@ extension MarketViewController: UITableViewDelegate, UITableViewDataSource {
         guard let cell = tableView.dequeueReusableCell(of: MarketSectionTableViewCell.self, for: indexPath) else {
             fatalError("TableView could not dequeue MarketSectionTableViewCell")
         }
-        cell.configure(with: dataSource[indexPath.row])
+        let row = indexPath.row
+        var model = dataSource[row]
+        model.isFirstSection = row == 0
+        cell.configure(with: model)
         cell.onTapItem = { [unowned self] name in
             self.presentItemActionsSheetIfNeeded(forItemWithName: name)
         }
         return cell
     }
+    
+    func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
+        return indexPath.row == 0 ? 374 : 350
+    }
 }
 
 private extension MarketViewController {
+    func setupNavigationBar() {
+        title = "Market"
+        navigationController?.navigationItem.largeTitleDisplayMode = .always
+        navigationController?.navigationBar.prefersLargeTitles = true
+        navigationController?.navigationBar.tintColor = .white
+        navigationController?.navigationItem.prompt = "Market"
+    }
+
     func setupTableView() {
         tableView.delegate = self
         tableView.dataSource = self
-        tableView.estimatedRowHeight = 300 // TODO: Check which is perfect
-        tableView.rowHeight = 350// UITableView.automaticDimension
+        tableView.estimatedRowHeight = 300
         tableView.register(cellType: MarketSectionTableViewCell.self)
     }
 }

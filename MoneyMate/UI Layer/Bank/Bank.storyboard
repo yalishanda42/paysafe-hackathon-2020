@@ -19,14 +19,14 @@
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="kc4-Q8-Lh1">
                                 <rect key="frame" x="0.0" y="44" width="414" height="175"/>
                                 <subviews>
-                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="$7,377,00.00" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Cnk-8J-Iqm">
-                                        <rect key="frame" x="16" y="0.0" width="382" height="30"/>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="$7,377,00.00" textAlignment="justified" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Cnk-8J-Iqm">
+                                        <rect key="frame" x="16" y="0.0" width="159" height="30"/>
                                         <fontDescription key="fontDescription" type="boldSystem" pointSize="25"/>
                                         <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         <nil key="highlightedColor"/>
                                     </label>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Available Balance" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="bTf-54-MMJ">
-                                        <rect key="frame" x="16" y="38" width="105" height="16"/>
+                                        <rect key="frame" x="16" y="38" width="159" height="16"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="13"/>
                                         <color key="textColor" white="1" alpha="0.70181399828767121" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         <nil key="highlightedColor"/>
@@ -38,16 +38,27 @@
                                             <constraint firstAttribute="height" constant="89" id="H68-h6-S1U"/>
                                         </constraints>
                                     </stackView>
+                                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="person.circle.fill" catalog="system" translatesAutoresizingMaskIntoConstraints="NO" id="1Is-KD-9ce">
+                                        <rect key="frame" x="340" y="0.5" width="42" height="41"/>
+                                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        <constraints>
+                                            <constraint firstAttribute="width" constant="42" id="iJo-3a-sdA"/>
+                                            <constraint firstAttribute="height" constant="42" id="lAK-eG-Fay"/>
+                                        </constraints>
+                                    </imageView>
                                 </subviews>
                                 <color key="backgroundColor" name="shamrockGreen"/>
                                 <constraints>
+                                    <constraint firstAttribute="trailing" secondItem="hkw-eM-uex" secondAttribute="trailing" constant="16" id="30j-XD-aY8"/>
+                                    <constraint firstItem="bTf-54-MMJ" firstAttribute="centerX" secondItem="Cnk-8J-Iqm" secondAttribute="centerX" id="3Kl-cu-r29"/>
                                     <constraint firstItem="bTf-54-MMJ" firstAttribute="top" secondItem="Cnk-8J-Iqm" secondAttribute="bottom" constant="8" id="7EJ-Ll-ELB"/>
                                     <constraint firstAttribute="bottom" secondItem="hkw-eM-uex" secondAttribute="bottom" constant="16" id="Dw6-Zz-2rv"/>
                                     <constraint firstItem="Cnk-8J-Iqm" firstAttribute="top" secondItem="kc4-Q8-Lh1" secondAttribute="top" id="F5r-aV-AR8"/>
+                                    <constraint firstItem="hkw-eM-uex" firstAttribute="leading" secondItem="kc4-Q8-Lh1" secondAttribute="leading" constant="16" id="Q4g-Pb-80t"/>
+                                    <constraint firstAttribute="trailing" secondItem="1Is-KD-9ce" secondAttribute="trailing" constant="32" id="Wee-hq-xRA"/>
                                     <constraint firstItem="bTf-54-MMJ" firstAttribute="leading" secondItem="Cnk-8J-Iqm" secondAttribute="leading" id="Xkc-b8-Hjd"/>
-                                    <constraint firstAttribute="trailing" secondItem="Cnk-8J-Iqm" secondAttribute="trailing" constant="16" id="dht-YF-5r3"/>
-                                    <constraint firstItem="hkw-eM-uex" firstAttribute="trailing" secondItem="Cnk-8J-Iqm" secondAttribute="trailing" id="gxH-8F-d4j"/>
-                                    <constraint firstItem="Cnk-8J-Iqm" firstAttribute="leading" secondItem="kc4-Q8-Lh1" secondAttribute="leading" constant="16" id="hc9-Ut-f2f"/>
+                                    <constraint firstItem="1Is-KD-9ce" firstAttribute="top" secondItem="kc4-Q8-Lh1" secondAttribute="top" id="bCl-vF-yRz"/>
                                     <constraint firstItem="hkw-eM-uex" firstAttribute="top" secondItem="bTf-54-MMJ" secondAttribute="bottom" constant="16" id="tGR-Fh-fO1"/>
                                     <constraint firstItem="hkw-eM-uex" firstAttribute="leading" secondItem="Cnk-8J-Iqm" secondAttribute="leading" id="wBb-or-VLz"/>
                                 </constraints>
@@ -58,11 +69,11 @@
                             </view>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="6pf-SV-dWa">
                                 <rect key="frame" x="0.0" y="510" width="414" height="386"/>
-                                <color key="backgroundColor" name="ashGray"/>
+                                <color key="backgroundColor" systemColor="secondarySystemBackgroundColor" red="0.94901960780000005" green="0.94901960780000005" blue="0.96862745100000003" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                             </view>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" bouncesZoom="NO" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="-1" estimatedSectionHeaderHeight="50" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="8uG-kf-ZAv">
                                 <rect key="frame" x="0.0" y="219" width="414" height="643"/>
-                                <color key="backgroundColor" name="ashGray"/>
+                                <color key="backgroundColor" systemColor="secondarySystemBackgroundColor" red="0.94901960780000005" green="0.94901960780000005" blue="0.96862745100000003" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                             </tableView>
                         </subviews>
                         <color key="backgroundColor" name="shamrockGreen"/>
@@ -97,9 +108,7 @@
         </scene>
     </scenes>
     <resources>
-        <namedColor name="ashGray">
-            <color red="0.76078431372549016" green="0.77254901960784317" blue="0.73333333333333328" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-        </namedColor>
+        <image name="person.circle.fill" catalog="system" width="64" height="60"/>
         <namedColor name="shamrockGreen">
             <color red="0.28627450980392155" green="0.62352941176470589" blue="0.40784313725490196" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </namedColor>

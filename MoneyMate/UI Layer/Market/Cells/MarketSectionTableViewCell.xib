@@ -17,7 +17,7 @@
                 <autoresizingMask key="autoresizingMask"/>
                 <subviews>
                     <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" dataMode="none" translatesAutoresizingMaskIntoConstraints="NO" id="M2D-mP-fgW">
-                        <rect key="frame" x="0.0" y="53" width="276" height="240"/>
+                        <rect key="frame" x="0.0" y="49.5" width="276" height="243.5"/>
                         <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
                             <constraint firstAttribute="height" relation="greaterThanOrEqual" constant="200" id="mu9-TJ-deA"/>
@@ -30,11 +30,11 @@
                         </collectionViewFlowLayout>
                     </collectionView>
                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="0f4-wY-GMX">
-                        <rect key="frame" x="0.0" y="0.0" width="276" height="37"/>
+                        <rect key="frame" x="0.0" y="0.0" width="276" height="33.5"/>
                         <subviews>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Title" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ugE-y6-2P5">
-                                <rect key="frame" x="16" y="8" width="244" height="29"/>
-                                <fontDescription key="fontDescription" type="boldSystem" pointSize="24"/>
+                                <rect key="frame" x="16" y="8" width="244" height="25.5"/>
+                                <fontDescription key="fontDescription" type="system" weight="medium" pointSize="21"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
@@ -64,6 +64,7 @@
             <connections>
                 <outlet property="collectionView" destination="M2D-mP-fgW" id="Yix-j2-K4j"/>
                 <outlet property="titleLabel" destination="ugE-y6-2P5" id="cWp-OV-UGl"/>
+                <outlet property="titleTopConstraint" destination="02X-Np-y1C" id="mzZ-FD-iLM"/>
             </connections>
             <point key="canvasLocation" x="-94.20289855072464" y="69.308035714285708"/>
         </tableViewCell>

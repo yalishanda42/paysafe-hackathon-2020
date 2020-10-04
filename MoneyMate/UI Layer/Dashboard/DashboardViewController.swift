@@ -17,10 +17,9 @@ class DashboardViewController: UIViewController {
         
     override func viewDidLoad() {
         super.viewDidLoad()
-        tableView.layer.cornerRadius = 32
         setupTableView()
-        moneyLabel.text = "\(GameDataStore.shared.account.money)"
-        dateLabel.setTitle(GameDataStore.shared.date.shortDateFormattedString, for: .normal) 
+        moneyLabel.text = Double(GameDataStore.shared.account.money).moneyString
+        dateLabel.setTitle(GameDataStore.shared.date.dashboardDataFormat, for: .normal)
         NotificationCenter.default.addObserver(self, selector: #selector(dataDidChange), name: .dataStoreWasUpdated, object: nil)
     }
     
@@ -91,8 +90,8 @@ private extension DashboardViewController {
     }
     
     @objc func dataDidChange() {
-        moneyLabel.text = "\(GameDataStore.shared.account.money)"
-        dateLabel.setTitle(GameDataStore.shared.date.shortDateFormattedString, for: .normal) 
+        moneyLabel.text = Double(GameDataStore.shared.account.money).moneyString
+        dateLabel.setTitle(GameDataStore.shared.date.dashboardDataFormat, for: .normal)
         tableView.reloadData()
     }
 }

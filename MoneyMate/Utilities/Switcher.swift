@@ -18,12 +18,10 @@ class Switcher {
 
     /// This will load the tabbar as the rootViewController
     static func changeRootToTab() {
-        DispatchQueue.main.async {
-            let tabVC = MainTabViewController.instantiateFromStoryboard()
-
-            changeRootTo(tabVC) { _ in
-                print("Switched to Main Tab Bar")
-            }
+        let tabVC = MainTabViewController.instantiateFromStoryboard()
+        
+        changeRootTo(tabVC) { _ in
+            print("Switched to Main Tab Bar")
         }
     }
     

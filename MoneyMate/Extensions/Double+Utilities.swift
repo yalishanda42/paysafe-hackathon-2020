@@ -13,7 +13,9 @@ extension Double {
         let formatter = NumberFormatter()
         formatter.numberStyle = .currency
         formatter.decimalSeparator = ","
+        formatter.currencyDecimalSeparator = ","
         formatter.currencySymbol = "$"
+        formatter.maximumFractionDigits = 0
         return formatter.string(from: (self as NSNumber))
     }
 }

@@ -95,7 +95,7 @@ private extension IntroExperienceViewController {
     
     func setupNavibationBar() {
         navigationController?.setNavigationBarHidden(false, animated: true)
-        navigationController?.clearBackground()
+        navigationController?.backgroundColor()
     }
     
     func setupSkipBarButton(isHidden: Bool = false) {
