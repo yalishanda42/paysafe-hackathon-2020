@@ -18,9 +18,18 @@ class MarketViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        tableView.layer.cornerRadius = 32
         setupTableView()
+        setupUI()
         NotificationCenter.default.addObserver(tableView as Any, selector: #selector(tableView.reloadData), name: .dataStoreWasUpdated, object: nil)
+        
+    }
+    
+    override func viewDidLayoutSubviews() {
+        super.viewDidLayoutSubviews()
+        var size = tableView.contentSize
+        size.height += 350
+        let bounds = CGRect(origin: .zero, size: size)
+        tableView.roundCorners(corners: [.topLeft, .topRight], radius: 32, bounds: bounds)
     }
     
     deinit {
@@ -47,11 +56,15 @@ extension MarketViewController: UITableViewDelegate, UITableViewDataSource {
 }
 
 private extension MarketViewController {
+    func setupUI() {
+        navigationController?.clearBackground()
+    }
+
     func setupTableView() {
         tableView.delegate = self
         tableView.dataSource = self
         tableView.estimatedRowHeight = 300 // TODO: Check which is perfect
-        tableView.rowHeight = 350// UITableView.automaticDimension
+        tableView.rowHeight = 350 // UITableView.automaticDimension
         tableView.register(cellType: MarketSectionTableViewCell.self)
     }
 }

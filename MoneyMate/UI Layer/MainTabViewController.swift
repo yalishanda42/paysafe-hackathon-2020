@@ -20,24 +20,30 @@ private extension MainTabViewController {
     func setupViewControllers() {
         var viewControllerList: [UIViewController] = []
 
+        // Dashboard Tab
         let dashboardVC = DashboardViewController.instantiateFromStoryboard()
         dashboardVC.tabBarItem = UITabBarItem(title: "Dashboard", image: nil, tag: 1)
         dashboardVC.tabBarItem.selectedImage =  nil //UIImage(named: "home_active_icon")
         viewControllerList.append(dashboardVC)
-
+        
+        // Merket Tab
+        let marketNavController = UINavigationController()
+        marketNavController.tabBarItem = UITabBarItem(title: "Market", image: nil, tag: 2)
+        marketNavController.tabBarItem.selectedImage = nil
+        
         let marketVC = MarketViewController.instantiateFromStoryboard()
-        marketVC.tabBarItem = UITabBarItem(title: "Market", image: nil, tag: 2)
-        marketVC.tabBarItem.selectedImage = nil //UIImage(named: "resourcesActive")
-        viewControllerList.append(marketVC)
+        marketNavController.pushViewController(marketVC, animated: false)
+        viewControllerList.append(marketNavController)
 
-        let navController = UINavigationController()
-        navController.tabBarItem = UITabBarItem(title: "Bank", image: resizeForTabBarImage("bank"), tag: 3)
-        navController.tabBarItem.selectedImage = resizeForTabBarImage("bank.fill")
+        // Bank Tab
+        let bankNavController = UINavigationController()
+        bankNavController.tabBarItem = UITabBarItem(title: "Bank", image: resizeForTabBarImage("bank"), tag: 3)
+        bankNavController.tabBarItem.selectedImage = resizeForTabBarImage("bank.fill")
 
         let bankVC = BankViewController.instantiateFromStoryboard()
-        navController.pushViewController(bankVC, animated: true)
-
-        viewControllerList.append(navController)
+        bankNavController.pushViewController(bankVC, animated: false)
+        viewControllerList.append(bankNavController)
+        
         viewControllers = viewControllerList
     }
     

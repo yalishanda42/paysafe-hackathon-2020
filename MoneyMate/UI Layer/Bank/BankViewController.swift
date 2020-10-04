@@ -90,11 +90,21 @@ class BankViewController: UIViewController {
 
 private extension BankViewController {
     func setupUI() {
-        navigationController?.clearBackground()
+        setupNavigationBar()
         setupBankActions()
         setupTableView()
         
         availableBalanceLabel.text = dataSource.balance.moneyString
+    }
+    
+    func setupNavigationBar() {
+        navigationController?.clearBackground()
+
+        let button = UIButton()
+        let dateString = GameDataStore.shared.date.shortDateFormattedString
+        button.setTitle(dateString, for: .normal)
+        button.setTitleColor(.black, for: .normal)
+        navigationItem.titleView = button
     }
     
     func setupTableView() {
