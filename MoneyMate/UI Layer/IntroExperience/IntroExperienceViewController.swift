@@ -108,7 +108,7 @@ private extension IntroExperienceViewController {
     }
         
     func updateButtonsUI(isLastPage: Bool = false) {
-        let primaryButtonText = isLastPage ? "Start First Quize" : "Next"
+        let primaryButtonText = isLastPage ? "Start First Quiz" : "Next"
         primaryButton.setTitle(primaryButtonText, for: .normal)
 //        secondaryButton.isHidden = !isLastPage
 //        setupSkipBarButton(isHidden: isLastPage)

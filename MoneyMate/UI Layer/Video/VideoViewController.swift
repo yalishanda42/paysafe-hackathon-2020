@@ -36,12 +36,12 @@ class VideoViewController: UIViewController {
     }
     
     @IBAction func yesButtonTapped(_ sender: Any) {
-        #warning("TODO: Add 1000$ to the account")
+        GameDataStore.shared.account.money = 1000
         Switcher.changeRootToTab()
     }
     
     @IBAction func noButtonTapped(_ sender: Any) {
-        #warning("TODO: Add 500$ to the account")
+        GameDataStore.shared.account.money = 500
         Switcher.changeRootToTab()
     }
     
