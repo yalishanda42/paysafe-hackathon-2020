@@ -105,7 +105,7 @@ struct GameDataStore {
         } else if let job = jobs.first(where: { $0.name == name }) {
             if account.jobs.contains(job) {
                 result.append(.leaveJob(job))
-            } else {
+            } else if Set(job.requiredCourses).isSubset(of: account.completedCourses.map { $0.name }) {
                 result.append(.startJob(job))
             }
         } else if let item = items.first(where: { $0.name == name }) {

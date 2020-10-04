@@ -14,18 +14,18 @@ struct MarketItemModel: Codable {
     var imageTitle: String
     var description: String
     var details: [DetailsModel]
-    var requirements: [String]
+    var requirements: [RequirementModel]
 }
 
 struct DetailsModel: Codable {
     var title: String
     var value: String
 }
-//
-//struct RequirementModel: Codable {
-//    var title: String
-//    var value: [String]
-//}
+
+struct RequirementModel: Codable {
+    var title: String
+    var isFullfilled: Bool
+}
 
 extension MarketItemModel {
     init(with data: CourseData) {
@@ -46,8 +46,17 @@ extension MarketItemModel {
         self.details = [
             .init(title: "Salary", value: "\(data.income.value) / \(data.income.regularity.rawValue)"),
         ]
-        self.requirements = data.requiredCourses
-    }
+        self.requirements = data.requiredCourses.map { courseName in
+            .init(
+                title: courseName,
+                isFullfilled: GameDataStore.shared.account
+                    .completedCourses
+                    .map { course in
+                        course.name
+                    }.contains(courseName)
+            )
+        }
+     }
     
     init(with data: ItemData) {
         self.title = data.name

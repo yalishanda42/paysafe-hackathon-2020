@@ -70,9 +70,10 @@ class ItemCollectionViewCell: UICollectionViewCell {
         requirementsStackView.addArrangedSubview(titleLabel)
         
         for requirement in model.requirements {
-            let valueLable = createLabel(with: requirement,
+            let valueLable = createLabel(with: requirement.title,
                                          font: .systemFont(ofSize: 15),
                                          alignment: .center)
+            valueLable.textColor = requirement.isFullfilled ? .systemGreen : .systemRed
             requirementsStackView.addArrangedSubview(valueLable)
         }
         
