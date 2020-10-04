@@ -343,6 +343,7 @@ struct ItemData: Codable, Hashable, Equatable, Nameable {
 struct QuestData: Codable, Hashable, Equatable, Nameable {
     let name: String
     let description: String
+    let shortDescription: String
     let unlockingRequirementsQuests: [String]
     let unlockingRequirementsCourses: [String]
     let completionRequirementsCourses: [String]

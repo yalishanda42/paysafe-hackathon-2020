@@ -1,6 +1,7 @@
 [
     {
         "name": "Education",
+        "shortDescription": "Educate yourself and start the dream job.",
         "description": "Invest some time and money in your education and find your desired job with it.",
         "unlockingRequirementsQuests": [],
         "unlockingRequirementsCourses": [],
@@ -18,6 +19,7 @@
     },
     {
         "name": "Real Estate Loan",
+        "shortDescription": "Loan a house and then make money from it.",
         "description": "Buy some real estate using a bank loan and then turn it into another source of your income.",
         "unlockingRequirementsQuests": [
             "Education"
@@ -37,6 +39,7 @@
     },
     {
         "name": "You, so you are an IT...",
+        "shortDescription": "A friend gave you an interesting idea.",
         "description": "A friend told you about this genius idea: make a website for the business of his relative!",
         "unlockingRequirementsQuests": [
             "Real Estate Loan"
@@ -68,6 +71,7 @@
     },
     {
         "name": "Yo, wanna be famous?",
+        "shortDescription": "Looks like some one has noticed your skills!",
         "description": "You have got luck! A big record label noticed your skills and offers you a contract. The reward is very promising... looks like somebody is getting rich!",
         "unlockingRequirementsQuests": [
             "Real Estate Loan"
