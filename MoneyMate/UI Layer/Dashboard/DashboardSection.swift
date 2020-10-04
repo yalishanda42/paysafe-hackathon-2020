@@ -83,11 +83,11 @@ extension DashboardItemViewModel {
         
         if GameDataStore.shared.account
             .ongoingCourses.contains(model) {
-            let duration = model.examDate.timeIntervalSince(model.enrollmentDate)
-            let elapsed = GameDataStore.shared.date.timeIntervalSince(model.enrollmentDate)
-            let prog = Float(elapsed / duration)
-            self.descriptions = prog >= 1.0 ? ["Take exam!"] : []
-            self.progress = prog
+//            let duration = model.examDate.timeIntervalSince(model.enrollmentDate)
+//            let elapsed = GameDataStore.shared.date.timeIntervalSince(model.enrollmentDate)
+//            let prog = Float(elapsed / duration)
+            self.descriptions = /*prog >= 1.0 ? ["Take exam!"] :*/ []
+            self.progress = nil//prog
         } else {
             self.progress = nil
             self.descriptions = []

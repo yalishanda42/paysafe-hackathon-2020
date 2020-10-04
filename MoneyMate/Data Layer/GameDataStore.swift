@@ -24,18 +24,39 @@ struct GameDataStore {
         }
     }
     
+    var marketSections: [MarketSection] {
+        return [
+            .init(with: courses),
+            .init(with: jobs),
+            .init(with: items),
+        ]
+    }
+    
+    // MARK: - DATA STORE
     
     var date = Date()
     var account = AccountData()
     var ranking: [AccountData] = []
     var quests: [QuestData] = getDataFromJson()
-    var marketSections: [MarketSection] = getDataFromJson()
+    // -- marketplace --
+    var courses: [CourseData] = getDataFromJson()
+    var jobs: [JobData] = getDataFromJson()
+    var items: [ItemData] = getDataFromJson()
+    // -----------------
+    
+    
+    // MARK: - ACTIONS
+    
+    // TODO
+    
+    // MARK: - HELPERS
     
     private static func getDataFromJson<T: Codable>() -> [T] {
         do {
             let decoder = JSONDecoder()
             let resource = String(describing: T.self)
-            return try decoder.decodeJsonResource(resource, model: [T].self) ?? []
+            let result = try decoder.decodeJsonResource(resource, model: [T].self) ?? []
+            return result
         } catch {
             fatalError("Json Parser: \(error)")
         }
@@ -61,9 +82,11 @@ struct JobData: Hashable, Codable, Equatable {
 struct CourseData: Codable, Hashable, Equatable {
     let name: String
     let description: String
+    let cost: Int
     let quiz: QuizData
-    let enrollmentDate: Date
-    let examDate: Date
+    let durationInDays: Int
+    // let enrollmentDate: Date
+    // let examDate: Date
 }
 
 struct QuizData: Codable, Hashable, Equatable {
@@ -83,6 +106,7 @@ struct AnswerData: Codable, Hashable, Equatable {
 struct ItemData: Codable, Hashable, Equatable {
     let name: String
     let description: String
+    let cost: Int
     let income: Income?
     let loan: Loan?
     

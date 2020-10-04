@@ -52,6 +52,7 @@
             {
                 "name": "Website",
                 "description": "The website you made for the relative of your friend.",
+                "cost": 1500,
                 "income": {
                     "value": 500,
                     "regularity": "monthly"
@@ -80,6 +81,7 @@
             {
                 "name": "Record Label Contract",
                 "description": "The contract you made with the record label that noticed you.",
+                "cost": 5000,
                 "income": {
                     "value": 10000,
                     "regularity": "monthly"

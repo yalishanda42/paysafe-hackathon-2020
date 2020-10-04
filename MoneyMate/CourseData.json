@@ -1,0 +1,127 @@
+[
+    {
+        "name": "Web Development",
+        "description": "Enter the IT world with web development to unlock new opportunities.",
+        "cost": 400,
+        "durationInDays": 7,
+        "quiz": {
+            "questions": [
+                {
+                    "text": "Which of the following is not a programming language?",
+                    "answers": [
+                        {
+                            "text": "HTML",
+                            "isCorrect": true
+                        },
+                        {
+                            "text": "PHP",
+                            "isCorrect": false
+                        },
+                        {
+                            "text": "JavaScript",
+                            "isCorrect": false
+                        },
+                        {
+                            "text": "Java",
+                            "isCorrect": false
+                        }
+                    ]
+                },
+                {
+                    "text": "Which of the following is not an HTTP request method?",
+                    "answers": [
+                        {
+                            "text": "DELETE",
+                            "isCorrect": false
+                        },
+                        {
+                            "text": "POST",
+                            "isCorrect": false
+                        },
+                        {
+                            "text": "PUT",
+                            "isCorrect": false
+                        },
+                        {
+                            "text": "PULL",
+                            "isCorrect": true
+                        }
+                    ]
+                },
+                {
+                    "text": "Who are the best web developers?",
+                    "answers": [
+                        {
+                            "text": "Front-enders",
+                            "isCorrect": false
+                        },
+                        {
+                            "text": "Back-enders",
+                            "isCorrect": false
+                        },
+                        {
+                            "text": "Full-stackers",
+                            "isCorrect": false
+                        },
+                        {
+                            "text": "Spiders",
+                            "isCorrect": true
+                        }
+                    ]
+                }
+            ]
+        }
+    },
+    {
+        "name": "Music Production",
+        "description": "Always wanted to create the perfect beats? This course is for you.",
+        "cost": 100,
+        "durationInDays": 2,
+        "quiz": {
+            "questions": [
+                {
+                    "text": "Which of the following notes is enharmonic to Db (D flat)?",
+                    "answers": [
+                        {
+                            "text": "C",
+                            "isCorrect": false
+                        },
+                        {
+                            "text": "C#",
+                            "isCorrect": true
+                        },
+                        {
+                            "text": "D",
+                            "isCorrect": true
+                        },
+                        {
+                            "text": "D#",
+                            "isCorrect": false
+                        }
+                    ]
+                },
+                {
+                    "text": "Which of the following note names is not a programming language as well?",
+                    "answers": [
+                        {
+                            "text": "C",
+                            "isCorrect": false
+                        },
+                        {
+                            "text": "C#",
+                            "isCorrect": false
+                        },
+                        {
+                            "text": "D",
+                            "isCorrect": false
+                        },
+                        {
+                            "text": "G",
+                            "isCorrect": true
+                        }
+                    ]
+                }
+            ]
+        }
+    }
+]

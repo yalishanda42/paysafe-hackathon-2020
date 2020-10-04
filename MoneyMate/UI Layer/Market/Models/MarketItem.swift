@@ -26,3 +26,40 @@ struct DetailsModel: Codable {
 //    var title: String
 //    var value: [String]
 //}
+
+extension MarketItemModel {
+    init(with data: CourseData) {
+        self.title = data.name
+        self.imageTitle = "book"
+        self.description = data.description
+        self.details = [
+            .init(title: "Price", value: "\(data.cost)"),
+            .init(title: "Duration", value: "\(data.durationInDays) days")
+        ]
+        self.requirements = []
+    }
+    
+    init(with data: JobData) {
+        self.title = data.name
+        self.imageTitle = "briefcase"
+        self.description = data.description
+        self.details = [
+            .init(title: "Salary", value: "\(data.income.value) / \(data.income.regularity.rawValue)"),
+        ]
+        self.requirements = []
+        #warning("TODO")
+    }
+    
+    init(with data: ItemData) {
+        self.title = data.name
+        self.imageTitle = "house"
+        self.description = data.description
+        self.details = [
+            .init(title: "Buy Now:", value: "\(data.cost)"),
+        ]
+        if let loan = data.loan {
+            self.details.append(.init(title: "Bank Loan", value: "\(loan.value) / \(loan.regularity.rawValue)"))
+        }
+        self.requirements = []
+    }
+}

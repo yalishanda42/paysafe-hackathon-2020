@@ -12,12 +12,19 @@ class MarketViewController: UIViewController {
     
     @IBOutlet private weak var tableView: UITableView!
     
-    private lazy var dataSource = GameDataStore.shared.marketSections
+    private var dataSource: [MarketSection] {
+        GameDataStore.shared.marketSections
+    }
     
     override func viewDidLoad() {
         super.viewDidLoad()
         tableView.layer.cornerRadius = 32
         setupTableView()
+        NotificationCenter.default.addObserver(self, selector: #selector(tableView.reloadData), name: .dataStoreWasUpdated, object: nil)
+    }
+    
+    deinit {
+        NotificationCenter.default.removeObserver(self)
     }
 }
 
