@@ -9,6 +9,8 @@
 /* Begin PBXBuildFile section */
 		741FA8382529651D001DE305 /* CourseData.json in Resources */ = {isa = PBXBuildFile; fileRef = 741FA8372529651D001DE305 /* CourseData.json */; };
 		741FA83B25296523001DE305 /* JobData.json in Resources */ = {isa = PBXBuildFile; fileRef = 741FA83A25296523001DE305 /* JobData.json */; };
+		7447D59E2529E95200190C4B /* Leaderboard.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 7447D59D2529E95200190C4B /* Leaderboard.storyboard */; };
+		7447D5A12529E9DB00190C4B /* LeaderboardViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7447D5A02529E9DB00190C4B /* LeaderboardViewController.swift */; };
 		74F8D033252954350041A2BE /* ItemData.json in Resources */ = {isa = PBXBuildFile; fileRef = 74F8D032252954350041A2BE /* ItemData.json */; };
 		74FD4DB125286B0D00B69B78 /* Quiz.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 74FD4DB025286B0D00B69B78 /* Quiz.storyboard */; };
 		74FD4DB425286BB700B69B78 /* QuizViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 74FD4DB325286BB600B69B78 /* QuizViewController.swift */; };
@@ -83,6 +85,8 @@
 /* Begin PBXFileReference section */
 		741FA8372529651D001DE305 /* CourseData.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = CourseData.json; sourceTree = "<group>"; };
 		741FA83A25296523001DE305 /* JobData.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = JobData.json; sourceTree = "<group>"; };
+		7447D59D2529E95200190C4B /* Leaderboard.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Leaderboard.storyboard; sourceTree = "<group>"; };
+		7447D5A02529E9DB00190C4B /* LeaderboardViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LeaderboardViewController.swift; sourceTree = "<group>"; };
 		74F8D032252954350041A2BE /* ItemData.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = ItemData.json; sourceTree = "<group>"; };
 		74FD4DB025286B0D00B69B78 /* Quiz.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Quiz.storyboard; sourceTree = "<group>"; };
 		74FD4DB325286BB600B69B78 /* QuizViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QuizViewController.swift; sourceTree = "<group>"; };
@@ -167,6 +171,15 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		7447D59C2529E8FF00190C4B /* Leaderboard */ = {
+			isa = PBXGroup;
+			children = (
+				7447D59D2529E95200190C4B /* Leaderboard.storyboard */,
+				7447D5A02529E9DB00190C4B /* LeaderboardViewController.swift */,
+			);
+			path = Leaderboard;
+			sourceTree = "<group>";
+		};
 		74FD4DAE25286A5B00B69B78 /* Quiz */ = {
 			isa = PBXGroup;
 			children = (
@@ -279,6 +292,7 @@
 				F3990F602528614000E87E2A /* Dashboard */,
 				74FD4DAE25286A5B00B69B78 /* Quiz */,
 				74FD4DC6252896F500B69B78 /* QuestDetails */,
+				7447D59C2529E8FF00190C4B /* Leaderboard */,
 			);
 			path = "UI Layer";
 			sourceTree = "<group>";
@@ -474,6 +488,7 @@
 				741FA8382529651D001DE305 /* CourseData.json in Resources */,
 				74FD4DC82528974400B69B78 /* QuestDetails.storyboard in Resources */,
 				F3990EF02528586B00E87E2A /* MainTab.storyboard in Resources */,
+				7447D59E2529E95200190C4B /* Leaderboard.storyboard in Resources */,
 				F3F85C102529A7560030C674 /* IntroExperience.storyboard in Resources */,
 				F3990F712528629700E87E2A /* Market.storyboard in Resources */,
 				F3F85BFF2528F8470030C674 /* BankTableViewCell.xib in Resources */,
@@ -544,6 +559,7 @@
 				74FD4DB425286BB700B69B78 /* QuizViewController.swift in Sources */,
 				F3990F5125285FFF00E87E2A /* UINavigationController+Extensions.swift in Sources */,
 				F3990F8325287B7C00E87E2A /* MarketSection.swift in Sources */,
+				7447D5A12529E9DB00190C4B /* LeaderboardViewController.swift in Sources */,
 				F3990F4F25285FFF00E87E2A /* UIButton+Extensions.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

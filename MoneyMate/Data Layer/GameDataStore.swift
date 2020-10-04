@@ -38,8 +38,8 @@ struct GameDataStore {
     // MARK: - DATA STORE
     
     var date = Date()
-    var account = AccountData()
-    var ranking: [AccountData] = []
+    var account = AccountData(names: "Kole Kolev", dummyNetWorth: 1000)
+    var ranking: [AccountData] = [.init(names: "Peter Petrov", dummyNetWorth: 800), .init(names: "Hristo Hristov", dummyNetWorth: 500), .init(names: "Ivan Ivanov", dummyNetWorth: 420), .init(names: "Bogdan Bogdanov", dummyNetWorth: 312)]
     var quests: [QuestData] = getDataFromJson()
     // -- marketplace --
     var courses: [CourseData] = getDataFromJson()
@@ -285,6 +285,13 @@ struct AccountData {
         else { return nil }
         return beginDate.addingTimeInterval(TimeInterval(course.durationInDays) * Regularity.daily.timeInterval)
     }
+    
+    var names: String
+    var netWorth: Int {
+        money + items.map { $0.cost }.reduce(0, +)
+    }
+    var dummyNetWorth: Int
+
 }
 
 protocol Nameable {
