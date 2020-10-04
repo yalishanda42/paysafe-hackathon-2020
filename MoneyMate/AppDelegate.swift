@@ -20,8 +20,9 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         window = UIWindow(frame: UIScreen.main.bounds)
         window?.makeKeyAndVisible()
         
-        let mainTabVc = MainTabViewController.instantiateFromStoryboard()
-        window?.rootViewController = mainTabVc
+        Switcher.changeToIntroExperience()
+//        let mainTabVc = MainTabViewController.instantiateFromStoryboard()
+//        window?.rootViewController = mainTabVc
         return true
     }
 }
