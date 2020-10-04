@@ -83,13 +83,15 @@ extension DashboardItemViewModel {
         self.isAsset = false
         self.isQuest = false
         
-        if GameDataStore.shared.account
-            .ongoingCourses.contains(model) {
-//            let duration = model.examDate.timeIntervalSince(model.enrollmentDate)
-//            let elapsed = GameDataStore.shared.date.timeIntervalSince(model.enrollmentDate)
-//            let prog = Float(elapsed / duration)
-            self.descriptions = /*prog >= 1.0 ? ["Take exam!"] :*/ []
-            self.progress = nil//prog
+        if GameDataStore.shared.account.ongoingCourses.contains(model),
+           let enrollmentDate = GameDataStore.shared.account.courseBeginDate[model.name],
+           let examDate = GameDataStore.shared.account.examDate(forCourseName: model.name)
+        {
+            let duration = examDate.timeIntervalSince(enrollmentDate)
+            let elapsed = GameDataStore.shared.date.timeIntervalSince(enrollmentDate)
+            let prog = Float(elapsed / duration)
+            self.descriptions = prog >= 1.0 ? ["Take exam!"] : []
+            self.progress = prog
         } else {
             self.progress = nil
             self.descriptions = []
@@ -106,20 +108,23 @@ extension DashboardItemViewModel {
         var prog: Float? = nil
         self.isQuest = false
         
-        if let loan = model.loan {
-            #warning("TODO: calculate progress based on loan start date")
-//            let duration = loan.startDate
-//                .addingTimeInterval(loan.regularity.timeInterval * Double(loan.paymentsCount))
-//                .timeIntervalSince(loan.startDate)
-//            let elapsed = GameDataStore.shared.date
-//                .timeIntervalSince(loan.startDate)
-//            prog = Float(elapsed / duration)
+        if let loan = model.loan, let loanStartDate = GameDataStore.shared.account.itemLoanBeginDate[model.name] {
+            let duration = loanStartDate
+                .addingTimeInterval(loan.regularity.timeInterval * Double(loan.paymentsCount))
+                .timeIntervalSince(loanStartDate)
+            let elapsed = GameDataStore.shared.date
+                .timeIntervalSince(loanStartDate)
+            prog = Float(elapsed / duration)
             desc.append("- \(loan.value) / \(loan.regularity.rawValue)")
             desc.append("Total Loan: \(loan.paymentsCount * loan.value)")
         }
         
-        if let income = model.income {
-            desc.append("+ \(income.value) / \(income.regularity.rawValue)")
+        if let rent = model.rent, GameDataStore.shared.account.itemRentBeginDate[model.name] != nil {
+            desc.append("Rent: + \(rent.value) / \(rent.regularity.rawValue)")
+        }
+        
+        if let income = model.constantIncome {
+            desc.append("Income: + \(income.value) / \(income.regularity.rawValue)")
         }
         
         self.descriptions = desc

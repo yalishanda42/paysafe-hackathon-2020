@@ -2,6 +2,15 @@
     {
         "name": "A very cozy apartment",
         "description": "A nice apartment in the center of the city.",
-        "cost": 3500
+        "cost": 3500,
+        "rent": {
+            "value": 80,
+            "regularity": "weekly"
+        },
+        "loan": {
+            "value": 120,
+            "regularity": "daily",
+            "paymentsCount": 12
+        },
     }
 ]

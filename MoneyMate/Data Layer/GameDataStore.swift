@@ -63,6 +63,7 @@ struct GameDataStore {
         case lendItem(ItemData)
         case stopLendingItem(ItemData)
         case sendItem(ItemData)
+        case sellItem(ItemData)
         
         // DEBUG
         case forwardTimeWith1Day
@@ -79,6 +80,7 @@ struct GameDataStore {
                 case .lendItem: return "Lend"
                 case .stopLendingItem: return "Stop Lending"
                 case .sendItem: return "Send"
+                case .sellItem: return "Sell"
                 default: return ""
             }
         }
@@ -90,8 +92,12 @@ struct GameDataStore {
         if let course = courses.first(where: { $0.name == name }) {
             if !(account.ongoingCourses + account.completedCourses).contains(course) {
                 result.append(.enrollForCourse(course))
-            } else if account.ongoingCourses.contains(course) {
-                // TODO: ?? How to understand when it is exam time?
+            } else if account.ongoingCourses.contains(course),
+                  let enrollmentDate = GameDataStore.shared.account.courseBeginDate[course.name],
+                  let examDate = GameDataStore.shared.account.examDate(forCourseName: course.name) {
+                let duration = examDate.timeIntervalSince(enrollmentDate)
+                let elapsed = GameDataStore.shared.date.timeIntervalSince(enrollmentDate)
+                let prog = Float(elapsed / duration)
                 result.append(.takeExam(course))
             }
         } else if let job = jobs.first(where: { $0.name == name }) {
@@ -107,8 +113,13 @@ struct GameDataStore {
                     result.append(.loanItem(item))
                 }
             } else {
-                // TODO: Understand when the user lends an item
+                if item.rent != nil  {
+                    result.append(account.itemRentBeginDate[item.name] == nil ? .lendItem(item) : .stopLendingItem(item))
+                }
                 result.append(.sendItem(item))
+                if account.itemLoanBeginDate[item.name] == nil {
+                    result.append(.sellItem(item))
+                }
             }
         }
         
@@ -127,8 +138,8 @@ struct GameDataStore {
             if account.money > course.cost {
                 account.ongoingCourses.append(course)
                 account.money -= course.cost
+                account.courseBeginDate[course.name] = date
             }
-            // TODO: save time
         case .takeExam(_):
             break
         case .passCourse(let course):
@@ -136,32 +147,35 @@ struct GameDataStore {
             account.completedCourses.append(course)
         case .startJob(let job):
             account.jobs.append(job)
-            // TODO: save time
+            account.jobBeginDate[job.name] = date
         case .leaveJob(let job):
             account.jobs.removeAll { $0 == job }
         case .buyItem(let item):
             if account.money > item.cost{
                 account.items.append(item)
                 account.money -= item.cost
-                // TODO: save time
             }
         case .loanItem(let item):
-            break // TODO: loan
+            account.itemLoanBeginDate[item.name] = date
         case .lendItem(let item):
-            break // TODO: lend
+            account.itemRentBeginDate[item.name] = date
         case .stopLendingItem(let item):
-            break // TODO: stop lending
+            account.itemRentBeginDate[item.name] = nil
+        case .sellItem(let item):
+            account.money += item.cost / 2
+            account.itemRentBeginDate[item.name] = nil
+            account.itemLoanBeginDate[item.name] = nil //just in case
         case .sendItem(let item):
-            break // TODO: send to another player
+            break // TODO: send to another player?
         case .forwardTimeWith1Day:
-            date = date.addingTimeInterval(60*60*24)
+            date = date.addingTimeInterval(Regularity.daily.timeInterval)
             dateTriggers()
         }
     }
     
     mutating private func dateTriggers() {
-        // TODO: pay loans, earn salaries
-        // for food -$10
+        #warning("TODO: pay loans, rents, salaries accordingly")
+        // for food -$10 daily
         account.money -= 10
     }
     
@@ -187,6 +201,18 @@ struct AccountData {
     var items: [ItemData] = []
     var ongoingQuests: [QuestData] = []
     var completedQuests: [QuestData] = []
+    
+    var courseBeginDate: [String: Date] = [:]
+    var jobBeginDate: [String: Date] = [:]
+    var itemLoanBeginDate: [String: Date] = [:]
+    var itemRentBeginDate: [String: Date] = [:]
+    
+    func examDate(forCourseName name: String) -> Date? {
+        guard let beginDate = courseBeginDate[name],
+              let course = ongoingCourses.first(where: { $0.name == name })
+        else { return nil }
+        return beginDate.addingTimeInterval(TimeInterval(course.durationInDays) * Regularity.daily.timeInterval)
+    }
 }
 
 protocol Nameable {
@@ -206,8 +232,6 @@ struct CourseData: Codable, Hashable, Equatable, Nameable {
     let cost: Int
     let quiz: QuizData
     let durationInDays: Int
-    // let enrollmentDate: Date
-    // let examDate: Date
 }
 
 struct QuizData: Codable, Hashable, Equatable {
@@ -228,11 +252,12 @@ struct ItemData: Codable, Hashable, Equatable, Nameable {
     let name: String
     let description: String
     let cost: Int
-    let income: Income?
+    let constantIncome: Income?
+    let rent: Income?
     let loan: Loan?
     
     var isAsset: Bool {
-        income != nil
+        constantIncome != nil || GameDataStore.shared.account.itemRentBeginDate[name] != nil
     }
 }
 
