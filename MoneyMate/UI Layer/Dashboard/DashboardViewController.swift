@@ -50,6 +50,13 @@ extension DashboardViewController: UITableViewDelegate, UITableViewDataSource {
         cell.onTapItem = { [unowned self] name, isQuest in
             if isQuest {
                 let questVC = QuestDetailsViewController.instantiateFromStoryboard()
+                if GameDataStore.shared.account.completedQuests.map({$0.name}).contains(name) {
+                    questVC.buttonsConfig = .noButtons
+                } else if let quest = GameDataStore.shared.account.ongoingQuests.first(where: { $0.name == name }) {
+                    questVC.buttonsConfig = quest.isCompleted ? .collectReward : .noButtons
+                } else {
+                    questVC.buttonsConfig = .acceptAndDismiss
+                }
                 questVC.quest = GameDataStore.shared.quests.first { $0.name == name }
                 questVC.delegate = self
                 self.present(questVC, animated: true)
@@ -91,6 +98,10 @@ private extension DashboardViewController {
 }
 
 extension DashboardViewController: QuestDetailsViewControllerDelegate {
+    func collectReward(_ quest: QuestData) {
+        GameDataStore.shared.send(.accomplishQuest(quest))
+    }
+    
     func acceptQuest(_ quest: QuestData) {
         GameDataStore.shared.send(.acceptQuest(quest))
     }

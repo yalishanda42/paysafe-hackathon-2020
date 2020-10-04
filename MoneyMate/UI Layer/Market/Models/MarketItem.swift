@@ -14,18 +14,18 @@ struct MarketItemModel: Codable {
     var imageTitle: String
     var description: String
     var details: [DetailsModel]
-    var requirements: [String]
+    var requirements: [RequirementModel]
 }
 
 struct DetailsModel: Codable {
     var title: String
     var value: String
 }
-//
-//struct RequirementModel: Codable {
-//    var title: String
-//    var value: [String]
-//}
+
+struct RequirementModel: Codable {
+    var title: String
+    var isFullfilled: Bool
+}
 
 extension MarketItemModel {
     init(with data: CourseData) {
@@ -44,20 +44,33 @@ extension MarketItemModel {
         self.imageTitle = "briefcase"
         self.description = data.description
         self.details = [
-            .init(title: "Salary", value: "\(data.income.value) / \(data.income.regularity.rawValue)"),
+            .init(title: "Salary", value: "$\(data.income.value)/\(data.income.regularity.rawValue)"),
         ]
-        self.requirements = data.requiredCourses
-    }
+        self.requirements = data.requiredCourses.map { courseName in
+            .init(
+                title: courseName,
+                isFullfilled: GameDataStore.shared.account
+                    .completedCourses
+                    .map { course in
+                        course.name
+                    }.contains(courseName)
+            )
+        }
+     }
     
     init(with data: ItemData) {
         self.title = data.name
         self.imageTitle = "house"
         self.description = data.description
         self.details = [
-            .init(title: "Buy Now:", value: "\(data.cost)"),
+            .init(title: "Buy Now", value: "\(data.cost)"),
         ]
         if let loan = data.loan {
-            self.details.append(.init(title: "Bank Loan", value: "\(loan.value) / \(loan.regularity.rawValue)"))
+            self.details.append(.init(title: "Bank Loan", value: "$\(loan.value)/\(loan.regularity.rawValue)"))
+        }
+        
+        if let rent = data.rent {
+            self.details.append(.init(title: "Rent", value: "$\(rent.value)/\(rent.regularity.rawValue)"))
         }
         self.requirements = []
     }
