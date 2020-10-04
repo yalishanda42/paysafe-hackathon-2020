@@ -39,6 +39,11 @@ class MarketViewController: UIViewController {
     deinit {
         NotificationCenter.default.removeObserver(self)
     }
+    
+    @IBAction func onTapProfile(_ sender: Any) {
+        let rankVC = LeaderboardViewController.instantiateFromStoryboard()
+        present(rankVC, animated: true)
+    }
 }
 
 

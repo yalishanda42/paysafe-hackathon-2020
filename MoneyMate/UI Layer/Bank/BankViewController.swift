@@ -89,6 +89,11 @@ class BankViewController: UIViewController {
     @objc func updateBalance() {
         availableBalanceLabel.text = Double(GameDataStore.shared.account.money).moneyString
     }
+    
+    @IBAction func onTapProfile(_ sender: Any) {
+        let rankVC = LeaderboardViewController.instantiateFromStoryboard()
+        present(rankVC, animated: true)
+    }
 }
 
 private extension BankViewController {

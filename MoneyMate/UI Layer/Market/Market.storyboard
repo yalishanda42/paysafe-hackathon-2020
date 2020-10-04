@@ -1,10 +1,13 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="15705" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="4Y0-np-Yq8">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="17503.1" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="4Y0-np-Yq8">
     <device id="retina6_1" orientation="portrait" appearance="light"/>
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="15706"/>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="17502"/>
+        <capability name="Image references" minToolsVersion="12.0"/>
         <capability name="Named colors" minToolsVersion="9.0"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="System colors in document resources" minToolsVersion="11.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
@@ -18,7 +21,7 @@
                         <subviews>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" bounces="NO" alwaysBounceVertical="YES" showsHorizontalScrollIndicator="NO" bouncesZoom="NO" dataMode="prototypes" style="plain" separatorStyle="default" allowsSelection="NO" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="qog-W4-LED">
                                 <rect key="frame" x="0.0" y="120" width="414" height="742"/>
-                                <color key="backgroundColor" systemColor="secondarySystemBackgroundColor" red="0.94901960780000005" green="0.94901960780000005" blue="0.96862745100000003" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <color key="backgroundColor" systemColor="secondarySystemBackgroundColor"/>
                             </tableView>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="x0n-rs-FRD">
                                 <rect key="frame" x="0.0" y="0.0" width="414" height="120"/>
@@ -29,25 +32,38 @@
                                         <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         <nil key="highlightedColor"/>
                                     </label>
-                                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="person.circle.fill" catalog="system" translatesAutoresizingMaskIntoConstraints="NO" id="5v2-w4-4gQ">
-                                        <rect key="frame" x="356" y="61.5" width="42" height="41"/>
-                                        <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="cKZ-W4-405">
+                                        <rect key="frame" x="356" y="61" width="42" height="42"/>
                                         <constraints>
-                                            <constraint firstAttribute="width" constant="42" id="Ov4-Jp-fOA"/>
-                                            <constraint firstAttribute="height" constant="42" id="SSs-jt-Ncm"/>
+                                            <constraint firstAttribute="width" constant="42" id="NHx-hI-7KE"/>
+                                            <constraint firstAttribute="height" constant="42" id="gkH-Pp-MBX"/>
+                                            <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="42" id="kbG-Pg-koZ"/>
+                                            <constraint firstAttribute="height" relation="greaterThanOrEqual" constant="42" id="zN7-Cd-N6Q"/>
                                         </constraints>
-                                    </imageView>
+                                        <fontDescription key="fontDescription" type="system" pointSize="36"/>
+                                        <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        <state key="normal">
+                                            <imageReference key="image" image="person.circle.fill" catalog="system" symbolScale="large"/>
+                                            <preferredSymbolConfiguration key="preferredSymbolConfiguration" configurationType="font" scale="large">
+                                                <fontDescription key="fontDescription" style="UICTFontTextStyleTitle0"/>
+                                            </preferredSymbolConfiguration>
+                                        </state>
+                                        <connections>
+                                            <action selector="onTapProfile:" destination="4Y0-np-Yq8" eventType="touchUpInside" id="hIv-mD-sYs"/>
+                                        </connections>
+                                    </button>
                                 </subviews>
                                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="120" id="8pJ-Sl-2b7"/>
-                                    <constraint firstAttribute="trailing" secondItem="5v2-w4-4gQ" secondAttribute="trailing" constant="16" id="HMs-B6-5Er"/>
                                     <constraint firstItem="rzV-VG-p7a" firstAttribute="leading" secondItem="x0n-rs-FRD" secondAttribute="leading" constant="16" id="U5N-3i-W6N"/>
-                                    <constraint firstItem="5v2-w4-4gQ" firstAttribute="centerY" secondItem="rzV-VG-p7a" secondAttribute="centerY" id="WUz-Sz-y9i"/>
+                                    <constraint firstAttribute="trailing" secondItem="cKZ-W4-405" secondAttribute="trailing" constant="16" id="fXk-Zy-4yN"/>
                                     <constraint firstAttribute="bottom" secondItem="rzV-VG-p7a" secondAttribute="bottom" constant="16" id="iPL-ZV-6E5"/>
+                                    <constraint firstItem="cKZ-W4-405" firstAttribute="centerY" secondItem="rzV-VG-p7a" secondAttribute="centerY" id="qot-A3-gyx"/>
                                 </constraints>
                             </view>
                         </subviews>
+                        <viewLayoutGuide key="safeArea" id="oDY-rV-iSe"/>
                         <color key="backgroundColor" name="shamrockGreen"/>
                         <constraints>
                             <constraint firstItem="x0n-rs-FRD" firstAttribute="leading" secondItem="oDY-rV-iSe" secondAttribute="leading" id="0Lp-FE-Abs"/>
@@ -58,7 +74,6 @@
                             <constraint firstItem="x0n-rs-FRD" firstAttribute="top" secondItem="1Wh-yg-UEL" secondAttribute="top" id="r15-q9-Xqc"/>
                             <constraint firstItem="qog-W4-LED" firstAttribute="top" secondItem="x0n-rs-FRD" secondAttribute="bottom" id="tb8-42-zgz"/>
                         </constraints>
-                        <viewLayoutGuide key="safeArea" id="oDY-rV-iSe"/>
                     </view>
                     <navigationItem key="navigationItem" id="WBR-kl-4n8"/>
                     <connections>
@@ -71,9 +86,12 @@
         </scene>
     </scenes>
     <resources>
-        <image name="person.circle.fill" catalog="system" width="64" height="60"/>
+        <image name="person.circle.fill" catalog="system" width="128" height="121"/>
         <namedColor name="shamrockGreen">
             <color red="0.28627450980392155" green="0.62352941176470589" blue="0.40784313725490196" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </namedColor>
+        <systemColor name="secondarySystemBackgroundColor">
+            <color red="0.94901960784313721" green="0.94901960784313721" blue="0.96862745098039216" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </systemColor>
     </resources>
 </document>

@@ -20,6 +20,22 @@ class DashboardViewController: UIViewController {
         setupTableView()
         moneyLabel.text = Double(GameDataStore.shared.account.money).moneyString
         dateLabel.setTitle(GameDataStore.shared.date.dashboardDataFormat, for: .normal)
+        GameDataStore.shared.account.dummyNetWorth = GameDataStore.shared.account.netWorth
+        let all = (GameDataStore.shared.ranking + [GameDataStore.shared.account])
+            .sorted { $0.dummyNetWorth > $1.dummyNetWorth }
+        let index = all.firstIndex { $0.names == GameDataStore.shared.account.names } ?? 0
+        let rank = index + 1
+        let rankStr: String
+        if rank == 1 {
+            rankStr = "1st"
+        } else if rank == 2 {
+            rankStr = "2nd"
+        } else if rank == 3 {
+            rankStr = "3rd"
+        } else {
+            rankStr = "\(rank)th"
+        }
+        rankLabel.text = "Rank\n\(rankStr)"
         NotificationCenter.default.addObserver(self, selector: #selector(dataDidChange), name: .dataStoreWasUpdated, object: nil)
     }
     
@@ -29,6 +45,11 @@ class DashboardViewController: UIViewController {
     
     @IBAction func onTapDebugDate(_ sender: Any) {
         GameDataStore.shared.send(.forwardTimeWith1Day)
+    }
+    
+    @IBAction func onTapProfile(_ sender: Any) {
+        let rankVC = LeaderboardViewController.instantiateFromStoryboard()
+        present(rankVC, animated: true)
     }
 }
 
@@ -92,6 +113,23 @@ private extension DashboardViewController {
     @objc func dataDidChange() {
         moneyLabel.text = Double(GameDataStore.shared.account.money).moneyString
         dateLabel.setTitle(GameDataStore.shared.date.dashboardDataFormat, for: .normal)
+        var acc = GameDataStore.shared.account
+        acc.dummyNetWorth = GameDataStore.shared.account.netWorth
+        let all = (GameDataStore.shared.ranking + [acc])
+            .sorted { $0.dummyNetWorth > $1.dummyNetWorth }
+        let index = all.firstIndex { $0.names == acc.names } ?? 0
+        let rank = index + 1
+        let rankStr: String
+        if rank == 1 {
+            rankStr = "1st"
+        } else if rank == 2 {
+            rankStr = "2nd"
+        } else if rank == 3 {
+            rankStr = "3rd"
+        } else {
+            rankStr = "\(rank)th"
+        }
+        rankLabel.text = "Rank\n\(rankStr)"
         tableView.reloadData()
     }
 }

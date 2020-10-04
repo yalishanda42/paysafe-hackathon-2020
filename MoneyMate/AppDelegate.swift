@@ -32,8 +32,8 @@ class AppDelegate: UIResponder, UIApplicationDelegate, UNUserNotificationCenterD
         window = UIWindow(frame: UIScreen.main.bounds)
         window?.makeKeyAndVisible()
         
-        Switcher.changeRootToTab()
-//        Switcher.changeToIntroExperience()
+//        Switcher.changeRootToTab()
+        Switcher.changeToIntroExperience()
         return true
     }
     

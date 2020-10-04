@@ -93,7 +93,7 @@ extension DashboardItemViewModel {
             let daysLeft = prog < 1.0
                 ? (examDate.timeIntervalSince(GameDataStore.shared.date)) / Regularity.daily.timeInterval
                 : 0
-            self.descriptions = prog >= 1.0 ? ["Take exam!"] : ["\(daysLeft) days to exam"]
+            self.descriptions = prog >= 1.0 ? ["Take exam!"] : ["\(Int(daysLeft)) days to exam"]
             self.progress = prog
         } else {
             self.progress = nil
