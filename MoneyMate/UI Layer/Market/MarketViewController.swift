@@ -16,6 +16,7 @@ class MarketViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        tableView.layer.cornerRadius = 32
         setupTableView()
     }
 }
