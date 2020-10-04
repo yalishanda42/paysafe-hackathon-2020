@@ -69,7 +69,8 @@ extension DashboardItemViewModel {
     init(from model: JobData) {
         self.title = model.name
         self.description = model.description
-        self.descriptions = ["+ $\(model.income.value) / \(model.income.regularity.rawValue)"]
+        let price = Double(model.income.value).moneyString ?? "0"
+        self.descriptions = ["+ " + price + " / \(model.income.regularity.rawValue)"]
         self.systemImageTitle = "briefcase"
         self.isAsset = true
         self.progress = nil
@@ -117,16 +118,22 @@ extension DashboardItemViewModel {
             let elapsed = GameDataStore.shared.date
                 .timeIntervalSince(loanStartDate)
             prog = Float(elapsed / duration)
-            desc.append("- \(loan.value) / \(loan.regularity.rawValue)")
-            desc.append("Total Loan: \(loan.paymentsCount * loan.value)")
+            
+            let loanValue = Double(loan.value).moneyString ?? ""
+            desc.append("- " + loanValue + " / \(loan.regularity.rawValue)")
+            
+            let loanPaymentCost = Double(loan.paymentsCount * loan.value).moneyString ?? ""
+            desc.append("Total Loan: " + loanPaymentCost)
         }
         
         if let rent = model.rent, GameDataStore.shared.account.itemRentBeginDate[model.name] != nil {
-            desc.append("Rent: + \(rent.value) / \(rent.regularity.rawValue)")
+            let rentValue = Double(rent.value).moneyString ?? ""
+            desc.append("Rent: + " + rentValue + " / \(rent.regularity.rawValue)")
         }
         
         if let income = model.constantIncome {
-            desc.append("Income: + \(income.value) / \(income.regularity.rawValue)")
+            let incomeValue = Double(income.value).moneyString ?? ""
+            desc.append("Income: + " + incomeValue + " / \(income.regularity.rawValue)")
         }
         
         self.descriptions = desc
