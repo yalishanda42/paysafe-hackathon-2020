@@ -79,13 +79,13 @@ class BankViewController: UIViewController {
         setupUI()
     }
     
-    override func viewDidLayoutSubviews() {
-        super.viewDidLayoutSubviews()
-        var size = tableView.contentSize
-        size.height += 16
-        let bounds = CGRect(origin: .zero, size: size)
-        tableView.roundCorners(corners: [.topLeft, .topRight], radius: 32, bounds: bounds)
-    }
+//    override func viewDidLayoutSubviews() {
+//        super.viewDidLayoutSubviews()
+//        var size = tableView.contentSize
+//        size.height += 16
+//        let bounds = CGRect(origin: .zero, size: size)
+//        tableView.roundCorners(corners: [.topLeft, .topRight], radius: 32, bounds: bounds)
+//    }
 }
 
 private extension BankViewController {
@@ -98,7 +98,7 @@ private extension BankViewController {
     }
     
     func setupNavigationBar() {
-        navigationController?.clearBackground()
+        navigationController?.backgroundColor()
 
         let button = UIButton()
         let dateString = GameDataStore.shared.date.shortDateFormattedString

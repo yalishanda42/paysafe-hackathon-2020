@@ -12,6 +12,7 @@ class MarketSectionTableViewCell: UITableViewCell {
     
     var onTapItem: ((String) -> Void)?
     
+    @IBOutlet private weak var titleTopConstraint: NSLayoutConstraint!
     @IBOutlet private weak var titleLabel: UILabel!
     @IBOutlet private weak var collectionView: UICollectionView!
     
@@ -32,6 +33,8 @@ class MarketSectionTableViewCell: UITableViewCell {
     func configure(with model: MarketSection) {
         titleLabel.text = model.title.rawValue
         dataSource = model.items
+        titleTopConstraint.constant = model.isFirstSection ? 32 : 8
+        layoutIfNeeded()
     }
     
     func reload() {

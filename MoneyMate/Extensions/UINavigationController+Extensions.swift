@@ -5,8 +5,8 @@ extension UINavigationController {
         return topViewController?.preferredStatusBarStyle ?? .default
     }
     
-    func clearBackground() {
-        navigationBar.backgroundColor = .clear
+    func backgroundColor(color: UIColor = .clear) {
+        navigationBar.backgroundColor = color
         navigationBar.setBackgroundImage(UIImage(), for: UIBarMetrics.default)
         navigationBar.shadowImage = UIImage()
     }

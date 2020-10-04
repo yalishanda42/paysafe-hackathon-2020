@@ -27,13 +27,11 @@ private extension MainTabViewController {
         viewControllerList.append(dashboardVC)
         
         // Merket Tab
-        let marketNavController = UINavigationController()
-        marketNavController.tabBarItem = UITabBarItem(title: "Market", image: nil, tag: 2)
-        marketNavController.tabBarItem.selectedImage = nil
-        
+        let marketTitle = "Market"
         let marketVC = MarketViewController.instantiateFromStoryboard()
-        marketNavController.pushViewController(marketVC, animated: false)
-        viewControllerList.append(marketNavController)
+        marketVC.tabBarItem = UITabBarItem(title: marketTitle, image: nil, tag: 2)
+        marketVC.tabBarItem.selectedImage = nil
+        viewControllerList.append(marketVC)
 
         // Bank Tab
         let bankNavController = UINavigationController()

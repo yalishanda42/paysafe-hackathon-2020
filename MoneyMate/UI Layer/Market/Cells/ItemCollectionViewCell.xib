@@ -1,9 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="17503.1" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="15705" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
     <device id="retina6_1" orientation="portrait" appearance="light"/>
     <dependencies>
-        <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="17502"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="15706"/>
         <capability name="Named colors" minToolsVersion="9.0"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
@@ -80,13 +79,13 @@
                     </view>
                 </subviews>
             </view>
-            <viewLayoutGuide key="safeArea" id="ZTg-uK-7eu"/>
             <constraints>
                 <constraint firstAttribute="trailing" secondItem="fMC-cJ-4iE" secondAttribute="trailing" id="3TW-yr-7yW"/>
                 <constraint firstAttribute="bottom" secondItem="fMC-cJ-4iE" secondAttribute="bottom" id="cnH-br-HhU"/>
                 <constraint firstItem="fMC-cJ-4iE" firstAttribute="leading" secondItem="gTV-IL-0wX" secondAttribute="leading" id="fEC-VU-kUB"/>
                 <constraint firstItem="fMC-cJ-4iE" firstAttribute="top" secondItem="gTV-IL-0wX" secondAttribute="top" id="waC-dN-Ozq"/>
             </constraints>
+            <viewLayoutGuide key="safeArea" id="ZTg-uK-7eu"/>
             <size key="customSize" width="205" height="235"/>
             <connections>
                 <outlet property="containerView" destination="fMC-cJ-4iE" id="BQf-rA-20A"/>
@@ -101,7 +100,7 @@
         </collectionViewCell>
     </objects>
     <resources>
-        <image name="plus.rectangle.fill" catalog="system" width="128" height="93"/>
+        <image name="plus.rectangle.fill" catalog="system" width="64" height="46"/>
         <namedColor name="shamrockGreen">
             <color red="0.28627450980392155" green="0.62352941176470589" blue="0.40784313725490196" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </namedColor>

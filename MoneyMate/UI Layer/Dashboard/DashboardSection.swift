@@ -135,7 +135,7 @@ extension DashboardItemViewModel {
     
     init(from model: QuestData) {
         self.title = model.name
-        self.description = ""
+        self.description = model.description //""
         self.systemImageTitle = "safari"
         self.progress = nil
         self.isAsset = false

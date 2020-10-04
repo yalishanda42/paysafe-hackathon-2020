@@ -20,9 +20,8 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         window = UIWindow(frame: UIScreen.main.bounds)
         window?.makeKeyAndVisible()
         
-        Switcher.changeToIntroExperience()
-//        let mainTabVc = MainTabViewController.instantiateFromStoryboard()
-//        window?.rootViewController = mainTabVc
+        Switcher.changeRootToTab()
+//        Switcher.changeToIntroExperience()
         return true
     }
 }
@@ -31,9 +30,5 @@ extension AppDelegate {
     func setupAppearance() {
         UITabBar.appearance().tintColor = UIColor.fromAsset(.shamrockGreen)
         UITabBar.appearance().backgroundColor = UIColor.fromAsset(.khaki)
-//        UITabBar.appearance().backgroundImage = UIImage()
-//        UITabBar.appearance().shadowImage     = UIImage()
-//        UITabBar.appearance().clipsToBounds   = true
-        UINavigationBar.appearance().backgroundColor = .fromAsset(.pineGreen)
     }
 }

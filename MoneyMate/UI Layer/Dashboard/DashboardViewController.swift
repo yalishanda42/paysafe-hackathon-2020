@@ -17,7 +17,6 @@ class DashboardViewController: UIViewController {
         
     override func viewDidLoad() {
         super.viewDidLoad()
-        tableView.layer.cornerRadius = 32
         setupTableView()
         moneyLabel.text = "\(GameDataStore.shared.account.money)"
         dateLabel.setTitle(GameDataStore.shared.date.shortDateFormattedString, for: .normal) 

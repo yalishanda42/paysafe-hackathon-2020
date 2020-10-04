@@ -9,6 +9,7 @@
 import Foundation
 
 struct MarketSection: Codable {
+    var isFirstSection: Bool = false
     var title: MarketSectionTitle
     var items: [MarketItemModel]
 }
