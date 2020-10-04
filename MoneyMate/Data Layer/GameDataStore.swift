@@ -47,7 +47,121 @@ struct GameDataStore {
     
     // MARK: - ACTIONS
     
-    // TODO
+    enum Action {
+        case acceptQuest(QuestData)
+        case accomplishQuest(QuestData)
+        
+        case enrollForCourse(CourseData)
+        case takeExam(CourseData)
+        case passCourse(CourseData)
+        
+        case startJob(JobData)
+        case leaveJob(JobData)
+        
+        case buyItem(ItemData)
+        case loanItem(ItemData)
+        case lendItem(ItemData)
+        case stopLendingItem(ItemData)
+        case sendItem(ItemData)
+        
+        // DEBUG
+        case forwardTimeWith1Day
+        // =====
+        
+        var sheetActionText: String {
+            switch self {
+                case .enrollForCourse: return "Sign Up"
+                case .takeExam: return "Take Exam"
+                case .startJob: return "Star Job"
+                case .leaveJob: return "Leave Job"
+                case .buyItem: return "Buy"
+                case .loanItem: return "Bank Loan"
+                case .lendItem: return "Lend"
+                case .stopLendingItem: return "Stop Lending"
+                case .sendItem: return "Send"
+                default: return ""
+            }
+        }
+    }
+    
+    func sheetActionsForModel(withName name: String) -> [Action] {
+        var result: [Action] = []
+        
+        if let course = courses.first(where: { $0.name == name }) {
+            if !(account.ongoingCourses + account.completedCourses).contains(course) {
+                result.append(.enrollForCourse(course))
+            } else if account.ongoingCourses.contains(course) {
+                // TODO: ?? How to understand when it is exam time?
+                result.append(.takeExam(course))
+            }
+        } else if let job = jobs.first(where: { $0.name == name }) {
+            if account.jobs.contains(job) {
+                result.append(.leaveJob(job))
+            } else {
+                result.append(.startJob(job))
+            }
+        } else if let item = items.first(where: { $0.name == name }) {
+            if !account.items.contains(item) {
+                result.append(.buyItem(item))
+                if item.loan != nil {
+                    result.append(.loanItem(item))
+                }
+            } else {
+                // TODO: Understand when the user lends an item
+                result.append(.sendItem(item))
+            }
+        }
+        
+        return result
+    }
+    
+    mutating func send(_ event: Action) {
+        switch event {
+        case .acceptQuest(let quest):
+            account.ongoingQuests.append(quest)
+        case .accomplishQuest(let quest):
+            account.ongoingQuests.removeAll { $0 == quest }
+            account.completedQuests.append(quest)
+            account.money -= quest.completionRequirementsCost
+        case .enrollForCourse(let course):
+            if account.money > course.cost {
+                account.ongoingCourses.append(course)
+                account.money -= course.cost
+            }
+            // TODO: save time
+        case .takeExam(_):
+            break
+        case .passCourse(let course):
+            account.ongoingCourses.removeAll { $0 == course }
+            account.completedCourses.append(course)
+        case .startJob(let job):
+            account.jobs.append(job)
+            // TODO: save time
+        case .leaveJob(let job):
+            account.jobs.removeAll { $0 == job }
+        case .buyItem(let item):
+            if account.money > item.cost{
+                account.items.append(item)
+                account.money -= item.cost
+                // TODO: save time
+            }
+        case .loanItem(let item):
+            break // TODO: loan
+        case .lendItem(let item):
+            break // TODO: lend
+        case .stopLendingItem(let item):
+            break // TODO: stop lending
+        case .sendItem(let item):
+            break // TODO: send to another player
+        case .forwardTimeWith1Day:
+            date = date.addingTimeInterval(60*60*24)
+            dateTriggers()
+        }
+    }
+    
+    mutating private func dateTriggers() {
+        // TODO: pay loans, earn salaries
+    }
     
     // MARK: - HELPERS
     
@@ -73,14 +187,18 @@ struct AccountData {
     var completedQuests: [QuestData] = []
 }
 
-struct JobData: Hashable, Codable, Equatable {
+protocol Nameable {
+    var name: String { get }
+}
+
+struct JobData: Hashable, Codable, Equatable, Nameable {
     let name: String
     let description: String
     let income: Income
     let requiredCourses: [String]
 }
 
-struct CourseData: Codable, Hashable, Equatable {
+struct CourseData: Codable, Hashable, Equatable, Nameable {
     let name: String
     let description: String
     let cost: Int
@@ -104,7 +222,7 @@ struct AnswerData: Codable, Hashable, Equatable {
     let isCorrect: Bool
 }
 
-struct ItemData: Codable, Hashable, Equatable {
+struct ItemData: Codable, Hashable, Equatable, Nameable {
     let name: String
     let description: String
     let cost: Int
@@ -116,7 +234,7 @@ struct ItemData: Codable, Hashable, Equatable {
     }
 }
 
-struct QuestData: Codable, Hashable, Equatable {
+struct QuestData: Codable, Hashable, Equatable, Nameable {
     let name: String
     let description: String
     let unlockingRequirementsQuests: [String]

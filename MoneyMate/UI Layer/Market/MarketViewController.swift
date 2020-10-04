@@ -20,7 +20,7 @@ class MarketViewController: UIViewController {
         super.viewDidLoad()
         tableView.layer.cornerRadius = 32
         setupTableView()
-        NotificationCenter.default.addObserver(self, selector: #selector(tableView.reloadData), name: .dataStoreWasUpdated, object: nil)
+        NotificationCenter.default.addObserver(tableView as Any, selector: #selector(tableView.reloadData), name: .dataStoreWasUpdated, object: nil)
     }
     
     deinit {
@@ -38,8 +38,10 @@ extension MarketViewController: UITableViewDelegate, UITableViewDataSource {
         guard let cell = tableView.dequeueReusableCell(of: MarketSectionTableViewCell.self, for: indexPath) else {
             fatalError("TableView could not dequeue MarketSectionTableViewCell")
         }
-        
         cell.configure(with: dataSource[indexPath.row])
+        cell.onTapItem = { [unowned self] name in
+            self.presentItemActionsSheetIfNeeded(forItemWithName: name)
+        }
         return cell
     }
 }
@@ -51,5 +53,21 @@ private extension MarketViewController {
         tableView.estimatedRowHeight = 300 // TODO: Check which is perfect
         tableView.rowHeight = 350// UITableView.automaticDimension
         tableView.register(cellType: MarketSectionTableViewCell.self)
+    }
+}
+
+extension UIViewController {
+    func presentItemActionsSheetIfNeeded(forItemWithName name: String) {
+        let actions = GameDataStore.shared.sheetActionsForModel(withName: name)
+        guard !actions.isEmpty else { return }
+        
+        let alertController = UIAlertController(title: "Available actions", message: nil, preferredStyle: .actionSheet)
+        for action in actions {
+            alertController.addAction(.init(title: action.sheetActionText, style: .default, handler: { _ in
+                GameDataStore.shared.send(action)
+            }))
+        }
+        alertController.addAction(.init(title: "Cancel", style: .cancel, handler: nil))
+        present(alertController, animated: true, completion: nil)
     }
 }

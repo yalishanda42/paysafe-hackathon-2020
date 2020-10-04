@@ -10,6 +10,8 @@ import UIKit
 
 class MarketSectionTableViewCell: UITableViewCell {
     
+    var onTapItem: ((String) -> Void)?
+    
     @IBOutlet private weak var titleLabel: UILabel!
     @IBOutlet private weak var collectionView: UICollectionView!
     
@@ -28,7 +30,7 @@ class MarketSectionTableViewCell: UITableViewCell {
     }
     
     func configure(with model: MarketSection) {
-        titleLabel.text = model.title
+        titleLabel.text = model.title.rawValue
         dataSource = model.items
     }
     
@@ -64,5 +66,9 @@ extension MarketSectionTableViewCell: UICollectionViewDelegate, UICollectionView
         
         return CGSize(width: 200, height: 260)
 //        return UICollectionViewFlowLayout.automaticSize
+    }
+    
+    func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
+        onTapItem?(dataSource[indexPath.row].title)
     }
 }

@@ -9,25 +9,31 @@
 import Foundation
 
 struct MarketSection: Codable {
-    var title: String
+    var title: MarketSectionTitle
     var items: [MarketItemModel]
+}
+
+enum MarketSectionTitle: String, Codable {
+    case education = "Education"
+    case jobs = "Jobs"
+    case realEstate = "Real Estate"
 }
 
 extension MarketSection {
     init(with data: [CourseData]) {
-        self.title = "Education"
+        self.title = .education
         self.items = data
             .map(MarketItemModel.init(with:))
     }
     
     init(with data: [JobData]) {
-        self.title = "Jobs"
+        self.title = .jobs
         self.items = data
             .map(MarketItemModel.init(with:))
     }
     
     init(with data: [ItemData]) {
-        self.title = "Real Estate"
+        self.title = .realEstate
         self.items = data
             .map(MarketItemModel.init(with:))
     }
