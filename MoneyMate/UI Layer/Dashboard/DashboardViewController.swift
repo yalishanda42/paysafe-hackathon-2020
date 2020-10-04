@@ -27,6 +27,10 @@ class DashboardViewController: UIViewController {
     deinit {
         NotificationCenter.default.removeObserver(self)
     }
+    
+    @IBAction func onTapDebugDate(_ sender: Any) {
+        GameDataStore.shared.send(.forwardTimeWith1Day)
+    }
 }
 
 extension DashboardViewController: UITableViewDelegate, UITableViewDataSource {

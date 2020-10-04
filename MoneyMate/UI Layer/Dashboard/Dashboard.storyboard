@@ -44,6 +44,9 @@
                                         <state key="normal" title="Mon 21.12.2112">
                                             <color key="titleColor" systemColor="labelColor"/>
                                         </state>
+                                        <connections>
+                                            <action selector="onTapDebugDate:" destination="jE3-6S-6ia" eventType="touchUpInside" id="OC8-e7-jB7"/>
+                                        </connections>
                                     </button>
                                     <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="person.circle.fill" catalog="system" translatesAutoresizingMaskIntoConstraints="NO" id="t38-jA-k5C">
                                         <rect key="frame" x="12" y="5" width="55" height="53.666666666666671"/>

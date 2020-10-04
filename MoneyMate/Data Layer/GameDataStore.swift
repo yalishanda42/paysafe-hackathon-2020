@@ -72,7 +72,7 @@ struct GameDataStore {
             switch self {
                 case .enrollForCourse: return "Sign Up"
                 case .takeExam: return "Take Exam"
-                case .startJob: return "Star Job"
+                case .startJob: return "Start Job"
                 case .leaveJob: return "Leave Job"
                 case .buyItem: return "Buy"
                 case .loanItem: return "Bank Loan"
@@ -161,6 +161,8 @@ struct GameDataStore {
     
     mutating private func dateTriggers() {
         // TODO: pay loans, earn salaries
+        // for food -$10
+        account.money -= 10
     }
     
     // MARK: - HELPERS
