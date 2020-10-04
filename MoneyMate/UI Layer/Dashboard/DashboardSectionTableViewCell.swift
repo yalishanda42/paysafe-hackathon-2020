@@ -1,5 +1,5 @@
 //
-//  MarketSectionTableViewCell.swift
+//  DashboardSectionTableViewCell.swift
 //  MoneyMate
 //
 //  Created by Luboslav  Ivanov on 3.10.20.
@@ -8,12 +8,12 @@
 
 import UIKit
 
-class MarketSectionTableViewCell: UITableViewCell {
+class DashboardSectionTableViewCell: UITableViewCell {
     
     @IBOutlet private weak var titleLabel: UILabel!
     @IBOutlet private weak var collectionView: UICollectionView!
     
-    private var dataSource: [MarketItemModel]  = []
+    private var dataSource: [DashboardItemViewModel] = []
     
     override func awakeFromNib() {
         super.awakeFromNib()
@@ -27,9 +27,9 @@ class MarketSectionTableViewCell: UITableViewCell {
         collectionView.reloadData()
     }
     
-    func configure(with model: MarketSection) {
+    func configure(with model: DashboardSection) {
         titleLabel.text = model.title
-        dataSource = model.items
+        dataSource = model.itemViewModels
     }
     
     func reload() {
@@ -37,7 +37,7 @@ class MarketSectionTableViewCell: UITableViewCell {
     }
 }
 
-private extension MarketSectionTableViewCell {
+private extension DashboardSectionTableViewCell {
     func setupCollectionView() {
         collectionView.delegate = self
         collectionView.dataSource = self
@@ -45,7 +45,7 @@ private extension MarketSectionTableViewCell {
     }
 }
 
-extension MarketSectionTableViewCell: UICollectionViewDelegate, UICollectionViewDataSource, UICollectionViewDelegateFlowLayout {
+extension DashboardSectionTableViewCell: UICollectionViewDelegate, UICollectionViewDataSource, UICollectionViewDelegateFlowLayout {
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
         return dataSource.count
     }
@@ -62,7 +62,6 @@ extension MarketSectionTableViewCell: UICollectionViewDelegate, UICollectionView
     func collectionView(_ collectionView: UICollectionView,
                         layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
         
-        return CGSize(width: 200, height: 260)
-//        return UICollectionViewFlowLayout.automaticSize
+        return CGSize(width: 200, height: 200)
     }
 }

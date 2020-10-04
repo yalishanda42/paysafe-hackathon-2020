@@ -8,22 +8,15 @@
 
 import UIKit
 
-struct Quest: Codable {
-    let name: String
-    let description: String
-    let requirements: [String]
-    let rewards: [String]
-}
-
 protocol QuestDetailsViewControllerDelegate: class {
-    func acceptQuest(_ quest: Quest)
+    func acceptQuest(_ quest: QuestData)
 }
 
 class QuestDetailsViewController: UIViewController {
     
     weak var delegate: QuestDetailsViewControllerDelegate?
     
-    var quest: Quest = .init(name: "", description: "", requirements: [], rewards: []) {
+    var quest: QuestData? = nil {
         didSet {
             updateInfo()
         }
@@ -61,11 +54,14 @@ class QuestDetailsViewController: UIViewController {
     
     @IBAction func onTapRightButton(_ sender: Any) {
         dismiss(animated: true) {
-            self.delegate?.acceptQuest(self.quest)
+            guard let quest = self.quest else { return }
+            self.delegate?.acceptQuest(quest)
         }
     }
     
     private func updateInfo() {
+        guard let quest = quest else { return }
+        
         questTitle?.text = quest.name
         questDescription?.text = quest.description
         
@@ -80,7 +76,7 @@ class QuestDetailsViewController: UIViewController {
         reqStack.addArrangedSubview(reqStackTitle)
         rewardsStack.addArrangedSubview(rewardsStackTitle)
         
-        quest.requirements
+        quest.completionRequirements
             .map { UILabel.create(from: $0, font: .systemFont(ofSize: 17)) }
             .forEach(reqStack.addArrangedSubview(_:))
         

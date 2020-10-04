@@ -12,12 +12,11 @@ class MarketViewController: UIViewController {
     
     @IBOutlet private weak var tableView: UITableView!
     
-    private lazy var dataSource: [MarketSection] = {
-        return getDataFromJson() ?? []
-    }()
+    private lazy var dataSource = GameDataStore.shared.marketSections
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        tableView.layer.cornerRadius = 32
         setupTableView()
     }
 }
@@ -45,16 +44,5 @@ private extension MarketViewController {
         tableView.estimatedRowHeight = 300 // TODO: Check which is perfect
         tableView.rowHeight = 350// UITableView.automaticDimension
         tableView.register(cellType: MarketSectionTableViewCell.self)
-    }
-    
-    
-    func getDataFromJson() -> [MarketSection]? {
-        do {
-            let decoder = JSONDecoder()
-            let recource = "MarketDataSource"
-            return try decoder.decodeJsonResource(recource, model: [MarketSection].self)
-        } catch {
-            fatalError("Market Json Parser: \(error)")
-        }
     }
 }

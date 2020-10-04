@@ -1,8 +1,10 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="15705" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="17503.1" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
     <device id="retina6_1" orientation="portrait" appearance="light"/>
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="15706"/>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="17502"/>
+        <capability name="Named colors" minToolsVersion="9.0"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
@@ -49,6 +51,14 @@
                                     </stackView>
                                 </subviews>
                             </stackView>
+                            <imageView hidden="YES" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="plus.rectangle.fill" catalog="system" translatesAutoresizingMaskIntoConstraints="NO" id="DIc-x3-ydQ">
+                                <rect key="frame" x="177" y="5" width="24" height="21.5"/>
+                                <color key="tintColor" name="shamrockGreen"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="24" id="1DA-Oy-L6m"/>
+                                    <constraint firstAttribute="width" constant="24" id="7Tb-vq-2eb"/>
+                                </constraints>
+                            </imageView>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
@@ -56,6 +66,7 @@
                             <constraint firstAttribute="bottom" secondItem="oPl-pp-6a0" secondAttribute="bottom" constant="8" id="4Zh-Zq-nPn"/>
                             <constraint firstItem="hBE-HV-kbB" firstAttribute="leading" secondItem="fMC-cJ-4iE" secondAttribute="leading" constant="8" id="5PD-nd-Tn7"/>
                             <constraint firstItem="oPl-pp-6a0" firstAttribute="top" secondItem="HKp-9K-M3B" secondAttribute="bottom" constant="23.5" id="6Od-Gw-GNm"/>
+                            <constraint firstItem="DIc-x3-ydQ" firstAttribute="top" secondItem="fMC-cJ-4iE" secondAttribute="top" constant="4" id="Csd-xW-aND"/>
                             <constraint firstItem="HKp-9K-M3B" firstAttribute="top" secondItem="hBE-HV-kbB" secondAttribute="bottom" constant="3" id="Ire-PN-ej6"/>
                             <constraint firstItem="oPl-pp-6a0" firstAttribute="trailing" secondItem="HKp-9K-M3B" secondAttribute="trailing" id="LTM-1W-5Q4"/>
                             <constraint firstItem="yt7-QT-nah" firstAttribute="centerX" secondItem="fMC-cJ-4iE" secondAttribute="centerX" id="M3c-o4-gBc"/>
@@ -63,28 +74,36 @@
                             <constraint firstAttribute="trailing" secondItem="hBE-HV-kbB" secondAttribute="trailing" constant="8" id="iGZ-js-ZN3"/>
                             <constraint firstItem="yt7-QT-nah" firstAttribute="top" secondItem="fMC-cJ-4iE" secondAttribute="top" constant="16" id="pSm-3F-Oyg"/>
                             <constraint firstItem="HKp-9K-M3B" firstAttribute="leading" secondItem="hBE-HV-kbB" secondAttribute="leading" id="tnA-WM-bKV"/>
+                            <constraint firstAttribute="trailing" secondItem="DIc-x3-ydQ" secondAttribute="trailing" constant="4" id="u9q-4b-YDv"/>
                             <constraint firstItem="hBE-HV-kbB" firstAttribute="top" secondItem="yt7-QT-nah" secondAttribute="bottom" constant="8" id="vOE-5j-A2e"/>
                         </constraints>
                     </view>
                 </subviews>
             </view>
+            <viewLayoutGuide key="safeArea" id="ZTg-uK-7eu"/>
             <constraints>
                 <constraint firstAttribute="trailing" secondItem="fMC-cJ-4iE" secondAttribute="trailing" id="3TW-yr-7yW"/>
                 <constraint firstAttribute="bottom" secondItem="fMC-cJ-4iE" secondAttribute="bottom" id="cnH-br-HhU"/>
                 <constraint firstItem="fMC-cJ-4iE" firstAttribute="leading" secondItem="gTV-IL-0wX" secondAttribute="leading" id="fEC-VU-kUB"/>
                 <constraint firstItem="fMC-cJ-4iE" firstAttribute="top" secondItem="gTV-IL-0wX" secondAttribute="top" id="waC-dN-Ozq"/>
             </constraints>
-            <viewLayoutGuide key="safeArea" id="ZTg-uK-7eu"/>
             <size key="customSize" width="205" height="235"/>
             <connections>
                 <outlet property="containerView" destination="fMC-cJ-4iE" id="BQf-rA-20A"/>
                 <outlet property="descriptionLabel" destination="HKp-9K-M3B" id="Ai0-Ul-wEC"/>
                 <outlet property="detailsStackView" destination="e5o-Kw-SsS" id="gHw-BG-oIf"/>
                 <outlet property="imageView" destination="yt7-QT-nah" id="HNu-Mc-Zkm"/>
+                <outlet property="plusIcon" destination="DIc-x3-ydQ" id="Ok7-n0-AC7"/>
                 <outlet property="requirementsStackView" destination="OW9-VT-zfH" id="OAw-WX-1To"/>
                 <outlet property="titleLabel" destination="hBE-HV-kbB" id="QHb-YY-ijV"/>
             </connections>
             <point key="canvasLocation" x="-157.24637681159422" y="37.165178571428569"/>
         </collectionViewCell>
     </objects>
+    <resources>
+        <image name="plus.rectangle.fill" catalog="system" width="128" height="93"/>
+        <namedColor name="shamrockGreen">
+            <color red="0.28627450980392155" green="0.62352941176470589" blue="0.40784313725490196" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </namedColor>
+    </resources>
 </document>
