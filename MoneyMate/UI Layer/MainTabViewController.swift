@@ -21,13 +21,13 @@ private extension MainTabViewController {
         var viewControllerList: [UIViewController] = []
 
         let dashboardVC = DashboardViewController.instantiateFromStoryboard()
-        dashboardVC.tabBarItem = UITabBarItem(title: "Dashboard", image: nil, tag: 1)
-        dashboardVC.tabBarItem.selectedImage =  nil //UIImage(named: "home_active_icon")
+        dashboardVC.tabBarItem = UITabBarItem(title: "Dashboard", image: resizeForTabBarImage("house"), tag: 1)
+        dashboardVC.tabBarItem.selectedImage =  resizeForTabBarImage("house.fill")
         viewControllerList.append(dashboardVC)
 
         let marketVC = MarketViewController.instantiateFromStoryboard()
-        marketVC.tabBarItem = UITabBarItem(title: "Market", image: nil, tag: 2)
-        marketVC.tabBarItem.selectedImage = nil //UIImage(named: "resourcesActive")
+        marketVC.tabBarItem = UITabBarItem(title: "Market", image: resizeForTabBarImage("cart"), tag: 2)
+        marketVC.tabBarItem.selectedImage = resizeForTabBarImage("cart.fill")
         viewControllerList.append(marketVC)
 
         let navController = UINavigationController()
@@ -41,8 +41,8 @@ private extension MainTabViewController {
         viewControllers = viewControllerList
     }
     
-    func resizeForTabBarImage(_ named: String) -> UIImage {
-        let img = UIImage(named: named)!
-        return img.resize(scaledToWidth: 24)
+    func resizeForTabBarImage(_ named: String) -> UIImage? {
+        let img = UIImage(named: named) ?? UIImage(systemName: named)
+        return img?.resize(scaledToWidth: 24)
     }
 }
