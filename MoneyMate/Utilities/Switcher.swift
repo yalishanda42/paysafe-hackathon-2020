@@ -3,14 +3,13 @@ import UIKit
 
 class Switcher {
 
-//    static func changeToIntroExperience() {
-//        let introExperienceVC: IntroExperienceViewController = UIStoryboard(.introExperience).instantiateViewController()
-//
-//        let navigationVC = introExperienceVC.embedInNavigation()
-//        navigationVC.modalPresentationStyle = .fullScreen
-//
-//        changeRootTo(navigationVC)
-//    }
+    static func changeToIntroExperience() {
+        let introExperienceVC = IntroExperienceViewController.instantiateFromStoryboard()
+        let navigationVC = introExperienceVC.embedInNavigation()
+        navigationVC.modalPresentationStyle = .fullScreen
+
+        changeRootTo(navigationVC)
+    }
 
     /// This will load the tabbar as the rootViewController
     static func changeRootToTab() {
@@ -49,5 +48,11 @@ class Switcher {
             rootVC.view.setNeedsUpdateConstraints()
             completion?(rootVC)
         })
+    }
+}
+
+extension UIViewController {
+    func embedInNavigation() -> UINavigationController {
+        return UINavigationController(rootViewController: self)
     }
 }

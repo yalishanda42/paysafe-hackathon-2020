@@ -1,0 +1,96 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="15705" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="RjN-6m-slp">
+    <device id="retina6_1" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="15706"/>
+        <capability name="Named colors" minToolsVersion="9.0"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <scenes>
+        <!--Intro Experience View Controller-->
+        <scene sceneID="Lvo-oP-UIK">
+            <objects>
+                <viewController storyboardIdentifier="IntroExperienceViewController" id="RjN-6m-slp" customClass="IntroExperienceViewController" customModule="MoneyMate" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="Cnn-qv-IIY">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="hJK-9G-eaJ">
+                                <rect key="frame" x="32" y="754" width="350" height="44"/>
+                                <color key="backgroundColor" name="darkSkyBlue"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="44" id="HYM-fu-0WC"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" pointSize="16"/>
+                                <state key="normal" title="Start First Quize">
+                                    <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                </state>
+                                <connections>
+                                    <action selector="primaryButtonTapped:" destination="RjN-6m-slp" eventType="touchUpInside" id="iQu-6A-5iL"/>
+                                </connections>
+                            </button>
+                            <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" pagingEnabled="YES" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="S3H-wZ-zFh">
+                                <rect key="frame" x="0.0" y="44" width="414" height="657"/>
+                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <collectionViewFlowLayout key="collectionViewLayout" scrollDirection="horizontal" minimumLineSpacing="0.0" minimumInteritemSpacing="0.0" id="L8K-C9-5oN">
+                                    <size key="itemSize" width="414" height="654"/>
+                                    <size key="headerReferenceSize" width="0.0" height="0.0"/>
+                                    <size key="footerReferenceSize" width="0.0" height="0.0"/>
+                                    <inset key="sectionInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
+                                </collectionViewFlowLayout>
+                                <cells/>
+                            </collectionView>
+                            <pageControl opaque="NO" userInteractionEnabled="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" numberOfPages="3" translatesAutoresizingMaskIntoConstraints="NO" id="oDK-cK-o7i">
+                                <rect key="frame" x="187.5" y="701" width="39" height="37"/>
+                                <color key="pageIndicatorTintColor" red="0.76862745098039209" green="0.83137254901960778" blue="0.8901960784313725" alpha="1" colorSpace="calibratedRGB"/>
+                                <color key="currentPageIndicatorTintColor" red="0.0" green="0.23529411764705882" blue="0.44313725490196076" alpha="1" colorSpace="calibratedRGB"/>
+                            </pageControl>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="f7y-EY-nmT">
+                                <rect key="frame" x="157.5" y="814" width="99" height="28"/>
+                                <fontDescription key="fontDescription" type="system" weight="medium" pointSize="13"/>
+                                <state key="normal" title="Continue to app">
+                                    <color key="titleColor" name="marineBlue"/>
+                                </state>
+                                <connections>
+                                    <action selector="secondaryButtonTapped:" destination="RjN-6m-slp" eventType="touchUpInside" id="aB7-kT-FZe"/>
+                                </connections>
+                            </button>
+                        </subviews>
+                        <color key="backgroundColor" red="0.95686274509803915" green="0.98039215686274506" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                        <constraints>
+                            <constraint firstItem="hJK-9G-eaJ" firstAttribute="top" secondItem="oDK-cK-o7i" secondAttribute="bottom" constant="16" id="1dt-4J-hkM"/>
+                            <constraint firstItem="89P-Xg-9SO" firstAttribute="trailing" secondItem="hJK-9G-eaJ" secondAttribute="trailing" constant="32" id="67h-uP-dNZ"/>
+                            <constraint firstItem="89P-Xg-9SO" firstAttribute="trailing" secondItem="S3H-wZ-zFh" secondAttribute="trailing" id="BTy-oT-fUs"/>
+                            <constraint firstItem="oDK-cK-o7i" firstAttribute="top" secondItem="S3H-wZ-zFh" secondAttribute="bottom" id="HuE-ug-sqw"/>
+                            <constraint firstItem="S3H-wZ-zFh" firstAttribute="leading" secondItem="89P-Xg-9SO" secondAttribute="leading" id="LlK-7z-Wu5"/>
+                            <constraint firstItem="oDK-cK-o7i" firstAttribute="centerX" secondItem="hJK-9G-eaJ" secondAttribute="centerX" id="OsO-FI-M89"/>
+                            <constraint firstItem="S3H-wZ-zFh" firstAttribute="top" secondItem="89P-Xg-9SO" secondAttribute="top" id="bNn-9K-1ja"/>
+                            <constraint firstItem="89P-Xg-9SO" firstAttribute="bottom" secondItem="hJK-9G-eaJ" secondAttribute="bottom" constant="64" id="ejG-Sx-qXy"/>
+                            <constraint firstItem="hJK-9G-eaJ" firstAttribute="leading" secondItem="89P-Xg-9SO" secondAttribute="leading" constant="32" id="o6A-Xb-LkN"/>
+                            <constraint firstItem="f7y-EY-nmT" firstAttribute="top" secondItem="hJK-9G-eaJ" secondAttribute="bottom" constant="16" id="siI-aw-gg9"/>
+                            <constraint firstItem="f7y-EY-nmT" firstAttribute="centerX" secondItem="hJK-9G-eaJ" secondAttribute="centerX" id="wMM-d8-9Y1"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="89P-Xg-9SO"/>
+                    </view>
+                    <connections>
+                        <outlet property="collectionView" destination="S3H-wZ-zFh" id="Oyu-hU-69T"/>
+                        <outlet property="pageControl" destination="oDK-cK-o7i" id="rFV-7g-Q7T"/>
+                        <outlet property="primaryButton" destination="hJK-9G-eaJ" id="ZyI-Iq-fSS"/>
+                        <outlet property="secondaryButton" destination="f7y-EY-nmT" id="9Ca-X1-Jyy"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="eY2-6U-pun" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-304.34782608695656" y="-129.24107142857142"/>
+        </scene>
+    </scenes>
+    <resources>
+        <namedColor name="darkSkyBlue">
+            <color red="0.27450980392156865" green="0.55686274509803924" blue="0.88627450980392153" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </namedColor>
+        <namedColor name="marineBlue">
+            <color red="0.0" green="0.23529411764705882" blue="0.44313725490196076" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </namedColor>
+    </resources>
+</document>

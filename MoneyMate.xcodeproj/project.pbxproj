@@ -69,6 +69,12 @@
 		F3F85BFF2528F8470030C674 /* BankTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = F3F85BFD2528F8470030C674 /* BankTableViewCell.xib */; };
 		F3F85C012528F9460030C674 /* BankSectionHeaderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F3F85C002528F9460030C674 /* BankSectionHeaderView.swift */; };
 		F3F85C07252923160030C674 /* Double+Utilities.swift in Sources */ = {isa = PBXBuildFile; fileRef = F3F85C06252923160030C674 /* Double+Utilities.swift */; };
+		F3F85C0C2529A74B0030C674 /* IntroExperienceCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = F3F85C0A2529A74B0030C674 /* IntroExperienceCollectionViewCell.swift */; };
+		F3F85C0D2529A74B0030C674 /* IntroExperienceCollectionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = F3F85C0B2529A74B0030C674 /* IntroExperienceCollectionViewCell.xib */; };
+		F3F85C102529A7560030C674 /* IntroExperience.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = F3F85C0E2529A7560030C674 /* IntroExperience.storyboard */; };
+		F3F85C112529A7560030C674 /* IntroExperienceViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F3F85C0F2529A7560030C674 /* IntroExperienceViewController.swift */; };
+		F3F85C132529A7F90030C674 /* IntroExperience.json in Resources */ = {isa = PBXBuildFile; fileRef = F3F85C122529A7F90030C674 /* IntroExperience.json */; };
+		F3F85C152529A9250030C674 /* UIViewController+Alert.swift in Sources */ = {isa = PBXBuildFile; fileRef = F3F85C142529A9240030C674 /* UIViewController+Alert.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -136,6 +142,12 @@
 		F3F85BFD2528F8470030C674 /* BankTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = BankTableViewCell.xib; sourceTree = "<group>"; };
 		F3F85C002528F9460030C674 /* BankSectionHeaderView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BankSectionHeaderView.swift; sourceTree = "<group>"; };
 		F3F85C06252923160030C674 /* Double+Utilities.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Double+Utilities.swift"; sourceTree = "<group>"; };
+		F3F85C0A2529A74B0030C674 /* IntroExperienceCollectionViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = IntroExperienceCollectionViewCell.swift; sourceTree = "<group>"; };
+		F3F85C0B2529A74B0030C674 /* IntroExperienceCollectionViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = IntroExperienceCollectionViewCell.xib; sourceTree = "<group>"; };
+		F3F85C0E2529A7560030C674 /* IntroExperience.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = IntroExperience.storyboard; sourceTree = "<group>"; };
+		F3F85C0F2529A7560030C674 /* IntroExperienceViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = IntroExperienceViewController.swift; sourceTree = "<group>"; };
+		F3F85C122529A7F90030C674 /* IntroExperience.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = IntroExperience.json; sourceTree = "<group>"; };
+		F3F85C142529A9240030C674 /* UIViewController+Alert.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIViewController+Alert.swift"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -207,6 +219,7 @@
 		F3990F2F25285FDD00E87E2A /* Extensions */ = {
 			isa = PBXGroup;
 			children = (
+				F3F85C142529A9240030C674 /* UIViewController+Alert.swift */,
 				F3990F932528C8D400E87E2A /* UIColor+Utilities.swift */,
 				F3990F4425285FFF00E87E2A /* CollectionView+RegisterCell.swift */,
 				F3990F4125285FFF00E87E2A /* Date+Extensions.swift */,
@@ -252,6 +265,7 @@
 			children = (
 				F3990EEE2528586B00E87E2A /* MainTab.storyboard */,
 				F3990F64252861CD00E87E2A /* MainTabViewController.swift */,
+				F3F85C082529A7340030C674 /* IntroExperience */,
 				F3990F622528615400E87E2A /* Bank */,
 				F3990F612528614E00E87E2A /* Market */,
 				F3990F602528614000E87E2A /* Dashboard */,
@@ -327,6 +341,7 @@
 		F3990F7F252879B300E87E2A /* Jsons */ = {
 			isa = PBXGroup;
 			children = (
+				F3F85C122529A7F90030C674 /* IntroExperience.json */,
 				74FD4DEC252935C000B69B78 /* QuestData.json */,
 				741FA8372529651D001DE305 /* CourseData.json */,
 				741FA83A25296523001DE305 /* JobData.json */,
@@ -351,6 +366,25 @@
 			children = (
 				F3F85BFC2528F8470030C674 /* BankTableViewCell.swift */,
 				F3F85BFD2528F8470030C674 /* BankTableViewCell.xib */,
+			);
+			path = Cells;
+			sourceTree = "<group>";
+		};
+		F3F85C082529A7340030C674 /* IntroExperience */ = {
+			isa = PBXGroup;
+			children = (
+				F3F85C0E2529A7560030C674 /* IntroExperience.storyboard */,
+				F3F85C0F2529A7560030C674 /* IntroExperienceViewController.swift */,
+				F3F85C092529A7410030C674 /* Cells */,
+			);
+			path = IntroExperience;
+			sourceTree = "<group>";
+		};
+		F3F85C092529A7410030C674 /* Cells */ = {
+			isa = PBXGroup;
+			children = (
+				F3F85C0A2529A74B0030C674 /* IntroExperienceCollectionViewCell.swift */,
+				F3F85C0B2529A74B0030C674 /* IntroExperienceCollectionViewCell.xib */,
 			);
 			path = Cells;
 			sourceTree = "<group>";
@@ -418,13 +452,16 @@
 				741FA83B25296523001DE305 /* JobData.json in Resources */,
 				F3990F7825286B4400E87E2A /* ItemCollectionViewCell.xib in Resources */,
 				F3990EF22528586D00E87E2A /* Colors.xcassets in Resources */,
+				F3F85C0D2529A74B0030C674 /* IntroExperienceCollectionViewCell.xib in Resources */,
 				741FA8382529651D001DE305 /* CourseData.json in Resources */,
 				74FD4DC82528974400B69B78 /* QuestDetails.storyboard in Resources */,
 				F3990EF02528586B00E87E2A /* MainTab.storyboard in Resources */,
+				F3F85C102529A7560030C674 /* IntroExperience.storyboard in Resources */,
 				F3990F712528629700E87E2A /* Market.storyboard in Resources */,
 				F3F85BFF2528F8470030C674 /* BankTableViewCell.xib in Resources */,
 				F3990F73252862A200E87E2A /* Dashboard.storyboard in Resources */,
 				F3990F6F2528628A00E87E2A /* Bank.storyboard in Resources */,
+				F3F85C132529A7F90030C674 /* IntroExperience.json in Resources */,
 				F3990F922528C31900E87E2A /* Assets.xcassets in Resources */,
 				74FD4DE62528ECCB00B69B78 /* DashboardSectionTableViewCell.xib in Resources */,
 				74FD4DB125286B0D00B69B78 /* Quiz.storyboard in Resources */,
@@ -447,6 +484,7 @@
 				F3990F672528622800E87E2A /* BankViewController.swift in Sources */,
 				74FD4DD92528D5E200B69B78 /* GameDataStore.swift in Sources */,
 				F3990F4A25285FFF00E87E2A /* UIView+Nib.swift in Sources */,
+				F3F85C0C2529A74B0030C674 /* IntroExperienceCollectionViewCell.swift in Sources */,
 				F3990F5725285FFF00E87E2A /* Date+Extensions.swift in Sources */,
 				74FD4DDF2528DED500B69B78 /* DashboardSection.swift in Sources */,
 				F3990EE92528586B00E87E2A /* AppDelegate.swift in Sources */,
@@ -459,6 +497,7 @@
 				F3990F5A25285FFF00E87E2A /* CollectionView+RegisterCell.swift in Sources */,
 				F3990F7725286B4400E87E2A /* ItemCollectionViewCell.swift in Sources */,
 				F3990F942528C8D400E87E2A /* UIColor+Utilities.swift in Sources */,
+				F3F85C112529A7560030C674 /* IntroExperienceViewController.swift in Sources */,
 				F3990F7E252878C000E87E2A /* Switcher.swift in Sources */,
 				F3990F5425285FFF00E87E2A /* NSObject+ClassName.swift in Sources */,
 				F3990F4D25285FFF00E87E2A /* UITableView+RegisterCell.swift in Sources */,
@@ -475,6 +514,7 @@
 				F3F85BFE2528F8470030C674 /* BankTableViewCell.swift in Sources */,
 				F3990F5525285FFF00E87E2A /* NSAttributedString+AddLink.swift in Sources */,
 				F3990F962528D49F00E87E2A /* BankActionView.swift in Sources */,
+				F3F85C152529A9250030C674 /* UIViewController+Alert.swift in Sources */,
 				F3990F5625285FFF00E87E2A /* DateFormatter+Extensions.swift in Sources */,
 				74FD4DCB2528980800B69B78 /* QuestDetailsViewController.swift in Sources */,
 				F3990F8D25288F0C00E87E2A /* MarketSectionTableViewCell.swift in Sources */,
