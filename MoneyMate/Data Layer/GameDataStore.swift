@@ -112,7 +112,9 @@ struct GameDataStore {
             }
         } else if let item = items.first(where: { $0.name == name }) {
             if !account.items.contains(item) {
-                result.append(.buyItem(item))
+                if account.money > item.cost {
+                    result.append(.buyItem(item))
+                }
                 if item.loan != nil {
                     result.append(.loanItem(item))
                 }
