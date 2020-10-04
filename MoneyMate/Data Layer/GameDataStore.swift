@@ -26,10 +26,12 @@ struct GameDataStore {
     
     var marketSections: [MarketSection] {
         return [
-            .init(with: courses),
-            .init(with: jobs),
-            .init(with: items),
-        ]
+            .init(with: courses.filter {
+                    !(account.completedCourses + account.ongoingCourses).contains($0)
+            }),
+            .init(with: jobs.filter { !account.jobs.contains($0) }),
+            .init(with: items.filter { !account.items.contains($0) }),
+        ].filter { !$0.items.isEmpty }
     }
     
     // MARK: - DATA STORE
