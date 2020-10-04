@@ -105,7 +105,7 @@ extension DashboardItemViewModel {
         self.title = model.name
         self.description = model.description
         self.isAsset = model.isAsset
-        self.systemImageTitle = "briefcase"
+        self.systemImageTitle = "house"
         var desc: [String] = []
         var prog: Float? = nil
         self.isQuest = false

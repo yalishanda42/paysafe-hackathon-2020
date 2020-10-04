@@ -24,6 +24,7 @@ class ItemCollectionViewCell: UICollectionViewCell {
     override func awakeFromNib() {
         super.awakeFromNib()
         containerView.roundCorners(radius: 8)
+        imageView.tintColor = .fromAsset(.shamrockGreen)
     }
     
     override func prepareForReuse() {
