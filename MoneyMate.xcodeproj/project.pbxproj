@@ -12,7 +12,7 @@
 		74F8D033252954350041A2BE /* ItemData.json in Resources */ = {isa = PBXBuildFile; fileRef = 74F8D032252954350041A2BE /* ItemData.json */; };
 		74FD4DB125286B0D00B69B78 /* Quiz.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 74FD4DB025286B0D00B69B78 /* Quiz.storyboard */; };
 		74FD4DB425286BB700B69B78 /* QuizViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 74FD4DB325286BB600B69B78 /* QuizViewController.swift */; };
-		74FD4DC82528974400B69B78 /* Quest.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 74FD4DC72528974400B69B78 /* Quest.storyboard */; };
+		74FD4DC82528974400B69B78 /* QuestDetails.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 74FD4DC72528974400B69B78 /* QuestDetails.storyboard */; };
 		74FD4DCB2528980800B69B78 /* QuestDetailsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 74FD4DCA2528980800B69B78 /* QuestDetailsViewController.swift */; };
 		74FD4DD92528D5E200B69B78 /* GameDataStore.swift in Sources */ = {isa = PBXBuildFile; fileRef = 74FD4DD82528D5E200B69B78 /* GameDataStore.swift */; };
 		74FD4DDF2528DED500B69B78 /* DashboardSection.swift in Sources */ = {isa = PBXBuildFile; fileRef = 74FD4DDE2528DED500B69B78 /* DashboardSection.swift */; };
@@ -77,7 +77,7 @@
 		74F8D032252954350041A2BE /* ItemData.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = ItemData.json; sourceTree = "<group>"; };
 		74FD4DB025286B0D00B69B78 /* Quiz.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Quiz.storyboard; sourceTree = "<group>"; };
 		74FD4DB325286BB600B69B78 /* QuizViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QuizViewController.swift; sourceTree = "<group>"; };
-		74FD4DC72528974400B69B78 /* Quest.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Quest.storyboard; sourceTree = "<group>"; };
+		74FD4DC72528974400B69B78 /* QuestDetails.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = QuestDetails.storyboard; sourceTree = "<group>"; };
 		74FD4DCA2528980800B69B78 /* QuestDetailsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QuestDetailsViewController.swift; sourceTree = "<group>"; };
 		74FD4DD82528D5E200B69B78 /* GameDataStore.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameDataStore.swift; sourceTree = "<group>"; };
 		74FD4DDE2528DED500B69B78 /* DashboardSection.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DashboardSection.swift; sourceTree = "<group>"; };
@@ -161,7 +161,7 @@
 		74FD4DC6252896F500B69B78 /* QuestDetails */ = {
 			isa = PBXGroup;
 			children = (
-				74FD4DC72528974400B69B78 /* Quest.storyboard */,
+				74FD4DC72528974400B69B78 /* QuestDetails.storyboard */,
 				74FD4DCA2528980800B69B78 /* QuestDetailsViewController.swift */,
 			);
 			path = QuestDetails;
@@ -328,12 +328,10 @@
 			isa = PBXGroup;
 			children = (
 				74FD4DEC252935C000B69B78 /* QuestData.json */,
-				F3990F8825288BFA00E87E2A /* MarketSection.json */,
-				F3990F8F2528A36800E87E2A /* jsonBackUp.json */,
 				741FA8372529651D001DE305 /* CourseData.json */,
 				741FA83A25296523001DE305 /* JobData.json */,
 				74F8D032252954350041A2BE /* ItemData.json */,
-				F3990F8825288BFA00E87E2A /* MarketDataSource.json */,
+				F3990F8825288BFA00E87E2A /* MarketSection.json */,
 			);
 			name = Jsons;
 			sourceTree = "<group>";
@@ -421,7 +419,7 @@
 				F3990F7825286B4400E87E2A /* ItemCollectionViewCell.xib in Resources */,
 				F3990EF22528586D00E87E2A /* Colors.xcassets in Resources */,
 				741FA8382529651D001DE305 /* CourseData.json in Resources */,
-				74FD4DC82528974400B69B78 /* Quest.storyboard in Resources */,
+				74FD4DC82528974400B69B78 /* QuestDetails.storyboard in Resources */,
 				F3990EF02528586B00E87E2A /* MainTab.storyboard in Resources */,
 				F3990F712528629700E87E2A /* Market.storyboard in Resources */,
 				F3F85BFF2528F8470030C674 /* BankTableViewCell.xib in Resources */,
@@ -450,7 +448,6 @@
 				74FD4DD92528D5E200B69B78 /* GameDataStore.swift in Sources */,
 				F3990F4A25285FFF00E87E2A /* UIView+Nib.swift in Sources */,
 				F3990F5725285FFF00E87E2A /* Date+Extensions.swift in Sources */,
-				F3990F902528A36800E87E2A /* jsonBackUp.json in Sources */,
 				74FD4DDF2528DED500B69B78 /* DashboardSection.swift in Sources */,
 				F3990EE92528586B00E87E2A /* AppDelegate.swift in Sources */,
 				F3990F4625285FFF00E87E2A /* UIView+Extensions.swift in Sources */,

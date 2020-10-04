@@ -10,6 +10,8 @@ import UIKit
 
 class DashboardSectionTableViewCell: UITableViewCell {
     
+    var onTapItem: ((String, Bool) -> Void)?
+    
     @IBOutlet private weak var titleLabel: UILabel!
     @IBOutlet private weak var collectionView: UICollectionView!
     
@@ -63,5 +65,10 @@ extension DashboardSectionTableViewCell: UICollectionViewDelegate, UICollectionV
                         layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
         
         return CGSize(width: 200, height: 200)
+    }
+    
+    func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
+        let item = dataSource[indexPath.row]
+        onTapItem?(item.title, item.isQuest)
     }
 }

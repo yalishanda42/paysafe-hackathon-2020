@@ -43,6 +43,16 @@ extension DashboardViewController: UITableViewDelegate, UITableViewDataSource {
         }
         
         cell.configure(with: dashboardSection)
+        cell.onTapItem = { [unowned self] name, isQuest in
+            if isQuest {
+                let questVC = QuestDetailsViewController.instantiateFromStoryboard()
+                questVC.quest = GameDataStore.shared.quests.first { $0.name == name }
+                questVC.delegate = self
+                self.present(questVC, animated: true)
+            } else {
+                self.presentItemActionsSheetIfNeeded(forItemWithName: name)
+            }
+        }
         return cell
     }
     
@@ -73,5 +83,11 @@ private extension DashboardViewController {
         moneyLabel.text = "\(GameDataStore.shared.account.money)"
         dateLabel.setTitle(GameDataStore.shared.date.shortDateFormattedString, for: .normal) 
         tableView.reloadData()
+    }
+}
+
+extension DashboardViewController: QuestDetailsViewControllerDelegate {
+    func acceptQuest(_ quest: QuestData) {
+        GameDataStore.shared.send(.acceptQuest(quest))
     }
 }

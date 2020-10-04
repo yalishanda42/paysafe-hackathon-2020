@@ -73,6 +73,7 @@ extension DashboardItemViewModel {
         self.systemImageTitle = "briefcase"
         self.isAsset = true
         self.progress = nil
+        self.isQuest = false
     }
     
     init(from model: CourseData) {
@@ -80,6 +81,7 @@ extension DashboardItemViewModel {
         self.description = model.description
         self.systemImageTitle = "book"
         self.isAsset = false
+        self.isQuest = false
         
         if GameDataStore.shared.account
             .ongoingCourses.contains(model) {
@@ -102,6 +104,7 @@ extension DashboardItemViewModel {
         self.systemImageTitle = "briefcase"
         var desc: [String] = []
         var prog: Float? = nil
+        self.isQuest = false
         
         if let loan = model.loan {
             #warning("TODO: calculate progress based on loan start date")
@@ -129,6 +132,7 @@ extension DashboardItemViewModel {
         self.systemImageTitle = "safari"
         self.progress = nil
         self.isAsset = false
+        self.isQuest = true
         if model.isCompleted {
             self.descriptions = ["Completed!"]
         } else {
