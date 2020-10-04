@@ -7,6 +7,7 @@
 //
 
 import Foundation
+import UserNotifications
 
 extension Notification.Name {
     static let dataStoreWasUpdated = Notification.Name("dataStoreWasUpdated")
@@ -212,6 +213,7 @@ struct GameDataStore {
             if let job = account.jobs.first(where: { $0.name == jobName }),
                isPayday(startDate: jobBeginDate, reg: job.income.regularity) {
                 account.money += job.income.value
+                sendNotification()
             }
         }
         
@@ -220,6 +222,25 @@ struct GameDataStore {
                let income = item.constantIncome,
                isPayday(startDate: incomeBeginDate, reg: income.regularity) {
                 account.money += income.value
+            }
+        }
+    }
+    
+    private func sendNotification() {
+        let content = UNMutableNotificationContent()
+        content.title = NSString.localizedUserNotificationString(forKey: "Kole", arguments: nil)
+        content.body = NSString.localizedUserNotificationString(forKey: "Poluchi li", arguments: nil)
+        content.sound = UNNotificationSound.default
+        content.badge = 1
+        content.categoryIdentifier = "notify-test"
+
+        let trigger = UNTimeIntervalNotificationTrigger(timeInterval: 5, repeats: false)
+        let request = UNNotificationRequest(identifier: "notify-test", content: content, trigger: trigger)
+
+        let center = UNUserNotificationCenter.current()
+        center.add(request) { (error) in
+            if let error = error {
+                print("Error \(error.localizedDescription)")
             }
         }
     }

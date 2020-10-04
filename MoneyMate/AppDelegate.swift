@@ -7,14 +7,26 @@
 //
 
 import UIKit
+import UserNotifications
 
 @UIApplicationMain
-class AppDelegate: UIResponder, UIApplicationDelegate {
+class AppDelegate: UIResponder, UIApplicationDelegate, UNUserNotificationCenterDelegate {
 
     var window: UIWindow?
     
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
-        
+
+        let center = UNUserNotificationCenter.current()
+        center.delegate = self
+        center.requestAuthorization(options: [.alert, .sound, .badge]) { (granted, error) in
+            // Enable or disable features based on authorization.
+            if error != nil {
+                print("Request authorization failed!")
+            } else {
+                print("Request authorization succeeded!")
+            }
+        }
+
         setupAppearance()
         
         window = UIWindow(frame: UIScreen.main.bounds)
@@ -24,6 +36,17 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 //        let mainTabVc = MainTabViewController.instantiateFromStoryboard()
 //        window?.rootViewController = mainTabVc
         return true
+    }
+    
+    func userNotificationCenter(_ center: UNUserNotificationCenter, openSettingsFor notification: UNNotification?) {
+    }
+    
+    func userNotificationCenter(_ center: UNUserNotificationCenter, didReceive response: UNNotificationResponse, withCompletionHandler completionHandler: @escaping () -> Void) {
+        print("poluchih 1")
+    }
+    
+    func userNotificationCenter(_ center: UNUserNotificationCenter, willPresent notification: UNNotification, withCompletionHandler completionHandler: @escaping (UNNotificationPresentationOptions) -> Void) {
+        print("poluchih 2")
     }
 }
 
@@ -37,3 +60,4 @@ extension AppDelegate {
         UINavigationBar.appearance().backgroundColor = .fromAsset(.pineGreen)
     }
 }
+
