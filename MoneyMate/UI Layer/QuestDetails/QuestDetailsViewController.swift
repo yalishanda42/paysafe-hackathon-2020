@@ -10,6 +10,7 @@ import UIKit
 
 protocol QuestDetailsViewControllerDelegate: class {
     func acceptQuest(_ quest: QuestData)
+    func collectReward(_ quest: QuestData)
 }
 
 class QuestDetailsViewController: UIViewController {
@@ -19,6 +20,18 @@ class QuestDetailsViewController: UIViewController {
     var quest: QuestData? = nil {
         didSet {
             updateInfo()
+        }
+    }
+    
+    enum ButtonsConfiguration {
+        case acceptAndDismiss
+        case noButtons
+        case collectReward
+    }
+    
+    var buttonsConfig: ButtonsConfiguration = .noButtons  {
+        didSet {
+            updateButtons()
         }
     }
     
@@ -35,6 +48,7 @@ class QuestDetailsViewController: UIViewController {
         super.viewDidLoad()
         
         updateInfo()
+        updateButtons()
         
         infoView.layer.cornerRadius = 8
         descriptionContainer.layer.cornerRadius = 8
@@ -55,7 +69,14 @@ class QuestDetailsViewController: UIViewController {
     @IBAction func onTapRightButton(_ sender: Any) {
         dismiss(animated: true) {
             guard let quest = self.quest else { return }
-            self.delegate?.acceptQuest(quest)
+            switch self.buttonsConfig {
+            case .acceptAndDismiss:
+                self.delegate?.acceptQuest(quest)
+            case .collectReward:
+                self.delegate?.collectReward(quest)
+            default:
+                break
+            }
         }
     }
     
@@ -73,8 +94,13 @@ class QuestDetailsViewController: UIViewController {
         let reqStackTitle = UILabel.create(from: "Requirements", font: .systemFont(ofSize: 17, weight: .bold))
         let rewardsStackTitle = UILabel.create(from: "Rewards", font: .systemFont(ofSize: 17, weight: .bold))
         
-        reqStack.addArrangedSubview(reqStackTitle)
-        rewardsStack.addArrangedSubview(rewardsStackTitle)
+        if !quest.completionRequirements.isEmpty {
+            reqStack.addArrangedSubview(reqStackTitle)
+        }
+        
+        if !quest.rewards.isEmpty {
+            rewardsStack.addArrangedSubview(rewardsStackTitle)
+        }
         
         quest.completionRequirements
             .map { UILabel.create(from: $0, font: .systemFont(ofSize: 17)) }
@@ -83,6 +109,29 @@ class QuestDetailsViewController: UIViewController {
         quest.rewards
             .map { UILabel.create(from: $0, font: .systemFont(ofSize: 17)) }
             .forEach(rewardsStack.addArrangedSubview(_:))
+        
+        infoView.isHidden = quest.completionRequirements.isEmpty && quest.rewards.isEmpty
+    }
+    
+    private func updateButtons() {
+        guard let left = leftButton, let right = rightButton else { return }
+        switch buttonsConfig {
+        case .noButtons:
+            left.isHidden = true
+            right.isHidden = true
+        case .acceptAndDismiss:
+            left.isHidden = false
+            left.setTitle("Ignore", for: .normal)
+            left.setTitleColor(.systemRed, for: .normal)
+            right.isHidden = false
+            right.setTitle("Accept", for: .normal)
+            right.setTitleColor(.systemGreen, for: .normal)
+        case .collectReward:
+            left.isHidden = true
+            right.isHidden = false
+            right.setTitle("Collect reward!", for: .normal)
+            right.setTitleColor(.systemGreen, for: .normal)
+        }
     }
 }
 

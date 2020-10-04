@@ -141,7 +141,7 @@ extension DashboardItemViewModel {
         self.isAsset = false
         self.isQuest = true
         if model.isCompleted {
-            self.descriptions = ["Completed!"]
+            self.descriptions = ["Collect reward!"]
         } else {
             self.descriptions = []
         }

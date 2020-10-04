@@ -112,11 +112,12 @@ private extension ItemCollectionViewCell {
     
     func createDetailStackView(left: UIView, right: UIView ) -> UIStackView {
         let stackView = UIStackView()
-        stackView.distribution = .fillEqually
+        stackView.distribution = .fillProportionally
         stackView.alignment = .center
         stackView.axis = .horizontal
-        stackView.spacing = 3
-        
+        stackView.spacing = 0
+        right.setContentHuggingPriority(UILayoutPriority(rawValue: 1000), for: .horizontal)
+        right.setContentCompressionResistancePriority(UILayoutPriority(1000), for: .horizontal)
         stackView.addArrangedSubview(left)
         stackView.addArrangedSubview(right)
         return stackView

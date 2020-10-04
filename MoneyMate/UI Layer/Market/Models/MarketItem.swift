@@ -44,7 +44,7 @@ extension MarketItemModel {
         self.imageTitle = "briefcase"
         self.description = data.description
         self.details = [
-            .init(title: "Salary", value: "\(data.income.value) / \(data.income.regularity.rawValue)"),
+            .init(title: "Salary", value: "$\(data.income.value)/\(data.income.regularity.rawValue)"),
         ]
         self.requirements = data.requiredCourses.map { courseName in
             .init(
@@ -63,10 +63,14 @@ extension MarketItemModel {
         self.imageTitle = "house"
         self.description = data.description
         self.details = [
-            .init(title: "Buy Now:", value: "\(data.cost)"),
+            .init(title: "Buy Now", value: "\(data.cost)"),
         ]
         if let loan = data.loan {
-            self.details.append(.init(title: "Bank Loan", value: "\(loan.value) / \(loan.regularity.rawValue)"))
+            self.details.append(.init(title: "Bank Loan", value: "$\(loan.value)/\(loan.regularity.rawValue)"))
+        }
+        
+        if let rent = data.rent {
+            self.details.append(.init(title: "Rent", value: "$\(rent.value)/\(rent.regularity.rawValue)"))
         }
         self.requirements = []
     }
