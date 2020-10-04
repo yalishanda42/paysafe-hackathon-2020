@@ -18,7 +18,9 @@ class DashboardViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         setupTableView()
-        NotificationCenter.default.addObserver(self, selector: #selector(tableView.reloadData), name: .dataStoreWasUpdated, object: nil)
+        moneyLabel.text = "\(GameDataStore.shared.account.money)"
+        dateLabel.setTitle(GameDataStore.shared.date.shortDateFormattedString, for: .normal) 
+        NotificationCenter.default.addObserver(self, selector: #selector(dataDidChange), name: .dataStoreWasUpdated, object: nil)
     }
     
     deinit {
@@ -64,5 +66,11 @@ private extension DashboardViewController {
         tableView.estimatedRowHeight = 200 // TODO: Check which is perfect
 //        tableView.rowHeight = 200// UITableView.automaticDimension
         tableView.register(cellType: DashboardSectionTableViewCell.self)
+    }
+    
+    @objc func dataDidChange() {
+        moneyLabel.text = "\(GameDataStore.shared.account.money)"
+        dateLabel.setTitle(GameDataStore.shared.date.shortDateFormattedString, for: .normal) 
+        tableView.reloadData()
     }
 }

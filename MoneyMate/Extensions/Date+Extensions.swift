@@ -128,7 +128,7 @@ extension Date {
     }
     
     var shortDateFormattedString: String {
-        let formatter = defaultDateFormatter(dateFormat: "MM/dd/yy")
+        let formatter = defaultDateFormatter(dateFormat: "dd.MM.YYYY")
         return formatter.string(from: self)
     }
     
