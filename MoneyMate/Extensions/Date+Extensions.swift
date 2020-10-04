@@ -127,8 +127,13 @@ extension Date {
         return dateFormatter
     }
     
+    var dashboardDataFormat: String {
+        let formatter = defaultDateFormatter(dateFormat: "MMM d, yyyy")
+        return formatter.string(from: self)
+    }
+    
     var shortDateFormattedString: String {
-        let formatter = defaultDateFormatter(dateFormat: "E dd.MM.YYYY")
+        let formatter = defaultDateFormatter(dateFormat: "dd.MM.YYYY")
         return formatter.string(from: self)
     }
     
